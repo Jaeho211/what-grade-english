@@ -4,7 +4,10 @@
   "type": "module",
   "engines": { "node": ">=24" },
   "scripts": {
-    "test": "node --test tests/engine.test.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && node scripts/serve.mjs",
+    "test:browser": "node tests/browser.smoke.mjs",
+    "test": "node --test tests/engine.test.mjs tests/build.test.mjs",
     "validate": "node scripts/validate-bank.mjs"
   }
 }

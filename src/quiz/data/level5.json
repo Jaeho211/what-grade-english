@@ -1,0 +1,482 @@
+[
+  {
+    "id": "L5-V01-1",
+    "level": 5,
+    "slotId": "L5-V01",
+    "domain": "vocabulary",
+    "skill": "academic-context",
+    "familyId": "meaning-choice",
+    "passage": "Public trust declined after the company hid information about its products.",
+    "prompt": "trust의 문맥상 뜻은?",
+    "choices": [
+      "믿고 의지하는 마음",
+      "상품을 구입한 금액",
+      "정보를 보관한 장소",
+      "회사의 법적 권한"
+    ],
+    "answer": 0,
+    "explanation": "정보 은폐 때문에 떨어진 것은 회사에 대한 신뢰입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-V01-2",
+    "level": 5,
+    "slotId": "L5-V01",
+    "domain": "vocabulary",
+    "skill": "academic-context",
+    "familyId": "meaning-choice",
+    "passage": "The evidence supports the idea that regular sleep improves memory.",
+    "prompt": "supports의 문맥상 뜻은?",
+    "choices": [
+      "물리적으로 들어 올린다",
+      "근거를 제공해 뒷받침한다",
+      "새로운 의문을 제기한다",
+      "관련성을 부정한다"
+    ],
+    "answer": 1,
+    "explanation": "evidence가 생각의 타당성을 뒷받침한다는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-V02-1",
+    "level": 5,
+    "slotId": "L5-V02",
+    "domain": "vocabulary",
+    "skill": "polysemy",
+    "familyId": "meaning-choice",
+    "passage": "The student raised an important question during the discussion.",
+    "prompt": "raised의 문맥상 뜻은?",
+    "choices": [
+      "키웠다",
+      "가격을 올렸다",
+      "제기했다",
+      "팔을 들었다"
+    ],
+    "answer": 2,
+    "explanation": "question을 목적어로 두면 질문이나 문제를 제기한다는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-V02-2",
+    "level": 5,
+    "slotId": "L5-V02",
+    "domain": "vocabulary",
+    "skill": "polysemy",
+    "familyId": "meaning-choice",
+    "passage": "This experiment sheds light on why people remember some events better than others.",
+    "prompt": "sheds light on의 뜻은?",
+    "choices": [
+      "차이를 숨겨 준다",
+      "기억을 완전히 없앤다",
+      "실험실을 밝게 비춘다",
+      "이해할 수 있도록 밝혀 준다"
+    ],
+    "answer": 3,
+    "explanation": "사건별 기억 차이의 이유를 밝혀 준다는 비유적 표현입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-V03-1",
+    "level": 5,
+    "slotId": "L5-V03",
+    "domain": "vocabulary",
+    "skill": "synonym-fit",
+    "familyId": "context-gap",
+    "passage": "The survey did not ___ all age groups, so its results may be incomplete.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "cover",
+      "hide",
+      "replace",
+      "separate"
+    ],
+    "answer": 0,
+    "explanation": "모든 연령 집단을 포함하지 못했다는 뜻이므로 cover입니다. separate는 나누는 것입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-V03-2",
+    "level": 5,
+    "slotId": "L5-V03",
+    "domain": "vocabulary",
+    "skill": "synonym-fit",
+    "familyId": "context-gap",
+    "passage": "The study found a link between the two factors but did not ___ that one caused the other.",
+    "prompt": "인과관계를 증명하지는 못했다는 뜻으로 빈칸에는?",
+    "choices": [
+      "assume",
+      "prove",
+      "doubt",
+      "ignore"
+    ],
+    "answer": 1,
+    "explanation": "연관성을 찾았어도 인과관계를 증명한 것은 아니라는 대조이므로 prove입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-U01-1",
+    "level": 5,
+    "slotId": "L5-U01",
+    "domain": "usage",
+    "skill": "sentence-core",
+    "familyId": "core-choice",
+    "passage": "The habit of checking messages while studying often reduces the attention students give to their work.",
+    "prompt": "문장의 핵심 내용은?",
+    "choices": [
+      "공부가 메시지 확인 습관을 없앤다",
+      "학생들의 주의가 메시지를 줄인다",
+      "메시지 확인 습관이 공부에 기울이는 주의를 줄인다",
+      "학생들은 메시지에만 집중해야 한다"
+    ],
+    "answer": 2,
+    "explanation": "주어 habit, 동사 reduces, 목적어 attention을 연결해야 합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-U01-2",
+    "level": 5,
+    "slotId": "L5-U01",
+    "domain": "usage",
+    "skill": "sentence-core",
+    "familyId": "core-choice",
+    "passage": "The results of a survey conducted among local residents suggest that more parks are needed.",
+    "prompt": "직접 제시된 판단은?",
+    "choices": [
+      "주민들이 설문조사를 금지했다",
+      "공원을 만들면 모든 주민이 참여한다",
+      "설문조사가 공원 안에서 진행됐다",
+      "설문 결과가 공원의 추가 필요성을 시사한다"
+    ],
+    "answer": 3,
+    "explanation": "results가 주어이고 suggest 뒤 절이 그 결과가 시사하는 내용입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-U02-1",
+    "level": 5,
+    "slotId": "L5-U02",
+    "domain": "usage",
+    "skill": "modifier-scope",
+    "familyId": "modifier-choice",
+    "passage": "People often avoid information that challenges what they already believe.",
+    "prompt": "that challenges 이하가 설명하는 대상은?",
+    "choices": [
+      "information",
+      "People",
+      "avoid",
+      "already"
+    ],
+    "answer": 0,
+    "explanation": "관계절은 바로 앞 information을 수식합니다. 기존 믿음에 의문을 제기하는 정보입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-U02-2",
+    "level": 5,
+    "slotId": "L5-U02",
+    "domain": "usage",
+    "skill": "modifier-scope",
+    "familyId": "modifier-choice",
+    "passage": "The report based on interviews with students describes the problems faced by new teachers.",
+    "prompt": "인터뷰를 근거로 한 것은?",
+    "choices": [
+      "신임 교사",
+      "보고서",
+      "문제들",
+      "학생들"
+    ],
+    "answer": 1,
+    "explanation": "based on interviews가 report를 수식합니다. faced by new teachers는 problems를 수식합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-U03-1",
+    "level": 5,
+    "slotId": "L5-U03",
+    "domain": "usage",
+    "skill": "clause-relation",
+    "familyId": "clause-gap",
+    "passage": "___ the app saves time, some users find it difficult to learn.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "Unless",
+      "Because",
+      "Although",
+      "So that"
+    ],
+    "answer": 2,
+    "explanation": "시간을 절약한다는 장점과 배우기 어렵다는 단점 사이의 양보 관계입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-U03-2",
+    "level": 5,
+    "slotId": "L5-U03",
+    "domain": "usage",
+    "skill": "clause-relation",
+    "familyId": "clause-gap",
+    "passage": "The instructions were simplified ___ first-time users could follow them.",
+    "prompt": "빈칸에 가장 적절한 표현은?",
+    "choices": [
+      "as if",
+      "even though",
+      "unless",
+      "so that"
+    ],
+    "answer": 3,
+    "explanation": "처음 쓰는 사람이 따를 수 있도록 단순화했다는 목적이므로 so that입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-R01-1",
+    "level": 5,
+    "slotId": "L5-R01",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "People may share false stories without intending to deceive. They often pass on information before checking whether it is true.",
+    "prompt": "글의 요지는?",
+    "choices": [
+      "확인 없는 공유가 의도치 않은 허위 정보 확산을 낳는다",
+      "허위 이야기는 항상 악의로 만들어진다",
+      "공유된 정보는 확인할 필요가 없다",
+      "거짓말을 하려는 사람만 정보를 공유한다"
+    ],
+    "answer": 0,
+    "explanation": "악의가 없어도 진위 확인 없이 전달하면 거짓 정보가 퍼질 수 있다는 내용입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-R01-2",
+    "level": 5,
+    "slotId": "L5-R01",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "Mistakes can reveal what we do not understand. Reviewing them carefully may be more useful than simply repeating familiar exercises.",
+    "prompt": "글의 요지는?",
+    "choices": [
+      "익숙한 문제만 반복해야 실수가 줄어든다",
+      "실수를 분석하면 부족한 이해를 찾을 수 있다",
+      "실수는 학습 능력이 없다는 증거다",
+      "틀린 문제보다 맞힌 문제를 항상 먼저 봐야 한다"
+    ],
+    "answer": 1,
+    "explanation": "실수가 드러내는 이해의 빈틈과 분석의 학습 가치를 강조합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-R02-1",
+    "level": 5,
+    "slotId": "L5-R02",
+    "domain": "reading",
+    "skill": "author-intention",
+    "familyId": "intention-choice",
+    "passage": "Before buying a product described as green, ask what evidence supports the claim. A label alone does not guarantee a lower environmental impact.",
+    "prompt": "글쓴이의 목적은?",
+    "choices": [
+      "친환경 표시가 항상 정확하다고 설명하기",
+      "모든 친환경 상품 구매를 금지하기",
+      "친환경 주장의 근거를 확인하라고 권하기",
+      "상품 가격을 낮추는 방법을 소개하기"
+    ],
+    "answer": 2,
+    "explanation": "label alone이 충분하지 않으므로 구매 전 근거를 확인하라는 권고입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-R02-2",
+    "level": 5,
+    "slotId": "L5-R02",
+    "domain": "reading",
+    "skill": "author-intention",
+    "familyId": "intention-choice",
+    "passage": "Instead of rewarding only the fastest answers, schools should also recognize students who explain their reasoning clearly.",
+    "prompt": "글쓴이의 주장은?",
+    "choices": [
+      "모든 학생의 답변 속도가 같아야 한다",
+      "빠른 정답에 대한 보상을 전부 없애야 한다",
+      "설명은 정답보다 언제나 중요하다",
+      "답을 설명하는 사고 과정도 인정해야 한다"
+    ],
+    "answer": 3,
+    "explanation": "also는 속도 외에 명확한 추론 설명도 평가하라는 추가를 나타냅니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-R03-1",
+    "level": 5,
+    "slotId": "L5-R03",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "A store offered discounts only through its app. Some customers without smartphones stopped shopping there.",
+    "prompt": "가장 타당한 추론은?",
+    "choices": [
+      "할인 방식이 일부 고객의 이용을 어렵게 했다",
+      "모든 고객이 앱을 싫어했다",
+      "할인 때문에 모든 매출이 감소했다",
+      "스마트폰 고객도 구매를 중단했다"
+    ],
+    "answer": 0,
+    "explanation": "스마트폰 없는 일부 고객의 이탈은 접근 조건의 불리함을 보여줍니다. 전체 매출은 알 수 없습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-R03-2",
+    "level": 5,
+    "slotId": "L5-R03",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "When the library extended its evening hours, visits from people with daytime jobs increased.",
+    "prompt": "가장 타당한 추론은?",
+    "choices": [
+      "낮 시간 방문객이 모두 사라졌다",
+      "낮에 일하는 사람에게 저녁 시간이 도움이 됐다",
+      "도서관의 책 수가 늘었다",
+      "직장인들은 저녁에만 책을 읽는다"
+    ],
+    "answer": 1,
+    "explanation": "운영 시간 확대 뒤 해당 집단 방문이 늘었다는 단서에 근거한 제한적인 추론입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-D01-1",
+    "level": 5,
+    "slotId": "L5-D01",
+    "domain": "discourse",
+    "skill": "implicit-relation",
+    "familyId": "relation-choice",
+    "passage": "Some plants survive in very dry places. Cacti, for instance, store water in their stems.",
+    "prompt": "두 번째 문장의 역할은?",
+    "choices": [
+      "앞의 원인을 설명한다",
+      "앞의 주장을 반박한다",
+      "앞의 일반적 설명에 사례를 제시한다",
+      "서로 다른 해결책을 비교한다"
+    ],
+    "answer": 2,
+    "explanation": "for instance 다음의 선인장은 건조한 곳에서 사는 식물의 예입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-D01-2",
+    "level": 5,
+    "slotId": "L5-D01",
+    "domain": "discourse",
+    "skill": "implicit-relation",
+    "familyId": "relation-choice",
+    "passage": "Online classes make learning possible from home. Yet students may miss direct contact with classmates.",
+    "prompt": "두 번째 문장의 역할은?",
+    "choices": [
+      "같은 장점을 반복한다",
+      "앞 문장의 사례를 든다",
+      "앞 문장의 이유를 설명한다",
+      "장점 뒤에 한계를 제시한다"
+    ],
+    "answer": 3,
+    "explanation": "Yet가 집에서 학습 가능한 장점과 직접 교류 부족을 대조합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-D02-1",
+    "level": 5,
+    "slotId": "L5-D02",
+    "domain": "discourse",
+    "skill": "sentence-bridge",
+    "familyId": "bridge-choice",
+    "passage": "A password should be hard for others to guess. ___ That is why names and birthdays are poor choices.",
+    "prompt": "가운데 들어갈 문장은?",
+    "choices": [
+      "Personal details are often easy to discover.",
+      "Long passwords always slow computers down.",
+      "Birthdays are celebrated in many cultures.",
+      "People prefer websites with colorful designs."
+    ],
+    "answer": 0,
+    "explanation": "개인 정보가 알아내기 쉽다는 내용이 추측 어려운 비밀번호와 이름·생일을 피해야 한다는 결론을 연결합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-D02-2",
+    "level": 5,
+    "slotId": "L5-D02",
+    "domain": "discourse",
+    "skill": "sentence-bridge",
+    "familyId": "bridge-choice",
+    "passage": "City trees provide shade. ___ As a result, less energy may be needed for cooling.",
+    "prompt": "가운데 들어갈 문장은?",
+    "choices": [
+      "Some trees lose their leaves each year.",
+      "This helps keep nearby buildings cooler.",
+      "Energy prices differ between countries.",
+      "People often plant flowers near trees."
+    ],
+    "answer": 1,
+    "explanation": "그늘이 건물을 시원하게 한다는 연결이 냉방 에너지 감소를 설명합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-D03-1",
+    "level": 5,
+    "slotId": "L5-D03",
+    "domain": "discourse",
+    "skill": "development",
+    "familyId": "structure-choice",
+    "passage": "Students were wasting food at lunch. The school introduced smaller portions with free refills. Food waste then decreased.",
+    "prompt": "글의 전개는?",
+    "choices": [
+      "일반론 → 예시 → 정의",
+      "주장 → 반론 → 양보",
+      "문제 → 해결책 → 결과",
+      "과거 → 원인 불명 → 예측"
+    ],
+    "answer": 2,
+    "explanation": "음식 낭비 문제, 작은 양과 추가 배식 해결책, 낭비 감소 결과입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L5-D03-2",
+    "level": 5,
+    "slotId": "L5-D03",
+    "domain": "discourse",
+    "skill": "development",
+    "familyId": "structure-choice",
+    "passage": "Learning a word in context helps memory. For example, a story can connect the word with a meaningful event.",
+    "prompt": "글의 전개는?",
+    "choices": [
+      "사건 → 무관한 사건",
+      "문제 → 서로 다른 해결책",
+      "반론 → 주장 포기",
+      "주장 → 구체적인 예시"
+    ],
+    "answer": 3,
+    "explanation": "문맥 학습이 기억을 돕는다는 주장에 이야기를 통한 연결의 예를 듭니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  }
+]

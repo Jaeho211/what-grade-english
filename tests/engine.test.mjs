@@ -102,3 +102,39 @@ test('all-recent pool remains playable and its oldest matching item is preferred
   // Initial candidates are tied in other criteria; oldest L3 item wins.
   assert.equal(initial.pending.id, bank.filter(q => q.level === 3).at(-1).id);
 });
+const fullLevels = [1, 2, 3, 4, 5, 6, 7];
+const fullBank = fullLevels.flatMap(level => JSON.parse(readFileSync(new URL('../src/quiz/data/level' + level + '.json', import.meta.url), 'utf8')));
+test('real seven-level bank: all 1024 paths across eight seeds terminate without repeat', () => {
+  for (let seed = 1; seed <= 8; seed++) for (let path = 0; path < 1024; path++) {
+    const state = run(Array.from({ length: 10 }, (_, i) => Boolean(path & (1 << i))), fullBank, fullLevels, seed);
+    assert.equal(state.history.length, 10);
+    assert.equal(new Set(state.history.map(e => e.question.id)).size, 10);
+    assert.equal(new Set(state.history.slice(0, 4).map(e => e.question.domain)).size, 4);
+    assert.ok(fullLevels.includes(state.result.level));
+    if (state.result.status === 'confirmed') assert.ok(state.result.correct >= 3 && state.result.domains.length >= 3);
+  }
+});
+test('real seven-level bank: perfect and recovered runs confirm high3, failures hit elementary6 floor', () => {
+  for (const pattern of [Array(10).fill(true), [false, ...Array(9).fill(true)]]) {
+    const state = run(pattern, fullBank, fullLevels);
+    assert.equal(state.result.level, 7);
+    assert.equal(state.result.status, 'confirmed');
+  }
+  for (const value of [false, 'skip', 'timeout']) {
+    const state = run(Array(10).fill(value), fullBank, fullLevels);
+    assert.equal(state.result.level, 1);
+    assert.equal(state.result.status, 'provisional');
+  }
+});
+test('mixed non-answer paths remain playable and preserve numeric answers for review', () => {
+  for (let seed = 1; seed <= 100; seed++) {
+    const random = rng(seed);
+    const pattern = Array.from({ length: 10 }, () => [true, false, 'skip', 'timeout'][Math.floor(random() * 4)]);
+    const state = run(pattern, fullBank, fullLevels, seed);
+    assert.equal(state.history.length, 10);
+    for (const entry of state.history) {
+      if (['correct', 'incorrect'].includes(entry.outcome)) assert.ok(Number.isInteger(entry.selectedAnswer));
+      else assert.equal(entry.selectedAnswer, undefined);
+    }
+  }
+});

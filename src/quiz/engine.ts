@@ -3,7 +3,7 @@ import { DOMAINS, START_LEVEL, type Domain, type EnglishQuestion, type Level } f
 export const QUESTION_COUNT = 10;
 export const TIME_LIMIT_MS = 20_000;
 export type Outcome = 'correct' | 'incorrect' | 'timeout' | 'skip';
-export type Evidence = { question: EnglishQuestion; outcome: Outcome; elapsedMs: number };
+export type Evidence = { question: EnglishQuestion; outcome: Outcome; elapsedMs: number; selectedAnswer?: number };
 export type Estimate = { level: Level; status: 'confirmed' | 'provisional'; correct: number; domains: Domain[] };
 export type Session = {
   levels: readonly Level[];
@@ -100,7 +100,7 @@ export function submitAnswer(bank: readonly EnglishQuestion[], state: Session, a
   if (typeof answer !== 'number' && answer !== 'skip' && answer !== 'timeout') throw new Error('Invalid answer.');
   const question = state.pending;
   const outcome: Outcome = elapsedMs >= TIME_LIMIT_MS || answer === 'timeout' ? 'timeout' : answer === 'skip' ? 'skip' : answer === question.answer ? 'correct' : 'incorrect';
-  const history = [...state.history, { question, outcome, elapsedMs: Math.min(elapsedMs, TIME_LIMIT_MS) }];
+  const history = [...state.history, { question, outcome, elapsedMs: Math.min(elapsedMs, TIME_LIMIT_MS), ...(typeof answer === 'number' ? { selectedAnswer: answer } : {}) }];
   if (history.length === QUESTION_COUNT) return { ...state, history, pending: null, result: estimate(history, state.levels) };
   let target: Level;
   if (history.length >= 7) target = confirmationTarget(history, state.levels);

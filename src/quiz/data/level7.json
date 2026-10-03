@@ -1,0 +1,482 @@
+[
+  {
+    "id": "L7-V01-1",
+    "level": 7,
+    "slotId": "L7-V01",
+    "domain": "vocabulary",
+    "skill": "precise-abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The two findings are compatible: one concerns short-term gains, while the other concerns long-term risks.",
+    "prompt": "compatible의 가장 정확한 뜻은?",
+    "choices": [
+      "서로 모순 없이 함께 성립할 수 있는",
+      "모든 측면에서 같은 내용을 말하는",
+      "같은 방법으로 측정한",
+      "서로의 신뢰성을 떨어뜨리는"
+    ],
+    "answer": 0,
+    "explanation": "다른 시간 범위를 다루므로 두 발견이 같지는 않아도 함께 성립할 수 있습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V01-2",
+    "level": 7,
+    "slotId": "L7-V01",
+    "domain": "vocabulary",
+    "skill": "precise-abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The argument is plausible, but plausibility should not be mistaken for proof.",
+    "prompt": "plausible의 가장 정확한 뜻은?",
+    "choices": [
+      "반례가 논리적으로 불가능한",
+      "그럴듯하지만 아직 입증되지는 않은",
+      "명백히 사실과 어긋나는",
+      "검토 없이 믿어야 하는"
+    ],
+    "answer": 1,
+    "explanation": "그럴듯함과 증명을 구별하라는 문맥이므로 타당해 보이지만 확정은 아닌 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V02-1",
+    "level": 7,
+    "slotId": "L7-V02",
+    "domain": "vocabulary",
+    "skill": "connotation",
+    "familyId": "tone-choice",
+    "passage": "The company boasts of its commitment to fairness, yet it refuses to explain how decisions are made.",
+    "prompt": "boasts가 드러내는 어조는?",
+    "choices": [
+      "회사가 침묵한다고 중립적으로 서술한다",
+      "회사의 공정성을 전적으로 보증한다",
+      "회사의 자랑을 비판적으로 바라본다",
+      "회사의 자랑을 겸손하다고 평가한다"
+    ],
+    "answer": 2,
+    "explanation": "boasts의 과시 의미와 yet 뒤의 정보 비공개가 회사의 주장을 비판하는 태도를 만듭니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V02-2",
+    "level": 7,
+    "slotId": "L7-V02",
+    "domain": "vocabulary",
+    "skill": "connotation",
+    "familyId": "tone-choice",
+    "passage": "His explanation conveniently ignores the evidence that would weaken his position.",
+    "prompt": "conveniently에 담긴 태도는?",
+    "choices": [
+      "자료 이용의 편리함만 중립적으로 설명한다",
+      "설명의 이해하기 쉬움을 칭찬한다",
+      "근거가 충분하다고 인정한다",
+      "자신에게 유리하게 근거를 빼는 점을 비판한다"
+    ],
+    "answer": 3,
+    "explanation": "자기 입장을 약화하는 근거만 무시한다는 맥락에서 conveniently는 비판적 함의를 갖습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V03-1",
+    "level": 7,
+    "slotId": "L7-V03",
+    "domain": "vocabulary",
+    "skill": "semantic-shift",
+    "familyId": "meaning-choice",
+    "passage": "The same facts can produce different reactions depending on how the issue is framed.",
+    "prompt": "framed의 문맥상 뜻은?",
+    "choices": [
+      "문제를 특정 관점에서 제시한",
+      "사진을 액자에 넣은",
+      "사실을 완전히 조작한",
+      "문제를 최종 해결한"
+    ],
+    "answer": 0,
+    "explanation": "같은 사실이라도 제시 관점에 따라 반응이 달라진다는 비유입니다. 조작을 반드시 뜻하지는 않습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V03-2",
+    "level": 7,
+    "slotId": "L7-V03",
+    "domain": "vocabulary",
+    "skill": "semantic-shift",
+    "familyId": "meaning-choice",
+    "passage": "Her experience lends weight to the argument, though it does not settle the debate.",
+    "prompt": "lends weight to의 뜻은?",
+    "choices": [
+      "주장을 확정적인 사실로 만든다",
+      "주장의 설득력을 높인다",
+      "논쟁의 주제를 바꾼다",
+      "주장을 물리적으로 무겁게 한다"
+    ],
+    "answer": 1,
+    "explanation": "경험이 근거를 강화하지만 논쟁을 끝내지는 않는다는 제한이 있습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U01-1",
+    "level": 7,
+    "slotId": "L7-U01",
+    "domain": "usage",
+    "skill": "negation-scope",
+    "familyId": "meaning-equivalence",
+    "passage": "Not every change that increases efficiency improves people's lives.",
+    "prompt": "정확한 뜻은?",
+    "choices": [
+      "삶을 개선하는 변화는 모두 비효율적이다",
+      "효율을 높이는 변화는 하나도 삶을 개선하지 않는다",
+      "효율을 높이는 변화라도 삶을 개선하지 않는 경우가 있다",
+      "효율을 높이는 모든 변화가 삶을 개선한다"
+    ],
+    "answer": 2,
+    "explanation": "not every는 전부가 아니라는 부분 부정입니다. 아무것도 아니라는 뜻이 아닙니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U01-2",
+    "level": 7,
+    "slotId": "L7-U01",
+    "domain": "usage",
+    "skill": "focus-scope",
+    "familyId": "meaning-equivalence",
+    "passage": "Only students who submitted both reports were allowed to present.",
+    "prompt": "반드시 성립하는 것은?",
+    "choices": [
+      "모든 학생이 두 보고서를 냈다",
+      "두 보고서를 낸 모든 학생이 실제로 발표했다",
+      "한 보고서만 낸 학생도 발표했다",
+      "발표한 학생은 두 보고서를 모두 제출했다"
+    ],
+    "answer": 3,
+    "explanation": "only가 발표 허용의 필요조건을 제한합니다. 허용된 학생 모두가 실제 발표했다는 뜻은 아닙니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U02-1",
+    "level": 7,
+    "slotId": "L7-U02",
+    "domain": "usage",
+    "skill": "embedded-structure",
+    "familyId": "core-choice",
+    "passage": "The assumption that what people choose always reflects what they truly need is open to question.",
+    "prompt": "의문이 제기되는 가정은?",
+    "choices": [
+      "사람의 선택은 항상 진짜 필요를 반영한다",
+      "사람은 어떤 선택도 할 수 없다",
+      "진짜 필요는 항상 선택을 방해한다",
+      "의문이 있는 선택은 모두 잘못이다"
+    ],
+    "answer": 0,
+    "explanation": "assumption의 내용은 that절이며 what절들이 choose와 reflects의 대상을 이룹니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U02-2",
+    "level": 7,
+    "slotId": "L7-U02",
+    "domain": "usage",
+    "skill": "embedded-structure",
+    "familyId": "core-choice",
+    "passage": "What the report fails to explain is why a policy that helped one group harmed another.",
+    "prompt": "보고서가 설명하지 못한 것은?",
+    "choices": [
+      "정책이 어떤 집단에도 도움이 안 된 이유",
+      "한 정책이 집단별로 다른 영향을 준 이유",
+      "보고서가 작성된 이유",
+      "다른 집단이 존재한다는 사실"
+    ],
+    "answer": 1,
+    "explanation": "what절은 설명 실패의 대상을 도입하고 why절이 설명되지 않은 질문을 제시합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U03-1",
+    "level": 7,
+    "slotId": "L7-U03",
+    "domain": "usage",
+    "skill": "subtle-usage",
+    "familyId": "counterfactual",
+    "passage": "Had the researchers considered the missing data, they might have reached a different conclusion.",
+    "prompt": "문장으로 알 수 있는 것은?",
+    "choices": [
+      "자료를 고려하지 않았으므로 결론은 반드시 틀렸다",
+      "자료를 고려했고 반드시 다른 결론을 냈다",
+      "빠진 자료를 고려하지 않았고 다른 결론의 가능성이 있다",
+      "앞으로 자료를 고려할 가능성만 말한다"
+    ],
+    "answer": 2,
+    "explanation": "Had ... considered는 과거 반사실 조건이고 might have는 다른 결과의 가능성이지 확정이 아닙니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U03-2",
+    "level": 7,
+    "slotId": "L7-U03",
+    "domain": "usage",
+    "skill": "subtle-usage",
+    "familyId": "logical-meaning",
+    "passage": "The evidence is consistent with the theory, but it does not uniquely support it.",
+    "prompt": "가장 정확한 해석은?",
+    "choices": [
+      "이론이 근거와 아무 관련이 없다",
+      "근거가 이론을 유일하게 증명한다",
+      "근거가 이론과 명백하게 모순된다",
+      "근거가 이론과 맞지만 다른 설명도 가능하다"
+    ],
+    "answer": 3,
+    "explanation": "consistent with는 모순이 없다는 뜻이며 uniquely support하지 않으므로 유일한 설명은 아닙니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R01-1",
+    "level": 7,
+    "slotId": "L7-R01",
+    "domain": "reading",
+    "skill": "implication",
+    "familyId": "implication-choice",
+    "passage": "When a reward replaces curiosity as the reason for acting, removing the reward may leave the activity without a purpose it once had.",
+    "prompt": "글이 암시하는 것은?",
+    "choices": [
+      "외적 보상이 원래의 내적 동기를 약화할 수 있다",
+      "보상을 없애면 호기심이 반드시 증가한다",
+      "보상과 호기심은 언제나 함께 증가한다",
+      "호기심만 있으면 보상은 항상 해롭다"
+    ],
+    "answer": 0,
+    "explanation": "호기심 대신 보상이 행동 이유가 되면 보상 제거 후 원래 목적도 약해질 수 있습니다. 모든 보상이 해롭다는 단정은 아닙니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R01-2",
+    "level": 7,
+    "slotId": "L7-R01",
+    "domain": "reading",
+    "skill": "implication",
+    "familyId": "implication-choice",
+    "passage": "A rule may treat everyone identically while preserving advantages that existed before the rule was introduced.",
+    "prompt": "글이 암시하는 것은?",
+    "choices": [
+      "같은 규칙은 기존 격차를 항상 줄인다",
+      "동일한 대우가 기존 격차까지 없애는 것은 아니다",
+      "모든 차별은 규칙의 차이에서만 생긴다",
+      "기존 격차가 있으면 어떤 규칙도 불가능하다"
+    ],
+    "answer": 1,
+    "explanation": "identically와 preserving advantages의 공존은 동일 대우와 격차 해소가 다름을 보여줍니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R02-1",
+    "level": 7,
+    "slotId": "L7-R02",
+    "domain": "reading",
+    "skill": "argument-core",
+    "familyId": "claim-choice",
+    "passage": "A prediction can change the behavior it predicts. Once people respond to it, the original conditions may disappear; failure then need not show that the prediction was initially unreasonable.",
+    "prompt": "핵심 주장은?",
+    "choices": [
+      "예측은 사람의 행동에 영향을 줄 수 없다",
+      "실현되지 않은 예측은 언제나 타당하다",
+      "예측이 행동을 바꾸면 미실현만으로 초기 타당성을 부정할 수 없다",
+      "예측은 조건이 바뀌어도 반드시 실현된다"
+    ],
+    "answer": 2,
+    "explanation": "예측에 대한 반응이 조건을 바꾸는 경우에 실패만으로 초기 판단을 평가하기 어렵다는 제한적 주장입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R02-2",
+    "level": 7,
+    "slotId": "L7-R02",
+    "domain": "reading",
+    "skill": "argument-core",
+    "familyId": "claim-choice",
+    "passage": "Silence in a meeting may reflect agreement, but it may also reflect fear of disagreement. Counting silence as support confuses the absence of opposition with evidence of consent.",
+    "prompt": "핵심 주장은?",
+    "choices": [
+      "동의는 말로 표현할 수 없다",
+      "침묵은 반드시 반대의 표시다",
+      "회의의 모든 동의는 두려움 때문이다",
+      "반대가 없다는 사실만으로 동의를 확정할 수 없다"
+    ],
+    "answer": 3,
+    "explanation": "침묵에 여러 이유가 있을 수 있어 absence of opposition과 consent를 구별해야 합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R03-1",
+    "level": 7,
+    "slotId": "L7-R03",
+    "domain": "reading",
+    "skill": "assumption-conclusion",
+    "familyId": "assumption-choice",
+    "passage": "The author argues that reducing notifications will improve concentration because each notification interrupts attention.",
+    "prompt": "결론에 필요한 전제는?",
+    "choices": [
+      "알림을 줄이면 주의를 끊는 방해도 줄어든다",
+      "모든 알림에는 중요한 정보가 있다",
+      "집중력은 알림과 무관하게 항상 같다",
+      "알림이 없어도 모든 사람은 집중하지 못한다"
+    ],
+    "answer": 0,
+    "explanation": "알림 감소에서 집중 향상으로 이어지려면 방해가 실제로 감소한다는 연결 전제가 필요합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R03-2",
+    "level": 7,
+    "slotId": "L7-R03",
+    "domain": "reading",
+    "skill": "assumption-conclusion",
+    "familyId": "assumption-choice",
+    "passage": "A town expects free bus rides to reduce car use because fares keep some drivers from choosing the bus.",
+    "prompt": "추론의 연결에 필요한 전제는?",
+    "choices": [
+      "모든 운전자가 이미 버스를 타고 있다",
+      "요금이 없어지면 일부 운전자가 버스로 바꿀 것이다",
+      "요금 외의 문제는 하나도 존재하지 않는다",
+      "무료 버스는 자동차보다 반드시 빠르다"
+    ],
+    "answer": 1,
+    "explanation": "요금 장벽 제거가 일부 선택 변화로 이어져야 자동차 이용 감소라는 결론이 나옵니다. 다른 장벽이 없을 필요는 없습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D01-1",
+    "level": 7,
+    "slotId": "L7-D01",
+    "domain": "discourse",
+    "skill": "sentence-insertion",
+    "familyId": "insertion-choice",
+    "passage": "(1) A model simplifies reality. (2) This makes it useful for finding patterns. (3) Its conclusions must therefore be checked against real conditions.",
+    "prompt": "'Yet the details it leaves out can matter.'를 넣을 위치는?",
+    "choices": [
+      "(2) 앞",
+      "(1) 앞",
+      "(3) 앞",
+      "(3) 뒤"
+    ],
+    "answer": 2,
+    "explanation": "단순화의 장점을 받은 뒤 빠진 세부의 중요성을 대조해야 현실 조건 점검이라는 therefore 결론으로 이어집니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D01-2",
+    "level": 7,
+    "slotId": "L7-D01",
+    "domain": "discourse",
+    "skill": "sentence-insertion",
+    "familyId": "insertion-choice",
+    "passage": "(1) An early trial supported the idea. (2) Later trials failed to produce the same result. (3) Researchers revised their explanation.",
+    "prompt": "'This failure raised doubts about the original claim.'를 넣을 위치는?",
+    "choices": [
+      "(3) 뒤",
+      "(1) 앞",
+      "(2) 앞",
+      "(3) 앞"
+    ],
+    "answer": 3,
+    "explanation": "This failure는 이후 실험의 재현 실패를 받고, 의문 제기 후 설명 수정으로 이어지므로 (3) 앞입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D02-1",
+    "level": 7,
+    "slotId": "L7-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "argument-order",
+    "passage": "(A) That possibility weakens the claim that the policy alone caused the change. (B) The change followed a new policy. (C) However, other conditions changed at the same time.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "B → C → A",
+      "A → B → C",
+      "C → A → B",
+      "B → A → C"
+    ],
+    "answer": 0,
+    "explanation": "정책 뒤 변화 → 다른 조건도 변했다는 반론 → 정책 단독 원인 주장 약화입니다. That possibility는 다른 조건의 영향을 받습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D02-2",
+    "level": 7,
+    "slotId": "L7-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "argument-order",
+    "passage": "(A) Yet without that risk, truly new approaches may never be tried. (B) Innovation requires accepting the possibility of failure. (C) This makes innovation uncomfortable for people who expect certainty.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "A → C → B",
+      "B → C → A",
+      "C → B → A",
+      "B → A → C"
+    ],
+    "answer": 1,
+    "explanation": "실패 가능성 → 그 때문에 생기는 불편함 → 그래도 위험을 받아야 새 시도가 가능하다는 양보입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D03-1",
+    "level": 7,
+    "slotId": "L7-D03",
+    "domain": "discourse",
+    "skill": "high-density-blank",
+    "familyId": "logic-gap",
+    "passage": "Agreement reached by excluding every conflicting view may look stable. Yet it provides little evidence that the conclusion can survive ___.",
+    "prompt": "빈칸에 가장 적절한 표현은?",
+    "choices": [
+      "the absence of debate",
+      "repeated approval",
+      "a serious challenge",
+      "unquestioned acceptance"
+    ],
+    "answer": 2,
+    "explanation": "반대 견해를 배제한 합의는 실제 반박을 견디는지 확인하지 못했다는 논리입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D03-2",
+    "level": 7,
+    "slotId": "L7-D03",
+    "domain": "discourse",
+    "skill": "high-density-blank",
+    "familyId": "logic-gap",
+    "passage": "A tool designed to reveal hidden bias can reproduce it if its standards come from the same decisions it is meant to evaluate. The tool therefore needs ___.",
+    "prompt": "빈칸에 가장 적절한 표현은?",
+    "choices": [
+      "fewer opportunities to question its results",
+      "closer imitation of past decisions",
+      "automatic acceptance of existing standards",
+      "an independent basis for judgment"
+    ],
+    "answer": 3,
+    "explanation": "평가할 결정에서 기준을 가져오면 편향이 순환하므로 독립적인 판단 기준이 필요합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  }
+]

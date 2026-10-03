@@ -1,0 +1,482 @@
+[
+  {
+    "id": "L6-V01-1",
+    "level": 6,
+    "slotId": "L6-V01",
+    "domain": "vocabulary",
+    "skill": "abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The policy's short-term benefits are clear, but its long-term consequences remain uncertain.",
+    "prompt": "consequences의 뜻은?",
+    "choices": [
+      "정책이 뒤에 가져올 결과",
+      "정책을 지지하는 사람들",
+      "정책의 첫 시행 날짜",
+      "정책이 제시한 목표"
+    ],
+    "answer": 0,
+    "explanation": "장기적으로 생길 영향과 결과를 뜻합니다. 의도한 목표만을 의미하지 않습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-V01-2",
+    "level": 6,
+    "slotId": "L6-V01",
+    "domain": "vocabulary",
+    "skill": "abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The evidence is limited, so any conclusion should be regarded as tentative.",
+    "prompt": "tentative의 뜻은?",
+    "choices": [
+      "반례 없이 완전히 입증된",
+      "추가 근거에 따라 바뀔 수 있는 잠정적인",
+      "내용이 너무 복잡한",
+      "문제와 전혀 관련 없는"
+    ],
+    "answer": 1,
+    "explanation": "근거가 제한적이므로 결론은 확정이 아니라 임시적이라는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-V02-1",
+    "level": 6,
+    "slotId": "L6-V02",
+    "domain": "vocabulary",
+    "skill": "synonym-fit",
+    "familyId": "context-gap",
+    "passage": "The new evidence does not reject the theory; it ___ the conditions under which the theory applies.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "erases",
+      "reverses",
+      "clarifies",
+      "denies"
+    ],
+    "answer": 2,
+    "explanation": "이론을 부정하는 것이 아니라 적용 조건을 명확히 한다는 뜻이므로 clarifies입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-V02-2",
+    "level": 6,
+    "slotId": "L6-V02",
+    "domain": "vocabulary",
+    "skill": "synonym-fit",
+    "familyId": "context-gap",
+    "passage": "Participants given more options felt less satisfied. These findings ___ the belief that more choice always brings greater satisfaction.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "obey",
+      "repeat",
+      "preserve",
+      "challenge"
+    ],
+    "answer": 3,
+    "explanation": "findings가 기존 믿음에 의문을 제기할 때 challenge를 씁니다. obey는 주장에 대한 적절한 결합이 아닙니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-V03-1",
+    "level": 6,
+    "slotId": "L6-V03",
+    "domain": "vocabulary",
+    "skill": "context-inference",
+    "familyId": "contrast-clue",
+    "passage": "Unlike a rigid plan that never changes, a flexible one can adapt when circumstances change.",
+    "prompt": "flexible의 뜻은?",
+    "choices": [
+      "상황에 맞춰 조정할 수 있는",
+      "변화를 전혀 허용하지 않는",
+      "상황과 관계없이 임의로 정하는",
+      "처음부터 목적이 없는"
+    ],
+    "answer": 0,
+    "explanation": "rigid와 대조되고 adapt라는 단서가 있어 조정 가능하다는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-V03-2",
+    "level": 6,
+    "slotId": "L6-V03",
+    "domain": "vocabulary",
+    "skill": "context-inference",
+    "familyId": "definition-clue",
+    "passage": "The result was anomalous: every earlier trial showed an increase, but this one showed a decrease.",
+    "prompt": "anomalous의 뜻은?",
+    "choices": [
+      "기존 결과를 반복한",
+      "기존 패턴에서 벗어난",
+      "측정 없이 예측한",
+      "차이가 전혀 없는"
+    ],
+    "answer": 1,
+    "explanation": "모든 이전 결과의 증가와 달리 감소한 결과이므로 기존 패턴과 다릅니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-U01-1",
+    "level": 6,
+    "slotId": "L6-U01",
+    "domain": "usage",
+    "skill": "long-distance-relation",
+    "familyId": "core-choice",
+    "passage": "The claim that students who use tablets always learn more has not been supported by the study.",
+    "prompt": "연구가 뒷받침하지 않은 것은?",
+    "choices": [
+      "학생의 학습을 연구할 수 있다는 사실",
+      "일부 학생이 태블릿을 사용한다는 사실",
+      "태블릿 사용자가 항상 더 배운다는 주장",
+      "태블릿이 존재한다는 주장"
+    ],
+    "answer": 2,
+    "explanation": "주절 주어는 claim이고 that절 전체가 주장 내용입니다. not supported는 연구가 지지하지 않았다는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-U01-2",
+    "level": 6,
+    "slotId": "L6-U01",
+    "domain": "usage",
+    "skill": "long-distance-relation",
+    "familyId": "agreement-gap",
+    "passage": "The quality of the reports submitted by the students ___ more important than their length.",
+    "prompt": "빈칸에 맞는 말은?",
+    "choices": [
+      "were",
+      "are",
+      "have",
+      "is"
+    ],
+    "answer": 3,
+    "explanation": "핵심 주어는 단수 quality입니다. 복수 reports와 students에 이끌려 are를 고르면 안 됩니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-U02-1",
+    "level": 6,
+    "slotId": "L6-U02",
+    "domain": "usage",
+    "skill": "clause-function",
+    "familyId": "clause-meaning",
+    "passage": "What matters is not how much information we have, but how well we evaluate it.",
+    "prompt": "글쓴이가 중요하게 여기는 것은?",
+    "choices": [
+      "정보의 양보다 평가하는 능력",
+      "정보가 많다는 사실 자체",
+      "정보를 모으지 않는 태도",
+      "평가를 하지 않고 기억하는 속도"
+    ],
+    "answer": 0,
+    "explanation": "not A but B에서 양이 아니라 평가의 질이 중요하다고 합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-U02-2",
+    "level": 6,
+    "slotId": "L6-U02",
+    "domain": "usage",
+    "skill": "clause-function",
+    "familyId": "clause-meaning",
+    "passage": "Whether the plan succeeds depends on how well the team responds to unexpected problems.",
+    "prompt": "성공 여부를 좌우하는 것은?",
+    "choices": [
+      "예상하지 못한 문제가 전혀 없다는 사실",
+      "예상하지 못한 문제에 대응하는 능력",
+      "계획을 얼마나 빨리 세웠는지",
+      "팀원의 수만 많다는 사실"
+    ],
+    "answer": 1,
+    "explanation": "whether절의 성공 여부가 how well 이하의 대응 수준에 달렸다고 합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-U03-1",
+    "level": 6,
+    "slotId": "L6-U03",
+    "domain": "usage",
+    "skill": "context-usage",
+    "familyId": "modal-meaning",
+    "passage": "The lights are off, but that alone is not enough to conclude that nobody is home.",
+    "prompt": "글의 판단에 맞는 말은?",
+    "choices": [
+      "Everyone has definitely left.",
+      "Nobody must be home.",
+      "Someone may still be home.",
+      "The house cannot contain anyone."
+    ],
+    "answer": 2,
+    "explanation": "불이 꺼져도 사람이 있을 가능성을 배제할 수 없으므로 may입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-U03-2",
+    "level": 6,
+    "slotId": "L6-U03",
+    "domain": "usage",
+    "skill": "context-usage",
+    "familyId": "meaning-equivalence",
+    "passage": "The report suggests that the change may help, rather than proving that it will.",
+    "prompt": "보고서의 결론을 정확히 옮긴 것은?",
+    "choices": [
+      "효과에 대한 판단을 완전히 금지한다",
+      "효과가 반드시 있다고 증명한다",
+      "효과가 절대로 없다고 증명한다",
+      "효과가 있을 가능성을 제시한다"
+    ],
+    "answer": 3,
+    "explanation": "suggests와 may가 잠정적 가능성을 나타내며 proving과 will보다 약한 주장입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-R01-1",
+    "level": 6,
+    "slotId": "L6-R01",
+    "domain": "reading",
+    "skill": "author-position",
+    "familyId": "attitude-choice",
+    "passage": "A system may be efficient and still leave some people behind. Praising its speed without asking who benefits misses an important part of the picture.",
+    "prompt": "필자의 입장은?",
+    "choices": [
+      "효율성을 평가할 때 혜택의 분배도 살펴야 한다",
+      "속도가 빠르면 모든 사람이 혜택을 얻는다",
+      "효율적인 시스템은 반드시 폐기해야 한다",
+      "효율성과 혜택은 비교할 수 없다"
+    ],
+    "answer": 0,
+    "explanation": "속도만 칭찬하지 말고 who benefits를 살피라고 하므로 혜택 분배도 평가해야 합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-R01-2",
+    "level": 6,
+    "slotId": "L6-R01",
+    "domain": "reading",
+    "skill": "author-position",
+    "familyId": "attitude-choice",
+    "passage": "New technology can widen access, yet access alone does not ensure meaningful participation. Users also need the skills to make use of it.",
+    "prompt": "필자의 입장은?",
+    "choices": [
+      "기술 접근성 확대는 의미가 없다",
+      "접근 기회와 활용 능력이 함께 필요하다",
+      "접근만 보장하면 참여가 완성된다",
+      "기술을 쓸 능력은 접근과 관계없다"
+    ],
+    "answer": 1,
+    "explanation": "access alone이 충분하지 않고 skills도 필요하다는 조건을 제시합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-R02-1",
+    "level": 6,
+    "slotId": "L6-R02",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "Two classes used the same textbook. One also received weekly feedback and improved more. The difference suggests that materials alone may not explain progress.",
+    "prompt": "뒷받침되는 결론은?",
+    "choices": [
+      "피드백만 있으면 모든 학생이 향상된다",
+      "교재는 학습에 아무 영향이 없다",
+      "피드백이 학습 향상에 기여했을 가능성이 있다",
+      "두 학급의 능력은 시작부터 같았다"
+    ],
+    "answer": 2,
+    "explanation": "같은 교재에서도 피드백 차이와 향상 차이가 연결됩니다. 다른 변수까지 통제했다고는 하지 않습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-R02-2",
+    "level": 6,
+    "slotId": "L6-R02",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "A city improved its parks, but use rose mainly in areas with safe walking routes. Physical distance was similar across the areas.",
+    "prompt": "뒷받침되는 결론은?",
+    "choices": [
+      "모든 지역의 길이 안전했다",
+      "거리는 이용에 언제나 무관하다",
+      "공원을 개선해도 아무도 이용하지 않는다",
+      "접근 경로의 안전성이 이용에 영향을 줄 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "비슷한 거리에도 안전한 경로가 있는 곳에서 이용 증가가 더 크므로 안전성의 영향을 추론할 수 있습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-R03-1",
+    "level": 6,
+    "slotId": "L6-R03",
+    "domain": "reading",
+    "skill": "abstract-main-point",
+    "familyId": "main-idea-choice",
+    "passage": "A measure becomes less useful when people focus on improving the score instead of the activity it was meant to represent.",
+    "prompt": "글의 요지는?",
+    "choices": [
+      "점수 자체가 목표가 되면 지표의 의미가 약해진다",
+      "측정 가능한 활동은 모두 가치가 없다",
+      "점수가 오르면 실제 활동도 반드시 좋아진다",
+      "활동을 개선하려면 측정을 금지해야 한다"
+    ],
+    "answer": 0,
+    "explanation": "원래 활동을 나타내던 점수가 독립적인 목표가 되면 지표의 유용성이 떨어집니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-R03-2",
+    "level": 6,
+    "slotId": "L6-R03",
+    "domain": "reading",
+    "skill": "abstract-main-point",
+    "familyId": "main-idea-choice",
+    "passage": "Shared rules reduce uncertainty, but rules applied without attention to context can produce unfair outcomes. Consistency needs judgment, not mere repetition.",
+    "prompt": "글의 요지는?",
+    "choices": [
+      "같은 규칙은 모든 상황에서 공정하다",
+      "공정한 일관성에는 상황을 고려하는 판단이 필요하다",
+      "불확실성을 없애려면 규칙을 폐기해야 한다",
+      "규칙은 판단 없이 반복해야 한다"
+    ],
+    "answer": 1,
+    "explanation": "규칙의 장점을 인정하되 맥락 없는 적용의 한계를 제시합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-D01-1",
+    "level": 6,
+    "slotId": "L6-D01",
+    "domain": "discourse",
+    "skill": "blank-logic",
+    "familyId": "logic-gap",
+    "passage": "Too many options can make decisions harder. Limiting choices may therefore ___, even if it seems to reduce freedom.",
+    "prompt": "빈칸에 가장 적절한 표현은?",
+    "choices": [
+      "make all options identical",
+      "prevent any decision",
+      "help people decide",
+      "remove every preference"
+    ],
+    "answer": 2,
+    "explanation": "선택지가 너무 많으면 결정이 어렵다는 원인에서 선택 제한이 결정을 도울 수 있다는 결과가 나옵니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-D01-2",
+    "level": 6,
+    "slotId": "L6-D01",
+    "domain": "discourse",
+    "skill": "blank-logic",
+    "familyId": "logic-gap",
+    "passage": "A warning repeated too often may lose its force. To remain effective, it must ___ rather than appear constantly.",
+    "prompt": "빈칸에 가장 적절한 표현은?",
+    "choices": [
+      "replace every other message",
+      "be repeated without pause",
+      "avoid all specific risks",
+      "be used selectively"
+    ],
+    "answer": 3,
+    "explanation": "반복이 효과를 낮추므로 필요한 때에 선별해서 사용해야 한다는 결론입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-D02-1",
+    "level": 6,
+    "slotId": "L6-D02",
+    "domain": "discourse",
+    "skill": "premise-conclusion",
+    "familyId": "conclusion-choice",
+    "passage": "A result appeared only once and disappeared in later trials. We should therefore wait for more evidence before accepting it.",
+    "prompt": "결론에 해당하는 내용은?",
+    "choices": [
+      "수용 전에 추가 근거를 기다려야 한다",
+      "결과가 한 번 나타났다",
+      "이후 실험에서 결과가 나타나지 않았다",
+      "모든 실험이 무의미하다"
+    ],
+    "answer": 0,
+    "explanation": "therefore 뒤가 앞의 반복 실패를 근거로 한 결론입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-D02-2",
+    "level": 6,
+    "slotId": "L6-D02",
+    "domain": "discourse",
+    "skill": "premise-conclusion",
+    "familyId": "evidence-role",
+    "passage": "The proposal claims to save money. However, its estimates exclude maintenance costs, so the promised savings may be overstated.",
+    "prompt": "유지비 제외라는 정보의 역할은?",
+    "choices": [
+      "절약 효과를 확정한다",
+      "절약액 주장의 신뢰성에 의문을 제기한다",
+      "유지비가 없다는 사실을 증명한다",
+      "제안의 목적을 바꾼다"
+    ],
+    "answer": 1,
+    "explanation": "누락된 비용은 실제 절약이 과장됐을 수 있다는 결론의 근거입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-D03-1",
+    "level": 6,
+    "slotId": "L6-D03",
+    "domain": "discourse",
+    "skill": "structural-transition",
+    "familyId": "transition-choice",
+    "passage": "Many people see competition as the best route to improvement. Yet cooperation can reveal ideas that individuals working alone would overlook.",
+    "prompt": "Yet 이후의 역할은?",
+    "choices": [
+      "경쟁의 뜻을 정의한다",
+      "기존 견해의 사례만 추가한다",
+      "기존 견해에 다른 관점을 제시한다",
+      "앞의 관점을 그대로 반복한다"
+    ],
+    "answer": 2,
+    "explanation": "경쟁 중심 견해에서 협력의 장점으로 전환해 다른 관점을 제시합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L6-D03-2",
+    "level": 6,
+    "slotId": "L6-D03",
+    "domain": "discourse",
+    "skill": "structural-transition",
+    "familyId": "transition-choice",
+    "passage": "The method worked well in a controlled setting. Outside the laboratory, however, changing conditions made its results less reliable.",
+    "prompt": "however 이후의 역할은?",
+    "choices": [
+      "실험실과 외부가 같다고 주장한다",
+      "실험실 결과의 원인을 증명한다",
+      "방법의 우수성을 일반화한다",
+      "적용 환경이 바뀔 때 생기는 한계를 밝힌다"
+    ],
+    "answer": 3,
+    "explanation": "통제 환경의 성공과 외부의 신뢰성 저하를 대조해 적용 한계를 제시합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  }
+]
