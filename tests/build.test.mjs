@@ -4,6 +4,12 @@ import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 const root = new URL('../', import.meta.url);
+test('Cloudflare deploy builds and uploads the executable dist directory', async () => {
+  const config = JSON.parse(await readFile(new URL('wrangler.jsonc', root), 'utf8'));
+  assert.equal(config.name, 'english');
+  assert.equal(config.build.command, 'npm run build');
+  assert.equal(config.assets.directory, './dist');
+});
 test('static build: executable modules, full bank and relative deployment paths', async () => {
   execFileSync(process.execPath, ['scripts/build.mjs'], { cwd: fileURLToPath(root), stdio: 'pipe' });
   const html = await readFile(new URL('dist/index.html', root), 'utf8');

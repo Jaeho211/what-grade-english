@@ -17,6 +17,10 @@ npm run build
 
 Cloudflare 빌드 명령: `npm run build`. 출력 디렉터리: `dist`. Node 버전: 24 이상 (`.node-version` 포함). Cloudflare에 Node 버전 환경변수를 별도로 설정했다면 `NODE_VERSION=24`로 맞춥니다.
 
+Cloudflare Workers(`english.2dain.workers.dev`)는 저장소의 `wrangler.jsonc`를 사용합니다. 배포 명령은 `npx wrangler deploy`이며, 이 명령이 빌드를 실행한 후 `dist` 전체를 업로드합니다. `public`은 HTML/CSS 원본만 있어 배포하면 안 됩니다. `--assets public` 같은 명령줄 옵션은 설정을 덮어쓰므로 제거합니다. 프로젝트 루트에서 배포해야 합니다.
+
+배포 후 `/web/app.js`, `/quiz/engine.js`, `/quiz/schema.js`, `/quiz/data/bank.json`이 모두 200으로 응답하는지 확인합니다. JS가 빠지면 첫 화면의 “문제를 준비하고 있어요…”에서 멈춥니다.
+
 ## 구현
 
 - 7레벨 각 24문항, 총 168문항/84슬롯
