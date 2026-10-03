@@ -40,6 +40,8 @@ function showQuestion() {
   document.querySelectorAll<HTMLButtonElement>('[data-answer]').forEach(button => button.addEventListener('click', () => finish(Number(button.dataset.answer), q.id)));
   document.querySelector('#skip')!.addEventListener('click', () => finish('skip', q.id));
   document.querySelector<HTMLElement>('.prompt')?.focus({ preventScroll: true });
+  // Stop any feedback scrolling and show the new passage before starting its timer.
+  window.scrollTo({ top: 0, behavior: 'instant' });
   // Start after content is in the DOM, using both monotonic and wall time to cover suspension.
   startedAt = performance.now();
   wallStartedAt = Date.now();
@@ -73,6 +75,11 @@ function finish(answer: number | 'skip' | 'timeout', id: string) {
   session = next;
   document.querySelector<HTMLButtonElement>('#next')!.addEventListener('click', () => { if (phase !== 'feedback') return; showQuestion(); });
   document.querySelector<HTMLElement>('#next')?.focus({ preventScroll: true });
+  // Reveal the explanation and its action without making the player scroll after every answer.
+  document.querySelector<HTMLElement>('.feedback')?.scrollIntoView({
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    block: 'end',
+  });
 }
 function review(e: Evidence, i: number) {
   const status = { correct: '정답', incorrect: '오답', skip: '넘어감', timeout: '시간 초과' }[e.outcome];
