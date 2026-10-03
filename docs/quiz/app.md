@@ -8,8 +8,10 @@
 
 공유는 Web Share → 클립보드 → 수동 복사 순서다. 개인 기록 동적 OG 이미지는 아직 없다.
 
-Cloudflare: 빌드 명령 npm run build, 출력 디렉터리 dist, Node 24 이상. 모든 자산 경로는 상대적이다.
+Cloudflare Workers: 저장소의 wrangler.jsonc로 npm run build를 실행한 후 dist 전체를 배포한다. 배포 명령은 npx wrangler deploy, Node 24 이상. public만 배포하면 실행용 JS와 문제은행이 빠진다. 모든 자산 경로는 상대적이다.
 
 구조·엔진·빌드 테스트는 학년 난이도 정확성을 보장하지 않는다. 실제 학생/성인 플레이로 20초 읽기 부담, 보기 길이, 고1~고3 난이도 차이와 오답 매력도를 보정해야 한다. 공식 기본 어휘 목록 대조도 필요하다. expectedMs는 임시값이며 속도 가속은 아직 꺼져 있다.
 
-현재 작업 환경에서 Chromium 다운로드가 실패하여 실제 모바일/데스크톱 렌더링 QA는 미완료다. tests/browser.smoke.mjs에 브라우저 검사 경로를 남겼다. 별도 정적 TypeScript 검사는 아직 구성하지 않았다.
+2026-10-04 배포 후 실제 브라우저에서 시작 화면 → 첫 문항 → 정답·해설을 확인했다. 모바일/데스크톱 전체 회차 및 공유를 포함한 tests/browser.smoke.mjs의 전체 실행 검증은 아직 완료하지 않았다. 별도 정적 TypeScript 검사는 아직 구성하지 않았다.
+
+자매 사이트 비교와 앞으로 충족할 품질 기준은 [제품 기준](../product-plan.md)을 따른다.

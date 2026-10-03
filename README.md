@@ -38,6 +38,8 @@ Cloudflare Workers(`english.2dain.workers.dev`)는 저장소의 `wrangler.jsonc`
 
 문항 난이도는 설계에 따른 초안으로 실제 플레이 및 공식 어휘 목록 대조가 필요합니다. expectedMs는 임시값이고 실제 은행의 속도 가속은 꺼져 있습니다. 초6 하한 결과는 초6 숙달 확인이 아닙니다.
 
-현재 환경에서는 Chromium 다운로드 실패로 실제 브라우저 렌더링 검증을 마치지 못했습니다. Playwright/Chromium이 설치된 환경에서 로컬 서버 실행 후 `npm run test:browser`로 검사합니다. 별도 정적 TypeScript 검사는 아직 구성하지 않았습니다.
+2026-10-04 배포 사이트에서 시작 화면 → 첫 문제 → 정답·해설을 실제 브라우저로 확인했습니다. 전체 브라우저 smoke suite는 아직 완료하지 않았습니다. Playwright/Chromium이 설치된 환경에서 로컬 서버 실행 후 `npm run test:browser`로 검사합니다. 별도 정적 TypeScript 검사는 아직 구성하지 않았습니다.
 
 설계와 UI 정책은 docs/curriculum 및 docs/quiz에 있습니다.
+
+제품 방향과 수학 자매 사이트 대비 품질 기준은 [제품 기준](docs/product-plan.md)을 따릅니다.
