@@ -1,0 +1,482 @@
+[
+  {
+    "id": "L3-V01-1",
+    "level": 3,
+    "slotId": "L3-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "Mina was relieved when she found her lost phone.",
+    "prompt": "relieved의 뜻으로 가장 알맞은 것은?",
+    "choices": [
+      "안심한",
+      "실망한",
+      "궁금한",
+      "화가 난"
+    ],
+    "answer": 0,
+    "explanation": "잃어버린 휴대전화를 찾았으므로 걱정이 사라져 안심한 상태입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V01-2",
+    "level": 3,
+    "slotId": "L3-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The room was crowded, so we could not find empty seats.",
+    "prompt": "crowded의 뜻은?",
+    "choices": [
+      "조용한",
+      "붐비는",
+      "어두운",
+      "깨끗한"
+    ],
+    "answer": 1,
+    "explanation": "빈자리가 없다는 단서에서 사람이 많아 붐빈다는 뜻임을 알 수 있습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V02-1",
+    "level": 3,
+    "slotId": "L3-V02",
+    "domain": "vocabulary",
+    "skill": "polysemy",
+    "familyId": "meaning-choice",
+    "passage": "This bag is light enough for a child to carry.",
+    "prompt": "light의 뜻은?",
+    "choices": [
+      "밝은",
+      "빛",
+      "가벼운",
+      "불을 켜다"
+    ],
+    "answer": 2,
+    "explanation": "아이가 들 수 있는 가방의 무게를 설명하므로 '가벼운'입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V02-2",
+    "level": 3,
+    "slotId": "L3-V02",
+    "domain": "vocabulary",
+    "skill": "polysemy",
+    "familyId": "meaning-choice",
+    "passage": "My uncle runs a small bakery near the station.",
+    "prompt": "runs의 뜻은?",
+    "choices": [
+      "달린다",
+      "흐른다",
+      "고장 난다",
+      "운영한다"
+    ],
+    "answer": 3,
+    "explanation": "목적어가 가게인 bakery이므로 가게를 운영한다는 의미입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V03-1",
+    "level": 3,
+    "slotId": "L3-V03",
+    "domain": "vocabulary",
+    "skill": "context-inference",
+    "familyId": "definition-clue",
+    "passage": "Unlike his noisy classmates, Ben was silent and said nothing.",
+    "prompt": "silent의 뜻은?",
+    "choices": [
+      "말이 없는",
+      "재빠른",
+      "친절한",
+      "늦은"
+    ],
+    "answer": 0,
+    "explanation": "said nothing은 아무 말도 하지 않았다는 뜻이며 noisy와 대조됩니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V03-2",
+    "level": 3,
+    "slotId": "L3-V03",
+    "domain": "vocabulary",
+    "skill": "context-inference",
+    "familyId": "definition-clue",
+    "passage": "This cup is fragile: it can break easily if you drop it.",
+    "prompt": "fragile의 뜻은?",
+    "choices": [
+      "무거운",
+      "깨지기 쉬운",
+      "뜨거운",
+      "비어 있는"
+    ],
+    "answer": 1,
+    "explanation": "콜론 뒤의 '떨어뜨리면 쉽게 깨진다'가 단어의 의미를 설명합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U01-1",
+    "level": 3,
+    "slotId": "L3-U01",
+    "domain": "usage",
+    "skill": "perfect-meaning",
+    "familyId": "meaning-equivalence",
+    "passage": "Jina moved to Busan in 2022 and still lives there.",
+    "prompt": "같은 뜻의 문장은?",
+    "choices": [
+      "Jina lived in Busan only in 2022.",
+      "Jina has lived in Busan since 2022.",
+      "Jina will move to Busan in 2022.",
+      "Jina has never lived in Busan."
+    ],
+    "answer": 1,
+    "explanation": "과거에 시작하여 지금도 이어지므로 has lived와 시작 시점 since 2022를 씁니다. only in 2022는 지금도 산다는 뜻을 담지 못합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U01-2",
+    "level": 3,
+    "slotId": "L3-U01",
+    "domain": "usage",
+    "skill": "perfect-meaning",
+    "familyId": "meaning-equivalence",
+    "passage": "Leo started learning French two years ago. He is still learning it.",
+    "prompt": "같은 뜻의 문장은?",
+    "choices": [
+      "Leo will learn French in two years.",
+      "Leo stopped learning French two years ago.",
+      "Leo has learned French for two years.",
+      "Leo learned French only yesterday."
+    ],
+    "answer": 2,
+    "explanation": "2년 전 시작해 지금도 계속하므로 현재완료와 기간 for two years가 맞습니다. stopped는 중단했다는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U02-1",
+    "level": 3,
+    "slotId": "L3-U02",
+    "domain": "usage",
+    "skill": "passive-relation",
+    "familyId": "agent-patient",
+    "passage": "A strong wind broke the window last night.",
+    "prompt": "같은 뜻의 문장은?",
+    "choices": [
+      "The wind was broken by the window.",
+      "The window broke the wind.",
+      "The window will break the wind.",
+      "The window was broken by the wind."
+    ],
+    "answer": 3,
+    "explanation": "깨진 대상인 window가 주어가 되면 was broken입니다. by 뒤에는 행위 원인인 wind가 옵니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U02-2",
+    "level": 3,
+    "slotId": "L3-U02",
+    "domain": "usage",
+    "skill": "passive-relation",
+    "familyId": "agent-patient",
+    "passage": "The students cleaned the classroom after lunch.",
+    "prompt": "같은 뜻의 문장은?",
+    "choices": [
+      "The classroom was cleaned by the students.",
+      "The students were cleaned by the classroom.",
+      "The classroom will clean the students.",
+      "The students did not clean the classroom."
+    ],
+    "answer": 0,
+    "explanation": "교실이 청소를 받은 대상입니다. was cleaned by the students는 학생들이 교실을 청소했다는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U03-1",
+    "level": 3,
+    "slotId": "L3-U03",
+    "domain": "usage",
+    "skill": "clause-order",
+    "familyId": "embedded-question",
+    "passage": "Could you tell me ___? I need to meet her.",
+    "prompt": "빈칸에 맞는 표현은?",
+    "choices": [
+      "where does Mina live",
+      "where Mina lives",
+      "where lives Mina",
+      "where Mina does lives"
+    ],
+    "answer": 1,
+    "explanation": "tell me 뒤에 들어가는 간접 질문은 where + 주어 + 동사 순서입니다. 직접 의문문의 does Mina live를 그대로 넣지 않습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U03-2",
+    "level": 3,
+    "slotId": "L3-U03",
+    "domain": "usage",
+    "skill": "relative-clause",
+    "familyId": "clause-completion",
+    "passage": "The boy ___ helped me yesterday is my classmate.",
+    "prompt": "빈칸에 맞는 말은?",
+    "choices": [
+      "whose",
+      "whom",
+      "who",
+      "where"
+    ],
+    "answer": 2,
+    "explanation": "뒤 절에서 helped의 주어가 필요하고 앞의 boy가 사람이므로 who입니다. whose는 뒤에 소유 대상을 나타내는 명사가 필요합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R01-1",
+    "level": 3,
+    "slotId": "L3-R01",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "Our class collects used paper. We reuse old notebooks. We also turn off lights when we leave.",
+    "prompt": "글의 중심 내용은?",
+    "choices": [
+      "새 공책을 구입하는 방법",
+      "교실을 꾸미는 방법",
+      "종이만 모으는 이유",
+      "자원을 아끼는 학급 활동"
+    ],
+    "answer": 3,
+    "explanation": "종이 재사용과 전등 끄기를 함께 포함하는 중심 내용은 자원 절약입니다. 종이만 모은다는 보기는 전체를 담지 못합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R01-2",
+    "level": 3,
+    "slotId": "L3-R01",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "Sora walks to school. She uses the stairs. She plays outside after class.",
+    "prompt": "글의 중심 내용은?",
+    "choices": [
+      "소라가 일상에서 몸을 움직이는 방법",
+      "소라가 학교에서 배우는 과목",
+      "소라가 계단을 피하는 이유",
+      "소라의 주말 여행 계획"
+    ],
+    "answer": 0,
+    "explanation": "걷기, 계단 이용, 밖에서 놀기는 모두 일상에서 몸을 움직이는 행동입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R02-1",
+    "level": 3,
+    "slotId": "L3-R02",
+    "domain": "reading",
+    "skill": "purpose",
+    "familyId": "purpose-choice",
+    "passage": "Yuna set an alarm for six because she wanted to catch the first bus.",
+    "prompt": "알람을 맞춘 목적은?",
+    "choices": [
+      "늦게 자기 위해",
+      "첫 버스를 타기 위해",
+      "버스를 고치기 위해",
+      "친구를 깨우기 위해"
+    ],
+    "answer": 1,
+    "explanation": "wanted to catch the first bus가 목적을 직접 설명합니다. 알람 시간 자체가 목적은 아닙니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R02-2",
+    "level": 3,
+    "slotId": "L3-R02",
+    "domain": "reading",
+    "skill": "reason",
+    "familyId": "reason-choice",
+    "passage": "The library closed early because its lights stopped working. Visitors had to leave.",
+    "prompt": "도서관이 일찍 문을 닫은 이유는?",
+    "choices": [
+      "방문객이 없어서",
+      "책을 모두 빌려줘서",
+      "조명이 작동하지 않아서",
+      "직원이 버스를 타야 해서"
+    ],
+    "answer": 2,
+    "explanation": "because 뒤의 lights stopped working이 원인입니다. 방문객이 떠난 것은 결과입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R03-1",
+    "level": 3,
+    "slotId": "L3-R03",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "Mina put on her raincoat and took an umbrella before leaving home.",
+    "prompt": "가장 타당한 추론은?",
+    "choices": [
+      "미나가 바다에서 수영할 것이다",
+      "미나가 우산을 버릴 것이다",
+      "미나가 집에 계속 있을 것이다",
+      "미나가 비에 대비하고 있다"
+    ],
+    "answer": 3,
+    "explanation": "비옷과 우산은 비에 대비하는 물건입니다. 실제로 비가 내린다고 단정할 필요는 없습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R03-2",
+    "level": 3,
+    "slotId": "L3-R03",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "Tom checked every pocket, then looked under his chair. 'Where is my key?' he said.",
+    "prompt": "톰의 상황으로 알맞은 것은?",
+    "choices": [
+      "열쇠를 찾고 있다",
+      "새 의자를 사고 있다",
+      "열쇠를 친구에게 주었다",
+      "주머니를 수선하고 있다"
+    ],
+    "answer": 0,
+    "explanation": "주머니와 의자 아래를 확인하고 열쇠 위치를 묻는 행동에서 찾는 중임을 알 수 있습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D01-1",
+    "level": 3,
+    "slotId": "L3-D01",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "The road was closed. ___, we took a different route.",
+    "prompt": "빈칸에 맞는 연결어는?",
+    "choices": [
+      "However",
+      "Therefore",
+      "For example",
+      "Meanwhile"
+    ],
+    "answer": 1,
+    "explanation": "도로 폐쇄가 원인이고 다른 길을 이용한 것이 결과이므로 Therefore입니다. However는 대조를 나타냅니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D01-2",
+    "level": 3,
+    "slotId": "L3-D01",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "I expected the book to be boring. ___, I enjoyed every page.",
+    "prompt": "빈칸에 맞는 연결어는?",
+    "choices": [
+      "Therefore",
+      "For example",
+      "However",
+      "Similarly"
+    ],
+    "answer": 2,
+    "explanation": "지루할 것이라는 예상과 실제 즐겼다는 내용이 반대이므로 However가 맞습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D02-1",
+    "level": 3,
+    "slotId": "L3-D02",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "event-reference",
+    "passage": "Jisu forgot to save her work. This meant she had to type it again.",
+    "prompt": "This가 가리키는 것은?",
+    "choices": [
+      "다시 타자를 치는 행동",
+      "새 컴퓨터를 구입한 일",
+      "숙제를 끝낸 일",
+      "작업 내용을 저장하지 않은 일"
+    ],
+    "answer": 3,
+    "explanation": "This는 바로 앞 문장의 저장을 잊은 사건을 가리킵니다. 다시 입력하는 것은 그 결과입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D02-2",
+    "level": 3,
+    "slotId": "L3-D02",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "event-reference",
+    "passage": "The team won its first game. This gave the players more confidence.",
+    "prompt": "This가 가리키는 것은?",
+    "choices": [
+      "팀이 첫 경기에서 이긴 일",
+      "선수들이 자신감을 잃은 일",
+      "선수들이 연습을 멈춘 일",
+      "팀이 새로운 선수를 뽑은 일"
+    ],
+    "answer": 0,
+    "explanation": "앞 문장 전체인 첫 경기 승리를 받습니다. confidence는 그 승리가 가져온 결과입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D03-1",
+    "level": 3,
+    "slotId": "L3-D03",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "(A) Finally, she served the soup. (B) First, she washed the vegetables. (C) Then, she cooked them.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "A → B → C",
+      "B → C → A",
+      "C → A → B",
+      "B → A → C"
+    ],
+    "answer": 1,
+    "explanation": "first로 채소를 씻고 then으로 익힌 뒤 finally로 수프를 냅니다. them은 vegetables를 받습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D03-2",
+    "level": 3,
+    "slotId": "L3-D03",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "cause-order",
+    "passage": "(A) He watered it every day. (B) Soon, a small plant appeared. (C) Jay planted a seed.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "A → B → C",
+      "B → C → A",
+      "C → A → B",
+      "C → B → A"
+    ],
+    "answer": 2,
+    "explanation": "먼저 씨앗을 심고 그것을 매일 물 준 뒤 싹이 나타납니다. A의 it은 C의 seed를 받습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  }
+]
