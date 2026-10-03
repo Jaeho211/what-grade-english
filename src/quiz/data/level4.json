@@ -1,0 +1,482 @@
+[
+  {
+    "id": "L4-V01-1",
+    "level": 4,
+    "slotId": "L4-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The plan seemed simple, but carrying it out proved challenging.",
+    "prompt": "challenging의 뜻은?",
+    "choices": [
+      "쉽지 않아 노력이 필요한",
+      "이미 끝난",
+      "위험이 전혀 없는",
+      "누구나 무관심한"
+    ],
+    "answer": 0,
+    "explanation": "계획은 단순해 보였지만 실행은 달랐다는 대조에서 어렵고 도전적인 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-V01-2",
+    "level": 4,
+    "slotId": "L4-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "Her explanation was brief but included every important point.",
+    "prompt": "brief의 뜻은?",
+    "choices": [
+      "틀린",
+      "간결한",
+      "반복적인",
+      "복잡한"
+    ],
+    "answer": 1,
+    "explanation": "짧지만 중요한 내용을 모두 포함했다는 뜻입니다. 설명이 틀렸다는 의미는 없습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-V02-1",
+    "level": 4,
+    "slotId": "L4-V02",
+    "domain": "vocabulary",
+    "skill": "abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The new rule had a positive effect: fewer students arrived late.",
+    "prompt": "effect의 뜻은?",
+    "choices": [
+      "도착한 장소",
+      "규칙을 정한 사람",
+      "영향이나 결과",
+      "걸린 시간"
+    ],
+    "answer": 2,
+    "explanation": "지각이 줄어든 것이 규칙의 긍정적인 결과이므로 effect는 영향입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-V02-2",
+    "level": 4,
+    "slotId": "L4-V02",
+    "domain": "vocabulary",
+    "skill": "abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "Although the task was difficult, her attitude remained positive.",
+    "prompt": "attitude의 뜻은?",
+    "choices": [
+      "일을 하는 장소",
+      "일을 끝낸 시각",
+      "일에 필요한 도구",
+      "일을 대하는 생각과 자세"
+    ],
+    "answer": 3,
+    "explanation": "어려운 일을 긍정적으로 대한다는 맥락에서 생각과 자세를 의미합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-V03-1",
+    "level": 4,
+    "slotId": "L4-V03",
+    "domain": "vocabulary",
+    "skill": "synonym-fit",
+    "familyId": "context-gap",
+    "passage": "Please ___ your voice; the baby is sleeping.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "lower",
+      "deepen",
+      "lose",
+      "raise"
+    ],
+    "answer": 0,
+    "explanation": "아기가 자므로 목소리 크기를 낮춰야 합니다. deepen은 음을 더 낮고 깊게 만드는 다른 의미입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-V03-2",
+    "level": 4,
+    "slotId": "L4-V03",
+    "domain": "vocabulary",
+    "skill": "synonym-fit",
+    "familyId": "context-gap",
+    "passage": "We need to ___ the problem before choosing a solution.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "invent",
+      "identify",
+      "ignore",
+      "replace"
+    ],
+    "answer": 1,
+    "explanation": "해결책을 선택하기 전에 무엇이 문제인지 파악해야 하므로 identify입니다. invent는 만들어낸다는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-U01-1",
+    "level": 4,
+    "slotId": "L4-U01",
+    "domain": "usage",
+    "skill": "modifier-relation",
+    "familyId": "modifier-choice",
+    "passage": "The girl wearing a red hat is my sister.",
+    "prompt": "빨간 모자를 쓰고 있는 대상은?",
+    "choices": [
+      "모자",
+      "나",
+      "그 소녀",
+      "그 소녀의 다른 친구"
+    ],
+    "answer": 2,
+    "explanation": "wearing a red hat이 바로 앞의 girl을 꾸밉니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-U01-2",
+    "level": 4,
+    "slotId": "L4-U01",
+    "domain": "usage",
+    "skill": "relative-clause",
+    "familyId": "modifier-choice",
+    "passage": "The photo that Mina took yesterday shows our school.",
+    "prompt": "미나가 어제 한 일은?",
+    "choices": [
+      "학교를 보여줬다",
+      "학교를 지었다",
+      "사진에 나왔다",
+      "사진을 찍었다"
+    ],
+    "answer": 3,
+    "explanation": "that Mina took yesterday가 photo를 수식합니다. 사진을 찍은 사람은 Mina입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-U02-1",
+    "level": 4,
+    "slotId": "L4-U02",
+    "domain": "usage",
+    "skill": "condition-concession",
+    "familyId": "meaning-equivalence",
+    "passage": "Unless you hurry, you will miss the bus.",
+    "prompt": "같은 뜻은?",
+    "choices": [
+      "서두르지 않으면 버스를 놓친다",
+      "서두르면 반드시 버스를 놓친다",
+      "버스를 놓치면 서두를 필요가 없다",
+      "서두르든 말든 버스를 놓친다"
+    ],
+    "answer": 0,
+    "explanation": "unless는 if not입니다. 놓치지 않을 가능성을 위해 서둘러야 한다는 조건입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-U02-2",
+    "level": 4,
+    "slotId": "L4-U02",
+    "domain": "usage",
+    "skill": "condition-concession",
+    "familyId": "meaning-equivalence",
+    "passage": "Although Tom was tired, he kept working.",
+    "prompt": "내용에 맞는 설명은?",
+    "choices": [
+      "피곤해서 일을 멈췄다",
+      "피곤했지만 계속 일했다",
+      "일하지 않아서 피곤했다",
+      "피곤하지 않아서 계속 일했다"
+    ],
+    "answer": 1,
+    "explanation": "although는 양보 관계를 만들어 피곤함에도 일을 계속했다는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-U03-1",
+    "level": 4,
+    "slotId": "L4-U03",
+    "domain": "usage",
+    "skill": "sentence-core",
+    "familyId": "core-choice",
+    "passage": "The books on the shelf beside the window belong to Mina.",
+    "prompt": "문장의 핵심 의미는?",
+    "choices": [
+      "미나가 책장을 만들었다",
+      "창문이 미나의 것이다",
+      "책들이 미나의 것이다",
+      "책장이 창문을 가린다"
+    ],
+    "answer": 2,
+    "explanation": "주어는 books, 동사구는 belong to Mina입니다. 가운데 구는 책의 위치를 설명합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-U03-2",
+    "level": 4,
+    "slotId": "L4-U03",
+    "domain": "usage",
+    "skill": "sentence-core",
+    "familyId": "core-choice",
+    "passage": "The teacher who helped us after class has moved to another school.",
+    "prompt": "핵심 사건은?",
+    "choices": [
+      "다른 학교가 우리를 도왔다",
+      "우리가 다른 학교로 옮겼다",
+      "수업이 취소됐다",
+      "선생님이 다른 학교로 옮겼다"
+    ],
+    "answer": 3,
+    "explanation": "주절의 주어 teacher와 동사 has moved가 핵심입니다. who절은 선생님을 설명합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-R01-1",
+    "level": 4,
+    "slotId": "L4-R01",
+    "domain": "reading",
+    "skill": "author-intention",
+    "familyId": "intention-choice",
+    "passage": "I understand your point, but a cheaper plan might help more students join.",
+    "prompt": "글쓴이가 하려는 일은?",
+    "choices": [
+      "더 저렴한 대안을 제안하기",
+      "상대의 말을 전부 인정하기",
+      "참여 학생을 줄이기",
+      "어떤 계획도 거부하기"
+    ],
+    "answer": 0,
+    "explanation": "상대 의견을 이해하면서 더 많은 참여를 위한 저렴한 대안을 제안합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-R01-2",
+    "level": 4,
+    "slotId": "L4-R01",
+    "domain": "reading",
+    "skill": "author-attitude",
+    "familyId": "attitude-choice",
+    "passage": "The project took longer than expected, but seeing everyone's smiles made the effort worthwhile.",
+    "prompt": "글쓴이의 태도는?",
+    "choices": [
+      "시간이 오래 걸려 전부 후회한다",
+      "노력의 결과에 보람을 느낀다",
+      "결과에 관심이 없다",
+      "다른 사람을 비난한다"
+    ],
+    "answer": 1,
+    "explanation": "시간이 더 걸렸지만 worthwhile에서 노력할 가치와 보람을 느낀다는 것을 알 수 있습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-R02-1",
+    "level": 4,
+    "slotId": "L4-R02",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "cause-result",
+    "passage": "The town added more buses. Soon, fewer people drove to work, and traffic became lighter.",
+    "prompt": "교통량 감소를 설명하는 추론은?",
+    "choices": [
+      "모든 도로가 넓어졌다",
+      "모든 직장이 문을 닫았다",
+      "일부 사람이 자동차 대신 버스를 이용했다",
+      "버스 운행이 중단됐다"
+    ],
+    "answer": 2,
+    "explanation": "버스 증가와 자동차 이용 감소를 연결하면 일부가 버스로 이동했음을 추론할 수 있습니다. 모든 사람에 관한 단정은 없습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-R02-2",
+    "level": 4,
+    "slotId": "L4-R02",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "cause-result",
+    "passage": "The cafe stopped providing plastic straws. Customers began bringing reusable ones.",
+    "prompt": "변화에 가장 타당한 설명은?",
+    "choices": [
+      "플라스틱 빨대가 더 많이 제공됐다",
+      "카페가 음료 판매를 중단했다",
+      "손님이 카페에 오지 않게 됐다",
+      "일회용 빨대 대신 재사용 빨대를 쓰게 됐다"
+    ],
+    "answer": 3,
+    "explanation": "제공 중단 이후 손님이 재사용 빨대를 가져오는 변화가 직접 연결됩니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-R03-1",
+    "level": 4,
+    "slotId": "L4-R03",
+    "domain": "reading",
+    "skill": "implication",
+    "familyId": "indirect-request",
+    "passage": "The window is open. 'It's getting cold in here,' Mina says to her brother.",
+    "prompt": "상황에서 미나가 암시하는 요청은?",
+    "choices": [
+      "창문을 닫아 달라",
+      "밖에서 놀자",
+      "냉방을 더 세게 하자",
+      "새 창문을 사자"
+    ],
+    "answer": 0,
+    "explanation": "열린 창문과 추위를 함께 언급하므로 닫아 달라는 간접 요청이 자연스럽습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-R03-2",
+    "level": 4,
+    "slotId": "L4-R03",
+    "domain": "reading",
+    "skill": "implication",
+    "familyId": "indirect-request",
+    "passage": "You are playing loud music. Your sister says, 'I'm trying to study.'",
+    "prompt": "동생이 암시하는 요청은?",
+    "choices": [
+      "공부를 대신 해 달라",
+      "음악 소리를 줄여 달라",
+      "음악을 더 크게 틀어 달라",
+      "같이 노래하자"
+    ],
+    "answer": 1,
+    "explanation": "시끄러운 음악 중 공부 중임을 말하는 것은 조용히 해 달라는 간접 요청입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-D01-1",
+    "level": 4,
+    "slotId": "L4-D01",
+    "domain": "discourse",
+    "skill": "contrast-concession",
+    "familyId": "relation-choice",
+    "passage": "The exam was difficult. Even so, most students passed.",
+    "prompt": "두 문장의 관계는?",
+    "choices": [
+      "쉬웠기 때문에 합격했다",
+      "어려워서 모두 실패했다",
+      "어려움에도 예상과 달리 합격했다",
+      "시험 난이도와 무관한 시간 순서다"
+    ],
+    "answer": 2,
+    "explanation": "Even so는 앞의 어려움에도 합격했다는 양보 관계를 표시합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-D01-2",
+    "level": 4,
+    "slotId": "L4-D01",
+    "domain": "discourse",
+    "skill": "contrast-concession",
+    "familyId": "relation-choice",
+    "passage": "Unlike her brother, who prefers quiet places, Jina enjoys busy markets.",
+    "prompt": "두 사람의 관계는?",
+    "choices": [
+      "오빠가 지나 때문에 취향을 바꿨다",
+      "둘 다 조용한 장소만 좋아한다",
+      "지나가 시장을 싫어한다",
+      "좋아하는 장소의 분위기가 다르다"
+    ],
+    "answer": 3,
+    "explanation": "Unlike가 두 사람의 장소 선호를 대조합니다. 선호가 바뀌었다는 내용은 없습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-D02-1",
+    "level": 4,
+    "slotId": "L4-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "cause-order",
+    "passage": "(A) As a result, the floor got wet. (B) Leo knocked over a glass. (C) Water spilled from it.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "B → C → A",
+      "A → B → C",
+      "C → A → B",
+      "B → A → C"
+    ],
+    "answer": 0,
+    "explanation": "잔을 넘어뜨림 → 물이 쏟아짐 → 바닥이 젖음입니다. it은 glass를 받습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-D02-2",
+    "level": 4,
+    "slotId": "L4-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "problem-solution",
+    "passage": "(A) Now, everyone can see the screen. (B) We moved it. (C) A tall plant blocked our view.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "A → B → C",
+      "C → B → A",
+      "B → A → C",
+      "C → A → B"
+    ],
+    "answer": 1,
+    "explanation": "먼저 식물이 시야를 가린 문제를 제시하고, 그것을 옮긴 뒤 화면을 볼 수 있게 됩니다. B의 it은 C의 plant를 받습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-D03-1",
+    "level": 4,
+    "slotId": "L4-D03",
+    "domain": "discourse",
+    "skill": "implicit-relation",
+    "familyId": "relation-choice",
+    "passage": "Kai practiced speaking every day. His confidence gradually grew.",
+    "prompt": "두 문장의 관계는?",
+    "choices": [
+      "서로 무관한 사건",
+      "주장과 반대 사례",
+      "연습과 그에 따른 변화",
+      "조건과 경고"
+    ],
+    "answer": 2,
+    "explanation": "매일 말하기 연습을 하면서 자신감이 커진 원인과 결과입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L4-D03-2",
+    "level": 4,
+    "slotId": "L4-D03",
+    "domain": "discourse",
+    "skill": "implicit-relation",
+    "familyId": "relation-choice",
+    "passage": "The new phone has a better camera. Its battery, though, lasts less time.",
+    "prompt": "두 문장의 관계는?",
+    "choices": [
+      "휴대전화 사용 순서를 설명한다",
+      "같은 장점을 반복한다",
+      "배터리로 카메라를 설명한다",
+      "장점 다음에 단점을 제시한다"
+    ],
+    "answer": 3,
+    "explanation": "좋아진 카메라와 줄어든 배터리 시간을 대조합니다. though가 반대 측면을 드러냅니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  }
+]

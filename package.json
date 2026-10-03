@@ -1,0 +1,10 @@
+{
+  "name": "what-grade-english",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test tests/engine.test.mjs",
+    "validate": "node scripts/validate-bank.mjs"
+  }
+}

@@ -1,14 +1,14 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
-const bank = JSON.parse(readFileSync(new URL('../src/quiz/data/level3.json', import.meta.url), 'utf8'));
-assert.equal(bank.length, 24);
+const bank = [2, 3, 4].flatMap(level => JSON.parse(readFileSync(new URL('../src/quiz/data/level' + level + '.json', import.meta.url), 'utf8')));
+assert.equal(bank.length, 72);
 assert.equal(new Set(bank.map(q => q.id)).size, bank.length);
 const domains = ['vocabulary', 'usage', 'reading', 'discourse'];
 for (const q of bank) {
-  assert.equal(q.level, 3, q.id);
+  assert.ok([2, 3, 4].includes(q.level), q.id);
   assert.ok(domains.includes(q.domain), q.id);
-  assert.ok(/^L3-[VURD]0[123]$/.test(q.slotId), q.id);
+  assert.ok(new RegExp('^L' + q.level + '-[VURD]0[123]$').test(q.slotId), q.id);
   assert.equal({ V: 'vocabulary', U: 'usage', R: 'reading', D: 'discourse' }[q.slotId[3]], q.domain, q.id);
   assert.equal(q.choices.length, 4, q.id);
   assert.equal(new Set(q.choices).size, 4, q.id);
@@ -20,7 +20,7 @@ for (const q of bank) {
   assert.equal(q.speedEligible, false, 'Speed remains disabled before calibration: ' + q.id);
 }
 const slots = new Set(bank.map(q => q.slotId));
-assert.equal(slots.size, 12);
+assert.equal(slots.size, 36);
 for (const slot of slots) assert.equal(bank.filter(q => q.slotId === slot).length, 2, slot);
-for (const domain of domains) assert.equal(bank.filter(q => q.domain === domain).length, 6, domain);
-console.log('PASS: 24 questions, 12 slots, 4 domains; structural checks only.');
+for (const level of [2, 3, 4]) for (const domain of domains) assert.equal(bank.filter(q => q.level === level && q.domain === domain).length, 6, level + '/' + domain);
+console.log('PASS: 72 questions, 36 slots, 4 domains; structural checks only.');
