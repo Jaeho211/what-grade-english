@@ -66,8 +66,8 @@
     "domain": "vocabulary",
     "skill": "context-word-choice",
     "familyId": "context-gap",
-    "passage": "I have never been on a plane before. I feel ___ about my first flight.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "passage": "Before my first flight, my hands shake and I worry about taking off.",
+    "prompt": "이 상황의 감정을 가장 잘 나타내는 말은?",
     "choices": [
       "bored",
       "angry",
@@ -75,7 +75,7 @@
       "nervous"
     ],
     "answer": 3,
-    "explanation": "첫 비행을 앞둔 불안하고 긴장한 마음을 nervous로 표현합니다.",
+    "explanation": "손이 떨리고 이륙을 걱정한다는 구체적인 단서가 있어 nervous, 긴장한 상태가 맞습니다. 첫 경험이라는 사실만으로 감정을 단정하는 문제가 아닙니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -126,16 +126,16 @@
     "domain": "vocabulary",
     "skill": "synonym",
     "familyId": "meaning-choice",
-    "passage": "The store is near my house. I can walk there in two minutes.",
-    "prompt": "near와 가장 가까운 뜻은?",
+    "passage": "Please reply to this message before Friday.",
+    "prompt": "reply와 가장 가까운 뜻은?",
     "choices": [
-      "far from",
-      "inside",
-      "behind",
-      "close to"
+      "forget",
+      "send",
+      "receive",
+      "answer"
     ],
     "answer": 3,
-    "explanation": "걸어서 2분이면 갈 수 있으므로 집에서 가깝다는 뜻입니다.",
+    "explanation": "reply는 답장하거나 응답하다는 뜻으로 answer와 가깝습니다. send는 보내다, receive는 받다로 답장한다는 뜻 자체와는 다릅니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -146,16 +146,16 @@
     "domain": "vocabulary",
     "skill": "synonym",
     "familyId": "meaning-choice",
-    "passage": "Please begin your work now. We have only ten minutes.",
-    "prompt": "begin과 가장 가까운 뜻은?",
+    "passage": "We finally arrived at the station after a long journey.",
+    "prompt": "arrived at과 가장 가까운 뜻은?",
     "choices": [
-      "start",
-      "finish",
-      "forget",
-      "copy"
+      "reached",
+      "left",
+      "missed",
+      "passed"
     ],
     "answer": 0,
-    "explanation": "begin은 시작하다는 뜻이며 지금 일을 시작하라는 부탁입니다.",
+    "explanation": "arrived at은 어떤 장소에 도착했다는 뜻으로 reached와 가깝습니다. left는 떠났다, missed는 놓쳤다, passed는 지나갔다는 뜻입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -206,16 +206,16 @@
     "domain": "vocabulary",
     "skill": "collocation",
     "familyId": "word-pair",
-    "passage": "Please ___ a photo of our team.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "passage": "We need to ___ a decision before Friday.",
+    "prompt": "결정을 내려야 한다는 뜻으로 빈칸에는?",
     "choices": [
-      "take",
-      "do",
       "make",
-      "have"
+      "do",
+      "catch",
+      "draw"
     ],
     "answer": 0,
-    "explanation": "사진을 찍다는 take a photo라는 표현을 씁니다.",
+    "explanation": "make a decision은 결정을 내린다는 표현입니다. do·catch·draw는 이 문맥에서 decision과 결합해 그 뜻을 나타내지 않습니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -226,16 +226,16 @@
     "domain": "vocabulary",
     "skill": "collocation",
     "familyId": "word-pair",
-    "passage": "I always ___ my homework before dinner.",
+    "passage": "I missed the bus, so I must ___ a taxi.",
     "prompt": "빈칸에 알맞은 말은?",
     "choices": [
-      "get",
-      "do",
       "make",
-      "take"
+      "take",
+      "do",
+      "hold"
     ],
     "answer": 1,
-    "explanation": "숙제를 하다는 do my homework로 표현합니다.",
+    "explanation": "take a taxi는 택시를 타고 이동한다는 표현입니다. 버스를 놓쳤으므로 택시를 이용해야 한다는 뜻입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -366,7 +366,7 @@
     "domain": "usage",
     "skill": "verb-complement",
     "familyId": "verb-form",
-    "passage": "Jin enjoys ___ stories.",
+    "passage": "Jin finished ___ his story before dinner.",
     "prompt": "빈칸에 알맞은 말은?",
     "choices": [
       "write",
@@ -375,7 +375,7 @@
       "writing"
     ],
     "answer": 3,
-    "explanation": "enjoy 뒤에는 동명사인 writing을 씁니다.",
+    "explanation": "finish 뒤에서 끝낸 행동은 writing처럼 -ing 형태로 나타냅니다. 즐긴 행동을 나타내는 enjoy와 다른 동사를 사용해 같은 형태를 확인합니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -726,7 +726,7 @@
     "domain": "discourse",
     "skill": "reference",
     "familyId": "noun-reference",
-    "passage": "Anna has a bike. She rides it to school.",
+    "passage": "Anna left her bike near the school gate. Her friend pushed it home.",
     "prompt": "it이 가리키는 것은?",
     "choices": [
       "안나",
@@ -735,7 +735,7 @@
       "길"
     ],
     "answer": 2,
-    "explanation": "rides의 대상인 it은 앞의 a bike를 받습니다.",
+    "explanation": "pushed it home은 그것을 집까지 밀었다는 뜻입니다. it은 Anna가 두고 간 bike를 받으며 사람이나 학교를 가리키지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -807,7 +807,7 @@
     "skill": "connector",
     "familyId": "connector-choice",
     "passage": "It was cold, ___ I wore a coat.",
-    "prompt": "빈칸에 맞는 말은?",
+    "prompt": "추위가 원인이고 코트를 입은 것이 결과라면?",
     "choices": [
       "so",
       "but",
@@ -815,7 +815,7 @@
       "although"
     ],
     "answer": 0,
-    "explanation": "추운 것이 원인이고 코트를 입은 것이 결과라 so입니다.",
+    "explanation": "원인인 It was cold 뒤에 결과인 I wore a coat를 연결하므로 so가 맞습니다. but는 대조이며 질문에서 지정한 원인·결과 관계와 다릅니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -827,7 +827,7 @@
     "skill": "connector",
     "familyId": "connector-choice",
     "passage": "I stayed home ___ I was sick.",
-    "prompt": "빈칸에 맞는 말은?",
+    "prompt": "집에 머문 이유가 아픈 것이었다면?",
     "choices": [
       "so",
       "because",
@@ -835,7 +835,7 @@
       "or"
     ],
     "answer": 1,
-    "explanation": "집에 머문 이유인 아팠다는 절을 연결하므로 because입니다.",
+    "explanation": "아팠다는 이유를 I stayed home 뒤에 연결하므로 because가 맞습니다. so를 쓰면 집에 머문 결과로 아팠다는 반대 관계가 됩니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -847,7 +847,7 @@
     "skill": "connector",
     "familyId": "connector-choice",
     "passage": "The train was late, ___ we missed the first song of the concert.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "열차 지연의 결과로 첫 곡을 놓쳤다면?",
     "choices": [
       "because",
       "but",
@@ -855,7 +855,7 @@
       "so"
     ],
     "answer": 3,
-    "explanation": "열차 지연이 원인이고 첫 곡을 놓친 것이 결과이므로 so가 맞습니다.",
+    "explanation": "열차 지연이 원인, 첫 곡을 놓친 것이 결과이므로 so가 맞습니다. because는 뒤 문장을 원인으로 만들고 but는 대조를 나타냅니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -886,16 +886,16 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "event-order",
-    "passage": "First, wash the apple. Then, cut it. Finally, eat it.",
-    "prompt": "사과를 자르기 바로 전에 하는 일은?",
+    "passage": "Put the bread in the toaster. After it pops up, spread butter on it.",
+    "prompt": "빵이 토스터에서 나온 다음 하는 일은?",
     "choices": [
-      "사과 사기",
-      "사과 먹기",
-      "사과 씻기",
-      "사과 굽기"
+      "빵 굽기 시작하기",
+      "빵 먹기",
+      "버터 바르기",
+      "토스터에 빵 넣기"
     ],
     "answer": 2,
-    "explanation": "first에서 씻은 뒤 then에서 자릅니다. 먹기는 그 다음입니다.",
+    "explanation": "After it pops up 뒤의 spread butter는 빵이 위로 올라온 다음 버터를 바르라는 뜻입니다. 단순히 first·then을 찾는 대신 after의 순서를 이해해야 합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -926,16 +926,16 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "event-order",
-    "passage": "Wash your hands before you eat lunch.",
-    "prompt": "먼저 해야 하는 일은?",
+    "passage": "Pack your bag before you go to bed.",
+    "prompt": "잠자기 전에 해야 하는 일은?",
     "choices": [
-      "손 씻기",
-      "점심 먹기",
-      "그릇 치우기",
-      "음식 주문하기"
+      "가방 챙기기",
+      "잠자기",
+      "침대 정리하기",
+      "가방 사기"
     ],
     "answer": 0,
-    "explanation": "before you eat lunch는 점심을 먹기 전에 손을 씻으라는 뜻입니다.",
+    "explanation": "before you go to bed는 잠자기 전이라는 뜻입니다. pack your bag, 가방 챙기기가 먼저 해야 할 일입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },

@@ -89,13 +89,13 @@
     "passage": "Please ___ the door. It is cold outside.",
     "prompt": "빈칸에 알맞은 말은?",
     "choices": [
-      "read",
-      "eat",
+      "open",
+      "lock",
       "close",
-      "drink"
+      "paint"
     ],
     "answer": 2,
-    "explanation": "밖이 추우므로 문을 닫는 close가 맞습니다.",
+    "explanation": "밖이 춥다는 상황에서 문을 닫으라는 close가 가장 적절합니다. open은 열다, lock은 잠그다, paint는 칠하다이며 추위를 막으려는 요청과 다릅니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -226,16 +226,16 @@
     "domain": "vocabulary",
     "skill": "basic-description",
     "familyId": "context-gap",
-    "passage": "I cannot carry this bag. It is too ___.",
+    "passage": "This shelf is too ___. I cannot reach it.",
     "prompt": "빈칸에 알맞은 말은?",
     "choices": [
-      "heavy",
-      "young",
+      "high",
+      "hungry",
       "early",
       "thirsty"
     ],
     "answer": 0,
-    "explanation": "가방을 들 수 없으므로 너무 무겁다는 heavy가 맞습니다.",
+    "explanation": "cannot reach는 손이 닿지 않는다는 뜻입니다. 선반의 위치가 너무 높다는 high가 맞습니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -286,16 +286,16 @@
     "domain": "usage",
     "skill": "basic-verb",
     "familyId": "verb-form",
-    "passage": "My sister ___ a student.",
+    "passage": "My friends ___ in the classroom.",
     "prompt": "빈칸에 알맞은 말은?",
     "choices": [
       "am",
-      "is",
       "are",
+      "is",
       "do"
     ],
     "answer": 1,
-    "explanation": "My sister는 한 사람을 가리키므로 be동사 is를 씁니다.",
+    "explanation": "My friends는 여러 친구이므로 are가 맞습니다. My brother is와 달리 복수 주어에 맞춰야 합니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -347,7 +347,7 @@
     "skill": "basic-tense",
     "familyId": "tense-gap",
     "passage": "She ___ to school every day.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "현재의 반복 습관을 나타내려면 빈칸에는?",
     "choices": [
       "go",
       "goes",
@@ -387,7 +387,7 @@
     "skill": "basic-tense",
     "familyId": "tense-gap",
     "passage": "She ___ breakfast at seven every day.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "현재 매일 하는 일을 나타내려면 빈칸에는?",
     "choices": [
       "ate",
       "eating",
@@ -727,7 +727,7 @@
     "skill": "connector",
     "familyId": "connector-choice",
     "passage": "I like milk ___ I do not like cheese.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "좋아하는 것과 좋아하지 않는 것을 대조하려면?",
     "choices": [
       "because",
       "and",
@@ -735,7 +735,7 @@
       "so"
     ],
     "answer": 2,
-    "explanation": "우유는 좋아하지만 치즈는 좋아하지 않는 대조이므로 but입니다.",
+    "explanation": "우유는 좋아하고 치즈는 좋아하지 않는 두 선호를 대조하므로 but를 씁니다. and도 두 사실을 나열할 때 가능하지만 이 질문은 대조를 요구합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -767,7 +767,7 @@
     "skill": "connector",
     "familyId": "connector-choice",
     "passage": "I want to go outside, ___ it is raining.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "나가고 싶은 마음과 비 오는 상황을 대조하려면?",
     "choices": [
       "because",
       "but",
@@ -775,7 +775,7 @@
       "or"
     ],
     "answer": 1,
-    "explanation": "나가고 싶은 마음과 비가 오는 상황이 대조되므로 but가 맞습니다.",
+    "explanation": "나가고 싶은 마음과 비 때문에 나가기 어려운 상황을 대조하므로 but가 적절합니다. and로 나열하는 것과 대조의 의미를 구분해야 합니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -787,7 +787,7 @@
     "skill": "connector",
     "familyId": "connector-choice",
     "passage": "I am wearing a coat ___ it is cold.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "추위가 코트를 입은 이유라는 뜻으로 빈칸에는?",
     "choices": [
       "or",
       "then",
@@ -866,16 +866,16 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "event-order",
-    "passage": "First, put on your shoes. Then, open the door. Finally, go outside.",
+    "passage": "First, open your bag. Then, take out a book. Finally, read it.",
     "prompt": "마지막에 하는 일은?",
     "choices": [
-      "신발 신기",
-      "문 열기",
-      "문 닫기",
-      "밖으로 나가기"
+      "가방 열기",
+      "책 꺼내기",
+      "가방 닫기",
+      "책 읽기"
     ],
     "answer": 3,
-    "explanation": "Finally 다음의 go outside가 마지막 행동입니다.",
+    "explanation": "Finally는 마지막 순서를 나타냅니다. 가방 열기와 책 꺼내기 다음에 하는 마지막 일은 read it, 책 읽기입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },

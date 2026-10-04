@@ -267,15 +267,15 @@
     "skill": "focus-scope",
     "familyId": "meaning-equivalence",
     "passage": "Only students who submitted both reports were allowed to present.",
-    "prompt": "반드시 성립하는 것은?",
+    "prompt": "발표 허용에 대해 반드시 성립하는 것은?",
     "choices": [
-      "모든 학생이 두 보고서를 냈다",
-      "두 보고서를 낸 모든 학생이 실제로 발표했다",
-      "한 보고서만 낸 학생도 발표했다",
-      "발표한 학생은 두 보고서를 모두 제출했다"
+      "두 보고서를 낸 학생은 실제 발표도 마쳤다",
+      "두 보고서를 낸 학생은 발표 허용 외의 조건도 충족했다",
+      "한 보고서만 낸 학생도 발표를 허용받았다",
+      "발표를 허용받은 학생은 두 보고서를 모두 제출했다"
     ],
     "answer": 3,
-    "explanation": "only가 발표 허용의 필요조건을 제한합니다. 허용된 학생 모두가 실제 발표했다는 뜻은 아닙니다.",
+    "explanation": "Only가 발표 허용의 필요조건을 제한합니다. 허용받았다면 두 보고서를 냈다는 뜻입니다. 실제 발표를 마쳤는지나 다른 조건을 충족했는지까지는 알 수 없습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -329,13 +329,13 @@
     "passage": "The assumption that what people choose always reflects what they truly need is open to question.",
     "prompt": "의문이 제기되는 가정은?",
     "choices": [
-      "사람의 선택은 항상 진짜 필요를 반영한다",
-      "사람은 어떤 선택도 할 수 없다",
-      "진짜 필요는 항상 선택을 방해한다",
-      "의문이 있는 선택은 모두 잘못이다"
+      "사람의 선택이 언제나 실제 필요를 반영한다는 가정",
+      "사람이 실제 필요를 알고 선택한다는 가정",
+      "사람의 선택이 실제 필요를 바꾼다는 가정",
+      "사람이 선택보다 실제 필요를 우선한다는 가정"
     ],
     "answer": 0,
-    "explanation": "assumption의 내용은 that절이며 what절들이 choose와 reflects의 대상을 이룹니다.",
+    "explanation": "The assumption의 내용은 that절입니다. 그 안에서 what people choose는 reflects의 주어, what they truly need는 목적어입니다. is open to question은 그 가정의 타당성을 의심할 수 있다는 뜻입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -467,7 +467,7 @@
     "skill": "subtle-usage",
     "familyId": "counterfactual",
     "passage": "The proposal is acceptable ___ its safety claims can be independently verified.",
-    "prompt": "빈칸에 가장 알맞은 말은?",
+    "prompt": "안전 주장을 검증할 수 있어야 수용한다는 조건을 나타내려면?",
     "choices": [
       "regardless of",
       "whether or not",
@@ -475,7 +475,7 @@
       "even if"
     ],
     "answer": 2,
-    "explanation": "안전 주장을 독립적으로 검증할 수 있어야 받아들인다는 조건입니다. 나머지는 검증 여부와 무관하다는 뜻입니다.",
+    "explanation": "검증 가능성이 수용의 조건이라는 뜻이므로 provided that입니다. whether or not은 검증 여부와 관계없음을, even if는 검증 가능해도라는 양보를 나타내 질문의 조건과 다릅니다. regardless of 뒤에는 여기처럼 완전한 절을 바로 둘 수 없습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -726,7 +726,7 @@
     "domain": "discourse",
     "skill": "sentence-insertion",
     "familyId": "insertion-choice",
-    "passage": "(1) A model simplifies reality. (2) This makes it useful for finding patterns. (3) Its conclusions must therefore be checked against real conditions.",
+    "passage": "(1) A model simplifies reality. (2) This simplification makes it useful for finding patterns. (3) These omitted details must therefore be checked against real conditions.",
     "prompt": "'Yet the details it leaves out can matter.'를 넣을 위치는?",
     "choices": [
       "(2) 앞",
@@ -735,7 +735,7 @@
       "(3) 뒤"
     ],
     "answer": 2,
-    "explanation": "단순화의 장점을 받은 뒤 빠진 세부의 중요성을 대조해야 현실 조건 점검이라는 therefore 결론으로 이어집니다.",
+    "explanation": "2번에서 단순화의 장점을 설명한 뒤 삽입문의 Yet로 생략한 세부의 중요성을 대조합니다. 3번의 These omitted details가 삽입문의 the details it leaves out을 받으므로 3번 앞이 가장 자연스럽습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -746,7 +746,7 @@
     "domain": "discourse",
     "skill": "sentence-insertion",
     "familyId": "insertion-choice",
-    "passage": "(1) An early trial supported the idea. (2) Later trials failed to produce the same result. (3) Researchers revised their explanation.",
+    "passage": "(1) An early trial supported the idea. (2) Later trials failed to produce the same result. (3) These doubts led researchers to revise their explanation.",
     "prompt": "'This failure raised doubts about the original claim.'를 넣을 위치는?",
     "choices": [
       "(3) 뒤",
@@ -755,7 +755,7 @@
       "(3) 앞"
     ],
     "answer": 3,
-    "explanation": "This failure는 이후 실험의 재현 실패를 받고, 의문 제기 후 설명 수정으로 이어지므로 (3) 앞입니다.",
+    "explanation": "삽입문의 This failure는 2번의 재현 실패를 받고 doubts를 도입합니다. 3번의 These doubts가 그 의문을 이어받으므로 3번 앞에 넣어야 연결이 완성됩니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -766,7 +766,7 @@
     "domain": "discourse",
     "skill": "sentence-insertion",
     "familyId": "insertion-choice",
-    "passage": "(1) A single successful trial can be misleading. (2) Scientists therefore repeat experiments. (3) Consistent results across trials strengthen confidence.",
+    "passage": "(1) A single successful trial can be misleading. (2) Scientists therefore repeat experiments. (3) By ruling out such chance effects, they gain greater confidence.",
     "prompt": "'This repetition helps separate stable effects from chance.'를 넣을 위치는?",
     "choices": [
       "1번 앞",
@@ -775,7 +775,7 @@
       "2번 뒤"
     ],
     "answer": 3,
-    "explanation": "This repetition은 2번의 반복 실험을 받아 그 기능을 설명하며 3번의 신뢰 증가로 이어집니다.",
+    "explanation": "삽입문의 This repetition은 2번의 반복 실험을 받고 chance를 소개합니다. 3번의 such chance effects가 이를 이어받으므로 2번 뒤에 넣어야 양쪽 연결이 맞습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -786,7 +786,7 @@
     "domain": "discourse",
     "skill": "sentence-insertion",
     "familyId": "insertion-choice",
-    "passage": "(1) The system was designed for ordinary conditions. (2) A rare storm disrupted it. (3) The disruption revealed weaknesses that routine tests had missed.",
+    "passage": "(1) The system was designed for ordinary conditions. (2) A rare storm disrupted it. (3) This new test exposed weaknesses that routine checks had missed.",
     "prompt": "'This unexpected event provided a different kind of test.'를 넣을 위치는?",
     "choices": [
       "2번 뒤",
@@ -795,7 +795,7 @@
       "3번 뒤"
     ],
     "answer": 0,
-    "explanation": "This unexpected event는 2번의 폭풍을 받고 3번의 약점 발견을 연결합니다.",
+    "explanation": "삽입문의 This unexpected event는 2번의 폭풍을 받고 a different kind of test를 도입합니다. 3번의 This new test가 이를 이어받으므로 2번 뒤가 적절합니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -826,7 +826,7 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "argument-order",
-    "passage": "(A) Yet without that risk, truly new approaches may never be tried. (B) Innovation requires accepting the possibility of failure. (C) This makes innovation uncomfortable for people who expect certainty.",
+    "passage": "(A) Yet accepting this discomfort allows people to try truly new approaches. (B) Innovation requires accepting the possibility of failure. (C) This risk makes innovation uncomfortable for people who expect certainty.",
     "prompt": "자연스러운 순서는?",
     "choices": [
       "A → C → B",
@@ -835,7 +835,7 @@
       "B → A → C"
     ],
     "answer": 1,
-    "explanation": "실패 가능성 → 그 때문에 생기는 불편함 → 그래도 위험을 받아야 새 시도가 가능하다는 양보입니다.",
+    "explanation": "B에서 실패 가능성을 도입하고 C의 This risk가 이를 받습니다. A의 this discomfort는 C의 불편함을 받아, 그 불편함을 수용하는 가치로 전환합니다. 따라서 B → C → A입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -929,13 +929,13 @@
     "passage": "A filter removes what its designer considers irrelevant. If that judgment is mistaken, useful information disappears before users can assess it. Filtering therefore requires ___.",
     "prompt": "빈칸에 가장 적절한 말은?",
     "choices": [
-      "measurement of speed alone",
+      "measuring how fast the output appears",
       "scrutiny of the criteria, not just the output",
-      "blind trust in the designer's intention",
-      "the removal of every unusual item"
+      "judging quality by the designer's intention",
+      "checking only the information that remains"
     ],
     "answer": 1,
-    "explanation": "관련성 판단이 틀릴 위험 때문에 결과뿐 아니라 무엇을 거를지 정한 기준도 검토해야 합니다.",
+    "explanation": "잘못 제외된 정보는 사용자가 보기 전에 사라집니다. 남은 결과만 확인하면 이 문제를 찾기 어려우므로 선별 기준 자체도 검토해야 합니다. 속도·설계 의도·남은 정보만 보는 보기는 누락 위험을 해결하지 못합니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -949,13 +949,13 @@
     "passage": "A policy may work because people expect others to follow it. If that expectation vanishes, the same written rule may lose its effect. Its success depends partly on ___.",
     "prompt": "빈칸에 가장 적절한 말은?",
     "choices": [
-      "the absence of any public discussion",
-      "identical outcomes for every person",
+      "public agreement on the wording alone",
+      "equal results for different groups",
       "shared beliefs about others' behavior",
-      "the exact length of the written rule"
+      "the frequency of publishing the rule"
     ],
     "answer": 2,
-    "explanation": "다른 사람도 따른다는 기대가 효과의 조건이므로 공유된 믿음에 일부 의존합니다.",
+    "explanation": "효과의 일부가 다른 사람도 따를 것이라는 기대에 달려 있습니다. 글의 표현에 동의하거나 규칙을 자주 공표하는 것 자체와는 다른, 타인의 행동에 대한 공유된 믿음입니다.",
     "expectedMs": 18000,
     "speedEligible": false
   }

@@ -46,16 +46,16 @@
     "domain": "vocabulary",
     "skill": "context-meaning",
     "familyId": "meaning-choice",
-    "passage": "The guide gave a brief explanation, lasting less than a minute.",
-    "prompt": "brief의 뜻은?",
+    "passage": "The bus service is reliable: it arrives on time almost every day.",
+    "prompt": "reliable의 뜻은?",
     "choices": [
-      "짧고 간단한",
-      "상세하고 긴",
-      "불확실한",
-      "반복적인"
+      "믿을 만한",
+      "우연한",
+      "값비싼",
+      "복잡한"
     ],
     "answer": 0,
-    "explanation": "1분도 걸리지 않았다는 단서로 설명이 짧고 간단했음을 알 수 있습니다.",
+    "explanation": "거의 매일 정시에 도착한다는 단서로 reliable은 믿을 만하다는 뜻입니다. 가격이나 복잡함에 대한 평가는 나오지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -126,16 +126,16 @@
     "domain": "vocabulary",
     "skill": "abstract-meaning",
     "familyId": "meaning-choice",
-    "passage": "Her positive attitude helped the team keep trying after the failure.",
-    "prompt": "attitude의 뜻은?",
+    "passage": "Her effort helped the team recover after the failure.",
+    "prompt": "effort의 뜻은?",
     "choices": [
-      "이동 속도",
-      "상황을 대하는 태도",
-      "경기 결과",
-      "몸의 크기"
+      "우연",
+      "노력",
+      "명령",
+      "결과"
     ],
     "answer": 1,
-    "explanation": "실패 후에도 노력하게 만든 긍정적인 태도를 뜻합니다.",
+    "explanation": "실패 뒤 팀이 회복하도록 도운 것은 effort, 노력입니다. 실패라는 결과나 우연과 구분해야 합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -146,16 +146,16 @@
     "domain": "vocabulary",
     "skill": "abstract-meaning",
     "familyId": "meaning-choice",
-    "passage": "The rule had little effect: people continued parking there.",
-    "prompt": "effect의 뜻은?",
+    "passage": "He accepted responsibility for the mistake and offered to fix it.",
+    "prompt": "responsibility의 뜻은?",
     "choices": [
-      "주차 요금",
-      "사람의 책임",
-      "영향이나 효과",
-      "규칙의 길이"
+      "보상",
+      "허락",
+      "책임",
+      "기회"
     ],
     "answer": 2,
-    "explanation": "사람들이 계속 주차했으므로 규칙이 행동에 미친 효과가 작았습니다.",
+    "explanation": "실수를 인정하고 고치겠다고 했으므로 responsibility는 그 일에 대한 책임입니다. 보상을 받거나 허락을 구했다는 뜻은 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -232,10 +232,10 @@
       "raise",
       "arise",
       "rise",
-      "lift"
+      "erase"
     ],
     "answer": 0,
-    "explanation": "raise awareness는 어떤 문제에 대한 인식을 높인다는 표현입니다.",
+    "explanation": "raise awareness는 어떤 문제에 대한 인식을 높인다는 표현입니다. rise와 arise는 awareness를 이렇게 목적어로 취하지 않고 erase는 지우다는 반대 뜻입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -306,7 +306,7 @@
     "domain": "usage",
     "skill": "modifier-relation",
     "familyId": "modifier-choice",
-    "passage": "I returned the book that you lent me last week.",
+    "passage": "You lent me a book last week. I returned it today.",
     "prompt": "지난주에 일어난 일은?",
     "choices": [
       "네가 책을 반납했다",
@@ -315,7 +315,7 @@
       "내가 책을 반납했다"
     ],
     "answer": 1,
-    "explanation": "that 이하의 you lent me last week가 지난주에 빌려 준 일을 설명합니다.",
+    "explanation": "last week는 네가 나에게 책을 빌려 준 시점이고 today는 내가 반납한 시점입니다. 두 사건의 행위자와 시간을 구분해야 합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -729,13 +729,13 @@
     "passage": "The exam was difficult. Even so, most students passed.",
     "prompt": "두 문장의 관계는?",
     "choices": [
-      "쉬웠기 때문에 합격했다",
-      "어려워서 모두 실패했다",
-      "어려움에도 예상과 달리 합격했다",
-      "시험 난이도와 무관한 시간 순서다"
+      "어려운 시험이 합격의 원인이었다",
+      "어려운 시험 때문에 학생들이 실패했다",
+      "어려움에도 대부분의 학생이 합격했다",
+      "합격 뒤 시험이 더 어려워졌다"
     ],
     "answer": 2,
-    "explanation": "Even so는 앞의 어려움에도 합격했다는 양보 관계를 표시합니다.",
+    "explanation": "Even so는 어려웠다는 조건에도 예상과 달리 합격했다는 양보 관계입니다. most students는 대부분이며 모든 학생이 합격했다는 뜻이 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -749,13 +749,13 @@
     "passage": "Unlike her brother, who prefers quiet places, Jina enjoys busy markets.",
     "prompt": "두 사람의 관계는?",
     "choices": [
-      "오빠가 지나 때문에 취향을 바꿨다",
-      "둘 다 조용한 장소만 좋아한다",
-      "지나가 시장을 싫어한다",
-      "좋아하는 장소의 분위기가 다르다"
+      "남자 형제가 지나 때문에 취향을 바꿨다",
+      "두 사람이 같은 분위기의 장소를 좋아한다",
+      "지나가 시장보다 조용한 장소를 선호한다",
+      "두 사람이 좋아하는 장소의 분위기가 다르다"
     ],
     "answer": 3,
-    "explanation": "Unlike가 두 사람의 장소 선호를 대조합니다. 선호가 바뀌었다는 내용은 없습니다.",
+    "explanation": "Unlike가 quiet places와 busy markets라는 취향을 대조합니다. brother만으로 형제의 나이 순서를 알 수 없으므로 오빠나 남동생으로 단정하지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -767,7 +767,7 @@
     "skill": "contrast-concession",
     "familyId": "relation-choice",
     "passage": "The path was muddy after the rain. ___, we chose the paved road.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "진흙길을 피한 결과로 포장도로를 골랐다면?",
     "choices": [
       "Therefore",
       "Nevertheless",
@@ -775,7 +775,7 @@
       "In contrast"
     ],
     "answer": 0,
-    "explanation": "진흙길이라는 이유로 포장도로를 골랐으므로 결과를 나타내는 Therefore가 맞습니다.",
+    "explanation": "진흙길이라는 상황을 원인으로 포장도로 선택이라는 결과를 연결하므로 Therefore입니다. Nevertheless는 그 상황에도 불구하고 선택한 반대 결과를 나타낼 때 씁니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -787,7 +787,7 @@
     "skill": "contrast-concession",
     "familyId": "relation-choice",
     "passage": "Online classes are convenient. ___, some students miss face-to-face discussions.",
-    "prompt": "빈칸에 알맞은 말은?",
+    "prompt": "온라인 수업의 편리함과 대면 교류의 아쉬움을 대조하려면?",
     "choices": [
       "Similarly",
       "Nevertheless",
@@ -795,7 +795,7 @@
       "For example"
     ],
     "answer": 1,
-    "explanation": "편리하지만 대면 토론을 아쉬워한다는 대조 관계입니다.",
+    "explanation": "편리함이라는 장점과 대면 토론의 아쉬움이라는 한계를 대조하므로 Nevertheless가 맞습니다. For example은 첫 문장을 지지하는 사례를 들 때 씁니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
