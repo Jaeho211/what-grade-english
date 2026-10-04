@@ -23,5 +23,5 @@ const bank = [];
 for (let level = 1; level <= 7; level++) bank.push(...JSON.parse(await readFile(new URL(`src/quiz/data/level${level}.json`, root), 'utf8')));
 await mkdir(new URL('quiz/data/', dist), { recursive: true });
 await writeFile(new URL('quiz/data/bank.json', dist), JSON.stringify(bank));
-for (const name of ['index.html', 'styles.css', 'icon.svg']) await copyFile(new URL('public/' + name, root), new URL(name, dist));
+for (const name of ['index.html', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png']) await copyFile(new URL('public/' + name, root), new URL(name, dist));
 console.log(`Built static app in dist with ${bank.length} questions.`);
