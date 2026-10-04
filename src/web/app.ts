@@ -84,7 +84,7 @@ function finish(answer: number | 'skip' | 'timeout', id: string) {
   });
   document.querySelector<HTMLButtonElement>('#skip')!.hidden = true;
   const title = { correct: '정답이에요!', incorrect: '다음에는 맞힐 수 있어요', timeout: '시간이 끝났어요', skip: '이 문제는 넘어갔어요' }[evidence.outcome];
-  document.querySelector('#feedback')!.innerHTML = `<section class="feedback ${evidence.outcome === 'correct' ? 'success' : ''}"><h2>${title}</h2><p class="answer-line">정답: ${escape(evidence.question.choices[evidence.question.answer])}</p><p>${escape(evidence.question.explanation)}</p><button class="primary" id="next">${next.result ? '내 결과 보기' : '다음 문제'} <span aria-hidden="true">→</span></button></section>`;
+  document.querySelector('#feedback')!.innerHTML = `<section class="feedback ${evidence.outcome === 'correct' ? 'success' : evidence.outcome === 'incorrect' ? 'error' : 'neutral'}"><h2>${title}</h2><p class="answer-line answer-correct">정답: ${escape(evidence.question.choices[evidence.question.answer])}</p><p>${escape(evidence.question.explanation)}</p><button class="primary" id="next">${next.result ? '내 결과 보기' : '다음 문제'} <span aria-hidden="true">→</span></button></section>`;
   session = next;
   document.querySelector<HTMLButtonElement>('#next')!.addEventListener('click', () => { if (phase !== 'feedback') return; showQuestion(); });
   document.querySelector<HTMLElement>('#next')?.focus({ preventScroll: true });
@@ -97,7 +97,7 @@ function finish(answer: number | 'skip' | 'timeout', id: string) {
 function review(e: Evidence, i: number) {
   const status = { correct: '정답', incorrect: '오답', skip: '넘어감', timeout: '시간 초과' }[e.outcome];
   const chosen = typeof e.selectedAnswer === 'number' ? e.question.choices[e.selectedAnswer] : status;
-  return `<details class="review"><summary><span>${i + 1}. ${labels[e.question.domain]}</span><span class="review-status ${e.outcome === 'correct' ? 'good' : ''}">${status}</span></summary><div class="review-body"><p class="passage" lang="en">${escape(e.question.passage)}</p><p><b>${escape(e.question.prompt)}</b></p><p>내 답: ${escape(chosen)}</p><p>정답: ${escape(e.question.choices[e.question.answer])}</p><p class="explanation">${escape(e.question.explanation)}</p></div></details>`;
+  return `<details class="review"><summary><span>${i + 1}. ${labels[e.question.domain]}</span><span class="review-status ${e.outcome === 'correct' ? 'good' : e.outcome === 'incorrect' ? 'bad' : ''}">${status}</span></summary><div class="review-body"><p class="passage" lang="en">${escape(e.question.passage)}</p><p><b>${escape(e.question.prompt)}</b></p><p class="${e.outcome === 'correct' ? 'answer-correct' : e.outcome === 'incorrect' ? 'answer-incorrect' : 'answer-neutral'}">내 답: ${escape(chosen)}</p><p class="answer-correct">정답: ${escape(e.question.choices[e.question.answer])}</p><p class="explanation">${escape(e.question.explanation)}</p></div></details>`;
 }
 function showResult() {
   if (!session?.result) return;
