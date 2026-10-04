@@ -1,4 +1,4 @@
-import { startQuiz, submitAnswer, shuffleChoices, QUESTION_COUNT, TIME_LIMIT_MS, type Session, type Evidence } from '../quiz/engine.ts';
+import { startQuiz, submitAnswer, shuffleChoices, QUESTION_COUNT, timeLimitMs, type Session, type Evidence } from '../quiz/engine.ts';
 import { LEVELS, type EnglishQuestion, type Domain } from '../quiz/schema.ts';
 
 const root = document.querySelector<HTMLElement>('#app')!;
@@ -23,7 +23,7 @@ function shell(content: string) {
 function home() {
   cancelAnimationFrame(frame);
   phase = 'home';
-  shell(`<section class="hero"><span class="eyebrow">짧게 풀고, 나를 발견하는 영어 퀴즈</span><h1>나의 영어<br><span>학년은?</span></h1><p class="intro">익숙한 한 문장부터<br>생각이 필요한 짧은 글까지.</p><div class="facts"><span><b>10</b>문제</span><span><b>20</b>초씩</span><span><b>초6–고3</b></span></div><button class="primary" id="start">내 영어 학년 알아보기 <span aria-hidden="true">→</span></button><p class="hint">모르는 문제는 넘어가도 괜찮아요.</p></section><section class="preview"><span class="eyebrow">어떤 문제를 풀까요?</span><p lang="en">Small questions.<br><em>A little discovery.</em></p><div class="tags">${Object.values(labels).map(label => `<span>${label}</span>`).join('')}</div></section>`);
+  shell(`<section class="hero"><span class="eyebrow">짧게 풀고, 나를 발견하는 영어 퀴즈</span><h1>나의 영어<br><span>학년은?</span></h1><p class="intro">익숙한 한 문장부터<br>생각이 필요한 짧은 글까지.</p><div class="facts"><span><b>10</b>문제</span><span><b>20–30</b>초씩</span><span><b>초6–고3</b></span></div><button class="primary" id="start">내 영어 학년 알아보기 <span aria-hidden="true">→</span></button><p class="hint">모르는 문제는 넘어가도 괜찮아요.</p></section><section class="preview"><span class="eyebrow">어떤 문제를 풀까요?</span><p lang="en">Small questions.<br><em>A little discovery.</em></p><div class="tags">${Object.values(labels).map(label => `<span>${label}</span>`).join('')}</div></section>`);
   document.querySelector('#start')!.addEventListener('click', begin);
 }
 function begin() {
@@ -36,7 +36,7 @@ function showQuestion() {
   const q = session.pending!;
   phase = 'question';
   const index = session.history.length + 1;
-  shell(`<section class="quiz"><div class="question-top"><span class="eyebrow">QUESTION ${String(index).padStart(2, '0')} <span class="muted">/ ${QUESTION_COUNT}</span></span><span class="domain">${labels[q.domain]}</span></div><div class="progress" role="progressbar" aria-label="퀴즈 진행" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="10"><span style="width:${index * 10}%"></span></div><div class="timer-row"><span>남은 시간</span><strong id="timer" role="timer" aria-label="남은 시간">20<span>초</span></strong></div><article class="question-card"><p class="passage" lang="en">${escape(q.passage)}</p><h1 class="prompt" tabindex="-1">${escape(q.prompt)}</h1><div class="choices">${q.choices.map((choice, i) => `<button class="choice" data-answer="${i}"><span class="choice-number">${i + 1}</span><span>${escape(choice)}</span></button>`).join('')}</div></article><button class="skip" id="skip">넘어가기 <span aria-hidden="true">→</span></button><div id="feedback" aria-live="polite"></div></section>`);
+  shell(`<section class="quiz"><div class="question-top"><span class="eyebrow">QUESTION ${String(index).padStart(2, '0')} <span class="muted">/ ${QUESTION_COUNT}</span></span><span class="domain">${labels[q.domain]}</span></div><div class="progress" role="progressbar" aria-label="퀴즈 진행" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="10"><span style="width:${index * 10}%"></span></div><div class="timer-row"><span>남은 시간</span><strong id="timer" role="timer" aria-label="남은 시간">${timeLimitMs(q) / 1000}<span>초</span></strong></div><article class="question-card"><p class="passage" lang="en">${escape(q.passage)}</p><h1 class="prompt" tabindex="-1">${escape(q.prompt)}</h1><div class="choices">${q.choices.map((choice, i) => `<button class="choice" data-answer="${i}"><span class="choice-number">${i + 1}</span><span>${escape(choice)}</span></button>`).join('')}</div></article><button class="skip" id="skip">넘어가기 <span aria-hidden="true">→</span></button><div id="feedback" aria-live="polite"></div></section>`);
   document.querySelectorAll<HTMLButtonElement>('[data-answer]').forEach(button => button.addEventListener('click', () => finish(Number(button.dataset.answer), q.id)));
   document.querySelector('#skip')!.addEventListener('click', () => finish('skip', q.id));
   document.querySelector<HTMLElement>('.prompt')?.focus({ preventScroll: true });
@@ -50,7 +50,7 @@ function showQuestion() {
 function elapsed() { return Math.max(performance.now() - startedAt, Date.now() - wallStartedAt, 0); }
 function tick(id: string) {
   if (phase !== 'question' || session?.pending?.id !== id) return;
-  const remaining = Math.max(0, TIME_LIMIT_MS - elapsed());
+  const remaining = Math.max(0, timeLimitMs(session.pending) - elapsed());
   const timer = document.querySelector('#timer');
   if (timer) { timer.innerHTML = `${Math.ceil(remaining / 1000)}<span>초</span>`; timer.classList.toggle('urgent', remaining <= 5000); }
   if (!remaining) { finish('timeout', id); return; }

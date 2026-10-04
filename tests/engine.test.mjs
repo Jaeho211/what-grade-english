@@ -179,3 +179,17 @@ test('eight replay sessions preserve domain requirements and avoid recent eligib
     }
   }
 });
+
+test('domain timer accepts reading at 20 seconds and expires at each exact deadline', () => {
+  const options = { levels, random: () => 0 };
+  for (const domain of ['vocabulary', 'usage', 'reading', 'discourse']) {
+    const question = bank.find(q => q.level === 3 && q.domain === domain);
+    const initial = { ...startQuiz(bank, options), pending: question };
+    const limit = domain === 'reading' || domain === 'discourse' ? 30000 : 20000;
+    assert.equal(submitAnswer(bank, initial, question.answer, limit - 1, options).history[0].outcome, 'correct');
+    const expired = submitAnswer(bank, initial, question.answer, limit, options).history[0];
+    assert.equal(expired.outcome, 'timeout');
+    assert.equal(expired.elapsedMs, limit);
+    if (limit === 30000) assert.equal(submitAnswer(bank, initial, question.answer, 20000, options).history[0].outcome, 'correct');
+  }
+});

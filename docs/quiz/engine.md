@@ -21,7 +21,7 @@
 
 ## API 및 타이머
 
-`startQuiz(bank, options)`는 첫 pending 문항을 돌려준다. `submitAnswer(bank, state, answer, elapsedMs, options)`는 기존 state를 변경하지 않고 다음 상태를 돌려준다. answer는 0~3 또는 skip/timeout이다. 20,000ms 이상 응답은 정답을 골라도 timeout이다. 열 번째 응답 이후 pending은 null이고 result가 존재한다.
+`startQuiz(bank, options)`는 첫 pending 문항을 돌려준다. `submitAnswer(bank, state, answer, elapsedMs, options)`는 기존 state를 변경하지 않고 다음 상태를 돌려준다. answer는 0~3 또는 skip/timeout이다. 문맥 어휘·문장 이해는 20,000ms, 짧은 글 읽기·글의 흐름은 30,000ms 이상 응답을 정답을 골라도 timeout으로 처리한다. UI와 엔진은 timeLimitMs로 같은 기준을 사용한다. 열 번째 응답 이후 pending은 null이고 result가 존재한다.
 
 UI는 시간 측정에 단조 증가하는 시계를 사용하고, 동일 상태에 대한 중복 클릭을 차단해야 한다. 보기 섞기는 `shuffleChoices`가 정답 인덱스도 함께 바꾼다. 섞인 pending 문항을 상태에 보관해야 표시 보기와 채점 인덱스가 일치한다.
 

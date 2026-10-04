@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import { timeLimitMs } from '../src/quiz/engine.ts';
 
 const levels = [1, 2, 3, 4, 5, 6, 7];
 const bank = levels.flatMap(level => JSON.parse(readFileSync(new URL('../src/quiz/data/level' + level + '.json', import.meta.url), 'utf8')));
@@ -18,7 +19,7 @@ for (const q of bank) {
   for (const key of ['id', 'skill', 'familyId', 'passage', 'prompt', 'explanation']) {
     assert.ok(typeof q[key] === 'string' && q[key].trim(), q.id + ': ' + key);
   }
-  assert.ok(q.expectedMs > 0 && q.expectedMs <= 20000, q.id);
+  assert.ok(q.expectedMs > 0 && q.expectedMs <= timeLimitMs(q), q.id);
   assert.equal(q.speedEligible, false, 'Speed remains disabled before calibration: ' + q.id);
 }
 const slots = new Set(bank.map(q => q.slotId));
