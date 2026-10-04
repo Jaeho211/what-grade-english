@@ -1,5 +1,6 @@
 import { DOMAINS, START_LEVEL, type Domain, type EnglishQuestion, type Level } from './schema.ts';
 
+export const ESTIMATION_VERSION = '2026-10-04.direct-evidence-v1';
 export const QUESTION_COUNT = 10;
 export const TIME_LIMIT_MS = 30_000;
 export function timeLimitMs(question: EnglishQuestion): number {
@@ -64,6 +65,30 @@ export function estimate(history: readonly Evidence[], levels: readonly Level[])
   const floor = Math.min(...levels) as Level;
   const evidence = evidenceAt(history, floor);
   return { level: floor, status: 'provisional', basis: 'floor', correct: evidence.correct, domains: evidence.domains };
+}
+
+// Explain the actual run without changing its estimate or treating a higher
+// partial result as a confirmed grade.
+export function resultDetails(history: readonly Evidence[], result: Estimate, levels: readonly Level[]) {
+  const counts = (entries: readonly Evidence[]) => ({
+    total: entries.length,
+    correct: entries.filter(e => e.outcome === 'correct').length,
+    incorrect: entries.filter(e => e.outcome === 'incorrect').length,
+    timedOut: entries.filter(e => e.outcome === 'timeout').length,
+    skipped: entries.filter(e => e.outcome === 'skip').length,
+  });
+  const supported = evidenceAt(history, result.level);
+  const byLevel = [...levels].sort((a, b) => a - b)
+    .filter(level => level >= result.level && history.some(e => e.question.level === level))
+    .map(level => ({ level, ...counts(history.filter(e => e.question.level === level)) }));
+  const higherPartial = [...levels].sort((a, b) => b - a).find(level => {
+    if (level <= result.level) return false;
+    const evidence = evidenceAt(history, level);
+    return evidence.correct >= 2 && evidence.domains.length >= 2 && evidence.accuracy >= .75;
+  });
+  return { overall: counts(history), direct: counts(history.filter(e => e.question.level === result.level)),
+    supportedDomains: supported.domains, byLevel,
+    higherPartial: higherPartial === undefined ? null : { level: higherPartial, ...evidenceAt(history, higherPartial) } };
 }
 
 function isConfirmed(evidence: ReturnType<typeof evidenceAt>): boolean {

@@ -300,3 +300,18 @@ test('one high3 mistake remains recoverable with three subsequent successes', ()
   for (let i = 0; i < 3; i++) state = submitAnswer(fullBank, state, state.pending.answer, 5000);
   assert.deepEqual([state.result.level, state.result.status], [7, 'confirmed']);
 });
+
+test('result details preserve lower confirmation and expose higher partial evidence separately', async () => {
+  const { resultDetails } = await import('../src/quiz/engine.ts');
+  const history = [...evidence(3, ['reading', 'usage', 'discourse']), ...evidence(6, ['reading', 'vocabulary']), ...evidence(7, ['usage'], 'timeout')];
+  const result = estimate(history, fullLevels);
+  assert.deepEqual([result.level, result.status], [3, 'confirmed']);
+  const details = resultDetails(history, result, fullLevels);
+  assert.equal(details.higherPartial.level, 6);
+  assert.equal(details.direct.correct, 3);
+  assert.equal(details.overall.timedOut, 1);
+  assert.deepEqual(details.byLevel.map(r => [r.level, r.correct, r.total]), [[3,3,3],[6,2,2],[7,0,1]]);
+  assert.equal(estimate(history, fullLevels).level, 3);
+  const upperFailure = [...history, ...evidence(6, ['usage'], 'incorrect')];
+  assert.equal(resultDetails(upperFailure, estimate(upperFailure, fullLevels), fullLevels).higherPartial.level, 5); // upper successes still support a lower tentative level
+});

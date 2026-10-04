@@ -1,4 +1,4 @@
-import { startQuiz, submitAnswer, shuffleChoices, QUESTION_COUNT, timeLimitMs, type Session, type Evidence } from '../quiz/engine.ts';
+import { startQuiz, submitAnswer, shuffleChoices, QUESTION_COUNT, timeLimitMs, resultDetails, type Session, type Evidence } from '../quiz/engine.ts';
 import { RECORDS_KEY, MAX_RECORDS, fingerprint, parseRecords, makeRecord, exportRecords, type PlayRecord, type Observation } from '../quiz/records.ts';
 import { LEVELS, type EnglishQuestion, type Domain } from '../quiz/schema.ts';
 
@@ -99,6 +99,26 @@ function review(e: Evidence, i: number) {
   const chosen = typeof e.selectedAnswer === 'number' ? e.question.choices[e.selectedAnswer] : status;
   return `<details class="review"><summary><span>${i + 1}. ${labels[e.question.domain]}</span><span class="review-status ${e.outcome === 'correct' ? 'good' : e.outcome === 'incorrect' ? 'bad' : ''}">${status}</span></summary><div class="review-body"><p class="passage" lang="en">${escape(e.question.passage)}</p><p><b>${escape(e.question.prompt)}</b></p><p class="${e.outcome === 'correct' ? 'answer-correct' : e.outcome === 'incorrect' ? 'answer-incorrect' : 'answer-neutral'}">내 답: ${escape(chosen)}</p><p class="answer-correct">정답: ${escape(e.question.choices[e.question.answer])}</p><p class="explanation">${escape(e.question.explanation)}</p></div></details>`;
 }
+function resultEvidence() {
+  if (!session?.result) return '';
+  const result = session.result;
+  const details = resultDetails(session.history, result, session.levels);
+  const shortLabel = (level: number) => LEVELS.find(item => item.level === level)!.label
+    .replace('초등학교 ', '초').replace('중학교 ', '중').replace('고등학교 ', '고').replace('학년', '');
+  const domainLabel: Record<Domain, string> = { vocabulary: '어휘', usage: '문장 이해', reading: '독해', discourse: '글의 흐름' };
+  const summary = details.overall;
+  const rows = details.byLevel.map(row => `<li><strong>${shortLabel(row.level)} 문제</strong><span>${row.total}개 중 ${row.correct}개 정답</span></li>`).join('');
+  const partial = details.higherPartial;
+  const upperNote = partial
+    ? `<p class="upper-evidence">${shortLabel(partial.level)} 수준에서도 일부 정답 근거가 있어요. 다만 그 학년을 확정할 근거는 부족해요.</p>`
+    : details.byLevel.some(row => row.level > result.level && row.correct > 0)
+      ? '<p class="upper-evidence">더 높은 학년의 문제도 일부 맞혔어요. 여러 영역에서 안정적으로 풀었는지는 더 확인해야 해요.</p>' : '';
+  const basis = result.basis === 'floor'
+    ? '<p>확정에 필요한 여러 영역의 정답 근거가 부족해요.</p>'
+    : `<p>판정 근거로 확인한 영역: ${details.supportedDomains.map(d => domainLabel[d]).join(' · ')}${result.status === 'provisional' ? ' (잠정)' : ''}</p><p>${shortLabel(result.level)} 문제는 ${details.direct.total ? `직접 ${details.direct.total}개 풀어 ${details.direct.correct}개 맞혔어요.` : '직접 출제되지 않았어요. 상위 학년 정답을 참고한 잠정 추정이에요.'}</p>`;
+  return `<section class="result-evidence" aria-labelledby="evidence-title"><h2 id="evidence-title">왜 이 학년으로 나왔을까요?</h2>${basis}<ul>${rows}</ul>${upperNote}<p class="outcome-summary">전체 기록: 정답 ${summary.correct} · 오답 ${summary.incorrect} · 시간 초과 ${summary.timedOut} · 넘어감 ${summary.skipped}</p></section>`;
+}
+
 function showResult() {
   if (!session?.result) return;
   phase = 'result';
@@ -111,7 +131,7 @@ function showResult() {
   const label = LEVELS.find(item => item.level === result.level)!.label;
   const badgeLabel = label.replace('초등학교 ', '초').replace('중학교 ', '중').replace('고등학교 ', '고').replace('학년', '');
   const correct = session.history.filter(e => e.outcome === 'correct').length;
-  shell(`<section class="result"><span class="eyebrow">나의 영어 학년</span><div class="result-badge" aria-hidden="true">${badgeLabel}</div><h1>지금 나의 영어 실력은<br><strong>${label} 수준</strong></h1><p class="result-note">${result.status === 'confirmed' ? '여러 영역의 문제를 풀어 본 결과로 추정했어요.' : result.basis === 'partial' ? '두 영역 이상의 정답을 바탕으로 추정했어요. 더 풀어 보면 결과가 달라질 수 있어요.' : '정답 근거가 부족해 결과 범위의 시작 학년으로 표시했어요. 이 학년의 실력을 확인했다는 뜻은 아니에요.'}</p><div class="result-stats"><div><b>${correct}<small> / 10</small></b><span>맞힌 문제</span></div><div><b>${new Set(session.history.filter(e => e.outcome === 'correct').map(e => e.question.domain)).size}<small> / 4</small></b><span>정답을 맞힌 영역</span></div></div><button class="primary" id="share">내 결과 자랑하기 <span aria-hidden="true">↗</span></button><p id="share-status" class="hint" aria-live="polite"></p><button class="secondary" id="again">한 번 더 도전하기</button></section><section class="review-list"><h2>문제 다시 보기 <span>10</span></h2><p class="hint">문제를 누르면 정답과 해설을 볼 수 있어요.</p>${session.history.map(review).join('')}</section><section class="record-controls"><h2>풀이 기록</h2><p class="hint">${records.length}회 기록 · 최근 ${MAX_RECORDS}회까지 보관해요.<br>${storageAvailable ? '이 기기에만 저장되며 자동으로 전송하지 않아요.' : '기기에 저장할 수 없어 이 화면이 열려 있는 동안만 기록을 유지해요.'}<br>기록에는 푼 문제, 선택한 답, 풀이 시간이 들어 있어요.</p><button class="secondary" id="download-records">풀이 기록 내려받기</button><button class="skip" id="clear-records">저장된 풀이 기록 삭제</button><p class="hint" id="record-status" aria-live="polite"></p></section>`);
+  shell(`<section class="result"><span class="eyebrow">나의 영어 학년</span><div class="result-badge" aria-hidden="true">${badgeLabel}</div><h1>지금 나의 영어 실력은<br><strong>${label} 수준</strong></h1><p class="result-note">${result.status === 'confirmed' ? '여러 영역의 문제를 풀어 본 결과로 추정했어요.' : result.basis === 'partial' ? '두 영역 이상의 정답을 바탕으로 추정했어요. 더 풀어 보면 결과가 달라질 수 있어요.' : '정답 근거가 부족해 결과 범위의 시작 학년으로 표시했어요. 이 학년의 실력을 확인했다는 뜻은 아니에요.'}</p><div class="result-stats"><div><b>${correct}<small> / 10</small></b><span>맞힌 문제</span></div><div><b>${new Set(session.history.filter(e => e.outcome === 'correct').map(e => e.question.domain)).size}<small> / 4</small></b><span>정답을 맞힌 영역</span></div></div>${resultEvidence()}<button class="primary" id="share">내 결과 자랑하기 <span aria-hidden="true">↗</span></button><p id="share-status" class="hint" aria-live="polite"></p><button class="secondary" id="again">한 번 더 도전하기</button></section><section class="review-list"><h2>문제 다시 보기 <span>10</span></h2><p class="hint">문제를 누르면 정답과 해설을 볼 수 있어요.</p>${session.history.map(review).join('')}</section><section class="record-controls"><h2>풀이 기록</h2><p class="hint">${records.length}회 기록 · 최근 ${MAX_RECORDS}회까지 보관해요.<br>${storageAvailable ? '이 기기에만 저장되며 자동으로 전송하지 않아요.' : '기기에 저장할 수 없어 이 화면이 열려 있는 동안만 기록을 유지해요.'}<br>기록에는 푼 문제, 선택한 답, 풀이 시간이 들어 있어요.</p><button class="secondary" id="download-records">풀이 기록 내려받기</button><button class="skip" id="clear-records">저장된 풀이 기록 삭제</button><p class="hint" id="record-status" aria-live="polite"></p></section>`);
   document.querySelector('#download-records')!.addEventListener('click', downloadRecords);
   document.querySelector('#clear-records')!.addEventListener('click', () => {
     records = [];

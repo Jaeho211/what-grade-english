@@ -12,3 +12,5 @@
 .feedback.error h2,.review-status.bad,.answer-incorrect{color:var(--answer-incorrect)}
 .feedback.neutral h2,.review-status,.answer-neutral{color:var(--muted)}
 .answer-correct,.review-status.good{color:var(--answer-correct)}
+
+.result-evidence{text-align:left;background:#edf2e9;border:1px solid #d5dfd0;border-radius:16px;padding:18px 20px;margin:0 0 24px}.result-evidence h2{font-size:15px;color:var(--green);margin:0 0 12px}.result-evidence p{font-size:12px;line-height:1.8;margin:8px 0;overflow-wrap:anywhere}.result-evidence ul{list-style:none;padding:0;margin:12px 0}.result-evidence li{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;padding:7px 0}.result-evidence li strong{font-weight:600}.result-evidence .upper-evidence{padding-top:10px;border-top:1px solid #d5dfd0;color:var(--green)}.result-evidence .outcome-summary{color:var(--muted);font-size:11px}

@@ -1,4 +1,4 @@
-import { timeLimitMs, type Session, type Outcome } from './engine.ts';
+import { ESTIMATION_VERSION, timeLimitMs, type Session, type Outcome } from './engine.ts';
 import type { EnglishQuestion, Domain } from './schema.ts';
 
 export const RECORDS_KEY = 'what-grade-english:records:v1';
@@ -9,7 +9,7 @@ export type Trial = {
   passage: string; prompt: string; choices: string[]; correctChoice: string; selectedChoice?: string;
   outcome: Outcome; elapsedMs: number; limitMs: number; observedMs: number; interrupted: boolean;
 };
-export type PlayRecord = { id: string; completedAt: string; bankVersion: string; result: Session['result']; trials: Trial[] };
+export type PlayRecord = { id: string; completedAt: string; bankVersion: string; estimationVersion?: string; result: Session['result']; trials: Trial[] };
 // Content fingerprint, not an identity or security token. Choice shuffling must not change it.
 export function fingerprint(value: string): string {
   let hash = 2166136261;
@@ -21,7 +21,7 @@ export function questionVersion(q: EnglishQuestion): string {
 }
 export function makeRecord(session: Session, bankVersion: string, observations: Observation[], id: string, completedAt: string): PlayRecord {
   if (!session.result || session.pending || session.history.length !== 10 || observations.length !== 10) throw new Error('Only complete quizzes can be recorded.');
-  return { id, completedAt, bankVersion, result: { ...session.result, domains: [...session.result.domains] }, trials: session.history.map((e, i) => ({
+  return { id, completedAt, bankVersion, estimationVersion: ESTIMATION_VERSION, result: { ...session.result, domains: [...session.result.domains] }, trials: session.history.map((e, i) => ({
     id: e.question.id, version: questionVersion(e.question), level: e.question.level, domain: e.question.domain,
     passage: e.question.passage, prompt: e.question.prompt, choices: [...e.question.choices], correctChoice: e.question.choices[e.question.answer],
     ...(e.selectedAnswer === undefined ? {} : { selectedChoice: e.question.choices[e.selectedAnswer] }),
@@ -34,6 +34,7 @@ export function parseRecords(raw: string | null): PlayRecord[] {
     if (!Array.isArray(value)) return [];
     return value.slice(0, MAX_RECORDS).filter((r: any) =>
       r && typeof r.id === 'string' && typeof r.bankVersion === 'string' && typeof r.completedAt === 'string' && Number.isFinite(Date.parse(r.completedAt)) &&
+      (r.estimationVersion === undefined || (typeof r.estimationVersion === 'string' && r.estimationVersion.trim().length > 0)) &&
       r.result && Number.isInteger(r.result.level) && r.result.level >= 1 && r.result.level <= 7 &&
       Array.isArray(r.trials) && r.trials.length === 10 && r.trials.every((t: any) =>
         t && typeof t.id === 'string' && typeof t.version === 'string' && Number.isInteger(t.level) && t.level >= 1 && t.level <= 7 &&
@@ -75,5 +76,5 @@ export function summarize(records: PlayRecord[]) {
   }).sort((a, b) => a.id.localeCompare(b.id) || a.version.localeCompare(b.version));
 }
 export function exportRecords(records: PlayRecord[], exportedAt: string) {
-  return { schemaVersion: 1, exportedAt, note: 'Local play records; repeated attempts are not independent participants. Interrupted trials are excluded from summary rates and timing. Correct responses below 1 second are excluded from timing only.', records, summary: summarize(records) };
+  return { schemaVersion: 1, exportedAt, note: 'Local play records; repeated attempts are not independent participants. Interrupted trials are excluded from summary rates and timing. Correct responses below 1 second are excluded from timing only. Records without estimationVersion have an unknown estimation policy; do not assume the current version.', records, summary: summarize(records) };
 }

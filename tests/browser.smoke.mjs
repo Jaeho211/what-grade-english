@@ -47,6 +47,10 @@ try {
   const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('what-grade-english:records:v1')));
   assert.equal(saved.length, 1);
   assert.equal(saved[0].trials.length, 10);
+  assert.equal(saved[0].estimationVersion, '2026-10-04.direct-evidence-v1');
+  assert.ok((await page.locator('.result-evidence').innerText()).includes('왜 이 학년으로 나왔을까요?'));
+  assert.ok((await page.locator('.outcome-summary').innerText()).includes('정답 10 · 오답 0 · 시간 초과 0 · 넘어감 0'));
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   const downloading = page.waitForEvent('download');
   await page.locator('#download-records').click();
   const download = await downloading;
@@ -61,6 +65,8 @@ try {
   for (let i = 0; i < 10; i++) { await page.locator('#skip').click(); await page.locator('#next').click(); }
   assert.ok((await page.locator('.result h1').innerText()).includes('초등학교 6학년'));
   assert.ok((await page.locator('.result-note').innerText()).includes('정답 근거가 부족해'));
+  assert.ok((await page.locator('.outcome-summary').innerText()).includes('넘어감 10'));
+  assert.ok(!(await page.locator('.result-evidence').innerText()).includes('판정 근거로 확인한 영역:'));
   await page.locator('#clear-records').click();
   assert.equal(await page.evaluate(() => localStorage.getItem('what-grade-english:records:v1')), null);
   assert.equal((await page.evaluate(() => JSON.parse(localStorage.getItem('what-grade-english:recent:v1')))).length, 20);

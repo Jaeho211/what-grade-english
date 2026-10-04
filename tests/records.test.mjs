@@ -45,3 +45,22 @@ test('corrupt local storage cannot break play; history is bounded', () => {
   assert.deepEqual(parseRecords(JSON.stringify([bad])),[]);
   assert.equal(parseRecords(JSON.stringify(Array(70).fill(complete()))).length,MAX_RECORDS);
 });
+
+test('estimation version is preserved while legacy records keep their unknown policy', async () => {
+  const { ESTIMATION_VERSION } = await import('../src/quiz/engine.ts');
+  const { exportRecords } = await import('../src/quiz/records.ts');
+  const current = complete();
+  assert.equal(current.estimationVersion, ESTIMATION_VERSION);
+  const legacy = structuredClone(current);
+  delete legacy.estimationVersion;
+  const parsed = parseRecords(JSON.stringify([current, legacy]));
+  assert.equal(parsed.length, 2);
+  assert.equal(parsed[1].estimationVersion, undefined);
+  const exported = exportRecords(parsed, '2026-10-04T09:00:00Z');
+  assert.equal(exported.records[0].estimationVersion, ESTIMATION_VERSION);
+  assert.equal(exported.records[1].estimationVersion, undefined);
+  assert.equal(exported.records[1].result.level, legacy.result.level);
+  for (const version of [null, 2, '', ' ']) {
+    assert.deepEqual(parseRecords(JSON.stringify([{...current, estimationVersion: version}])), []);
+  }
+});
