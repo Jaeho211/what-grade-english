@@ -44,13 +44,16 @@ function evidenceAt(history: readonly Evidence[], level: Level) {
   const relevant = history.filter(e => e.question.level === level || (e.question.level > level && e.outcome === 'correct'));
   const correct = relevant.filter(e => e.outcome === 'correct');
   const domains = [...new Set(correct.map(e => e.question.domain))];
-  return { correct: correct.length, domains, accuracy: relevant.length ? correct.length / relevant.length : 0 };
+  const direct = history.filter(e => e.question.level === level);
+  const directCorrect = direct.filter(e => e.outcome === 'correct').length;
+  return { correct: correct.length, domains, accuracy: relevant.length ? correct.length / relevant.length : 0,
+    directCorrect, directTotal: direct.length, directAccuracy: direct.length ? directCorrect / direct.length : 0 };
 }
 
 export function estimate(history: readonly Evidence[], levels: readonly Level[]): Estimate {
   for (const level of [...levels].sort((a, b) => b - a)) {
     const evidence = evidenceAt(history, level);
-    if (evidence.correct >= 3 && evidence.domains.length >= 3 && evidence.accuracy >= .75) return { level, status: 'confirmed', basis: 'confirmed', correct: evidence.correct, domains: evidence.domains };
+    if (isConfirmed(evidence)) return { level, status: 'confirmed', basis: 'confirmed', correct: evidence.correct, domains: evidence.domains };
   }
   // Partial evidence may support a tentative grade, but never one lucky answer or one domain.
   for (const level of [...levels].sort((a, b) => b - a)) {
@@ -63,9 +66,30 @@ export function estimate(history: readonly Evidence[], levels: readonly Level[])
   return { level: floor, status: 'provisional', basis: 'floor', correct: evidence.correct, domains: evidence.domains };
 }
 
+function isConfirmed(evidence: ReturnType<typeof evidenceAt>): boolean {
+  return evidence.directCorrect >= 2 && evidence.correct >= 3 && evidence.domains.length >= 3
+    && evidence.domains.some(domain => domain === 'reading' || domain === 'discourse')
+    && evidence.directAccuracy >= .75;
+}
+
 function confirmationTarget(history: readonly Evidence[], levels: readonly Level[]): Level {
+  const remaining = QUESTION_COUNT - history.length;
   const successes = history.filter(e => e.outcome === 'correct').map(e => e.question.level);
-  return (successes.length ? Math.max(...successes) : Math.min(...levels)) as Level;
+  const ceiling = successes.length ? Math.max(...successes) : Math.min(...levels);
+  // Reassess after every answer. Only pursue a level that can still be confirmed
+  // with the remaining questions, even if every subsequent answer is correct.
+  for (const level of [...levels].sort((a, b) => b - a)) {
+    if (level > ceiling) continue;
+    const evidence = evidenceAt(history, level);
+    const needed = Math.max(0, 2 - evidence.directCorrect, 3 - evidence.correct, 3 - evidence.domains.length);
+    for (let count = needed; count <= remaining; count++) {
+      const directTotal = evidence.directTotal + count;
+      if (directTotal && (evidence.directCorrect + count) / directTotal >= .75) return level;
+    }
+  }
+  // If confirmation is impossible, collect direct evidence for the best
+  // tentative level rather than returning to a single highest lucky answer.
+  return estimate(history, levels).level;
 }
 
 function select(bank: readonly EnglishQuestion[], state: Session, options: Options): EnglishQuestion {

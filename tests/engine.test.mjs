@@ -112,7 +112,13 @@ test('real seven-level bank: all 1024 paths across eight seeds terminate without
     assert.equal(new Set(state.history.map(e => e.question.id)).size, 10);
     assert.equal(new Set(state.history.slice(0, 4).map(e => e.question.domain)).size, 4);
     assert.ok(fullLevels.includes(state.result.level));
-    if (state.result.status === 'confirmed') assert.ok(state.result.correct >= 3 && state.result.domains.length >= 3);
+    if (state.result.status === 'confirmed') {
+      assert.ok(state.result.correct >= 3 && state.result.domains.length >= 3);
+      const direct = state.history.filter(e => e.question.level === state.result.level);
+      const correct = direct.filter(e => e.outcome === 'correct').length;
+      assert.ok(correct >= 2 && correct / direct.length >= .75);
+      assert.ok(state.result.domains.some(d => d === 'reading' || d === 'discourse'));
+    }
   }
 });
 test('real seven-level bank: perfect and recovered runs confirm high3, failures hit elementary6 floor', () => {
@@ -215,7 +221,7 @@ test('partial evidence observes accuracy, higher failures and the confirmed resu
   const history = evidence(5, ['vocabulary', 'reading']);
   assert.equal(estimate([...history, ...evidence(5, ['usage'], 'incorrect')], fullLevels).level, 4);
   assert.equal(estimate([...history, ...evidence(7, ['usage'], 'timeout')], fullLevels).level, 5);
-  const confirmed = estimate([...history, ...evidence(3, ['discourse'])], fullLevels);
+  const confirmed = estimate([...history, ...evidence(3, ['discourse', 'usage'])], fullLevels);
   assert.deepEqual([confirmed.level, confirmed.status, confirmed.basis], [3, 'confirmed', 'confirmed']);
   for (const outcome of ['skip', 'timeout']) {
     assert.equal(estimate([...history, ...evidence(5, ['usage'], outcome)], fullLevels).level, 4);
@@ -254,4 +260,43 @@ test('24 short words support twelve fixed-level replays without repeating a quic
   }
   assert.equal(quickIds.length, 24);
   assert.equal(new Set(quickIds).size, 24);
+});
+
+
+test('confirmation requires two direct successes and upper successes cannot inflate direct accuracy', () => {
+  const upper = evidence(7, ['vocabulary', 'reading']);
+  const sparse = [...evidence(6, ['discourse']), ...upper];
+  assert.notEqual(estimate(sparse, fullLevels).status, 'confirmed');
+  const supported = [...sparse, ...evidence(6, ['usage'])];
+  assert.deepEqual([estimate(supported, fullLevels).level, estimate(supported, fullLevels).status], [6, 'confirmed']);
+  const diluted = [...supported, ...evidence(6, ['reading'], 'incorrect')];
+  assert.notEqual(estimate(diluted, fullLevels).status, 'confirmed');
+  const recovered = [...diluted, ...evidence(6, ['vocabulary'])];
+  assert.equal(estimate(recovered, fullLevels).status, 'confirmed');
+});
+
+test('confirmation switches to high2 when high3 can no longer reach 75 percent', () => {
+  const opening = [...evidence(3, ['vocabulary']), ...evidence(4, ['reading']), ...evidence(5, ['usage']),
+    ...evidence(6, ['discourse']), ...evidence(7, ['vocabulary']),
+    ...evidence(7, ['vocabulary'], 'incorrect'), ...evidence(6, ['reading'])];
+  const initial = { ...startQuiz(fullBank), history: opening, target: 7,
+    pending: fullBank.find(q => q.level === 7 && q.domain === 'discourse') };
+  const afterEight = submitAnswer(fullBank, initial, 'timeout', 40000);
+  assert.equal(afterEight.target, 6);
+  assert.equal(afterEight.pending.domain, 'usage');
+  const afterNine = submitAnswer(fullBank, afterEight, afterEight.pending.answer, 5000);
+  const completed = submitAnswer(fullBank, afterNine, afterNine.pending.answer, 5000);
+  assert.deepEqual([completed.result.level, completed.result.status], [6, 'confirmed']);
+});
+
+test('one high3 mistake remains recoverable with three subsequent successes', () => {
+  const opening = [...evidence(3, ['vocabulary']), ...evidence(4, ['reading']), ...evidence(5, ['usage']),
+    ...evidence(6, ['discourse']), ...evidence(7, ['vocabulary']),
+    ...evidence(7, ['reading'], 'incorrect')];
+  const initial = { ...startQuiz(fullBank), history: opening, target: 6,
+    pending: fullBank.find(q => q.level === 6 && q.domain === 'reading') };
+  let state = submitAnswer(fullBank, initial, initial.pending.answer, 5000);
+  assert.equal(state.target, 7);
+  for (let i = 0; i < 3; i++) state = submitAnswer(fullBank, state, state.pending.answer, 5000);
+  assert.deepEqual([state.result.level, state.result.status], [7, 'confirmed']);
 });
