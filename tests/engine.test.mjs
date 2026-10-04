@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { startQuiz, submitAnswer, estimate, shuffleChoices } from '../src/quiz/engine.ts';
+import { startQuiz, submitAnswer, estimate, shuffleChoices, timeLimitMs } from '../src/quiz/engine.ts';
 
 const bank = [2, 3, 4].flatMap(level => JSON.parse(readFileSync(new URL('../src/quiz/data/level' + level + '.json', import.meta.url), 'utf8')));
 const levels = [2, 3, 4];
@@ -22,6 +22,7 @@ test('all 1024 correctness paths terminate with balanced opening and no repeated
   for (let seed = 1; seed <= 8; seed++) for (let path = 0; path < 1024; path++) {
     const state = run(Array.from({ length: 10 }, (_, i) => Boolean(path & (1 << i))), bank, levels, seed);
     assert.equal(state.history.length, 10);
+    assert.equal(state.history.filter(e => e.question.format === 'quick-vocabulary').length, 2);
     assert.equal(state.pending, null);
     assert.equal(new Set(state.history.map(e => e.question.id)).size, 10);
     assert.equal(new Set(state.history.slice(0, 4).map(e => e.question.domain)).size, 4);
@@ -57,7 +58,7 @@ test('higher failures do not erase lower evidence', () => {
 test('timer boundary, invalid inputs, immutable state and completed session', () => {
   const options = { levels, random: () => 0 };
   const initial = startQuiz(bank, options);
-  const next = submitAnswer(bank, initial, initial.pending.answer, 20000, options);
+  const next = submitAnswer(bank, initial, initial.pending.answer, timeLimitMs(initial.pending), options);
   assert.equal(next.history[0].outcome, 'timeout');
   assert.equal(initial.history.length, 0);
   for (const ms of [-1, NaN, Infinity]) assert.throws(() => submitAnswer(bank, initial, 0, ms, options));
@@ -168,6 +169,12 @@ test('eight replay sessions preserve domain requirements and avoid recent eligib
           const demonstrated = new Set(state.history.filter(e => e.outcome === 'correct' && e.question.level >= state.target).map(e => e.question.domain));
           if (eligible.some(q => !demonstrated.has(q.domain))) eligible = eligible.filter(q => !demonstrated.has(q.domain));
         }
+        const quickCount = state.history.filter(e => e.question.format === 'quick-vocabulary').length;
+        if (i === 5 && quickCount < 2) eligible = fullBank.filter(q => q.level === state.target && !used.has(q.id) && q.format === 'quick-vocabulary');
+        else {
+          const preferred = eligible.filter(q => q.domain !== 'vocabulary' || (quickCount === 0 ? q.format === 'quick-vocabulary' : q.format !== 'quick-vocabulary'));
+          if (preferred.length) eligible = preferred;
+        }
         if (eligible.some(q => !recentIds.includes(q.id))) assert.ok(!recentIds.includes(state.pending.id), `Unexpected repeat in ${response}, round ${round}, question ${i}`);
         else assert.equal(recentIds.indexOf(state.pending.id), Math.max(...eligible.map(q => recentIds.indexOf(q.id))));
         const q = state.pending;
@@ -185,12 +192,12 @@ test('domain timer accepts reading at 20 seconds and expires at each exact deadl
   for (const domain of ['vocabulary', 'usage', 'reading', 'discourse']) {
     const question = bank.find(q => q.level === 3 && q.domain === domain);
     const initial = { ...startQuiz(bank, options), pending: question };
-    const limit = domain === 'reading' || domain === 'discourse' ? 30000 : 20000;
+    const limit = domain === 'reading' || domain === 'discourse' ? 40000 : 30000;
     assert.equal(submitAnswer(bank, initial, question.answer, limit - 1, options).history[0].outcome, 'correct');
     const expired = submitAnswer(bank, initial, question.answer, limit, options).history[0];
     assert.equal(expired.outcome, 'timeout');
     assert.equal(expired.elapsedMs, limit);
-    if (limit === 30000) assert.equal(submitAnswer(bank, initial, question.answer, 20000, options).history[0].outcome, 'correct');
+    if (limit === 40000) assert.equal(submitAnswer(bank, initial, question.answer, 20000, options).history[0].outcome, 'correct');
   }
 });
 
@@ -215,4 +222,36 @@ test('partial evidence observes accuracy, higher failures and the confirmed resu
   }
   const reversed = estimate([...history].reverse().map(e => ({ ...e, elapsedMs: 29000 })), fullLevels);
   assert.equal(reversed.level, 5);
+});
+
+test('two quick vocabulary items keep balanced opening and exact 15-second boundary', () => {
+  for (let seed = 1; seed <= 50; seed++) {
+    const state = run((q, i) => i % 3 !== 0, fullBank, [1,2,3,4,5,6,7], seed);
+    assert.equal(state.history.filter(e => e.question.format === 'quick-vocabulary').length, 2);
+    assert.equal(state.history[5].question.format, 'quick-vocabulary');
+    assert.equal(new Set(state.history.slice(0,4).map(e => e.question.domain)).size, 4);
+  }
+  const options = { levels, random: () => 0 };
+  const question = bank.find(q => q.format === 'quick-vocabulary');
+  const initial = { ...startQuiz(bank, options), pending: question };
+  assert.equal(timeLimitMs(question), 15000);
+  assert.equal(submitAnswer(bank, initial, question.answer, 14999, options).history[0].outcome, 'correct');
+  assert.equal(submitAnswer(bank, initial, question.answer, 15000, options).history[0].outcome, 'timeout');
+});
+
+test('24 short words support twelve fixed-level replays without repeating a quick item', () => {
+  let recentIds = [];
+  const quickIds = [];
+  for (let round = 0; round < 12; round++) {
+    const options = { levels: [3], random: rng(round + 1), recentIds };
+    let state = startQuiz(fullBank, options);
+    for (let i = 0; i < 10; i++) {
+      const q = state.pending;
+      if (q.format === 'quick-vocabulary') quickIds.push(q.id);
+      recentIds = [q.id, ...recentIds.filter(id => id !== q.id)].slice(0, 400);
+      state = submitAnswer(fullBank, state, q.answer, 5000, { ...options, recentIds });
+    }
+  }
+  assert.equal(quickIds.length, 24);
+  assert.equal(new Set(quickIds).size, 24);
 });

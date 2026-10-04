@@ -1,9 +1,10 @@
 import { DOMAINS, START_LEVEL, type Domain, type EnglishQuestion, type Level } from './schema.ts';
 
 export const QUESTION_COUNT = 10;
-export const TIME_LIMIT_MS = 20_000;
+export const TIME_LIMIT_MS = 30_000;
 export function timeLimitMs(question: EnglishQuestion): number {
-  return question.domain === 'reading' || question.domain === 'discourse' ? 30_000 : TIME_LIMIT_MS;
+  if (question.format === 'quick-vocabulary') return 15_000;
+  return question.domain === 'reading' || question.domain === 'discourse' ? 40_000 : TIME_LIMIT_MS;
 }
 export type Outcome = 'correct' | 'incorrect' | 'timeout' | 'skip';
 export type Evidence = { question: EnglishQuestion; outcome: Outcome; elapsedMs: number; selectedAnswer?: number };
@@ -29,6 +30,7 @@ export function validateBank(bank: readonly EnglishQuestion[], levels: readonly 
     if (!DOMAINS.includes(q.domain) || !Number.isInteger(q.level) || q.level < 1 || q.level > 7 || q.choices.length !== 4 || new Set(q.choices).size !== 4 || !Number.isInteger(q.answer) || q.answer < 0 || q.answer > 3) throw new Error('Invalid question: ' + q.id);
     if (![q.id, q.slotId, q.skill, q.familyId, q.passage, q.prompt, q.explanation, ...q.choices].every(s => typeof s === 'string' && s.trim())) throw new Error('Empty question field: ' + q.id);
     if (!Number.isFinite(q.expectedMs) || q.expectedMs <= 0 || q.expectedMs > timeLimitMs(q)) throw new Error('Invalid timing: ' + q.id);
+    if (q.format !== undefined && (q.format !== 'quick-vocabulary' || q.domain !== 'vocabulary')) throw new Error('Invalid format: ' + q.id);
     if (q.speedEligible && (!Number.isFinite(q.fastThresholdMs) || q.fastThresholdMs! < 1000 || q.fastThresholdMs! >= timeLimitMs(q))) throw new Error('Invalid fast threshold: ' + q.id);
   }
   for (const level of levels) for (const domain of DOMAINS) {
@@ -78,6 +80,18 @@ function select(bank: readonly EnglishQuestion[], state: Session, options: Optio
     candidates = candidates.filter(q => counts[q.domain] === minimum);
   } else if (state.history.length >= 7 && candidates.some(q => !demonstrated.has(q.domain))) {
     candidates = candidates.filter(q => !demonstrated.has(q.domain));
+  }
+  // One quick vocabulary item in the balanced opening, another at question 6.
+  // Keep all later confirmation questions available in their original domains.
+  const quickCount = state.history.filter(e => e.question.format === 'quick-vocabulary').length;
+  if (state.history.length === 5 && quickCount < 2) {
+    const quick = bank.filter(q => q.level === state.target && !used.has(q.id) && q.format === 'quick-vocabulary');
+    if (quick.length) candidates = quick;
+  } else {
+    const preferred = candidates.filter(q => q.domain === 'vocabulary'
+      ? (quickCount === 0 ? q.format === 'quick-vocabulary' : q.format !== 'quick-vocabulary')
+      : true);
+    if (preferred.length) candidates = preferred;
   }
   const recent = options.recentIds ?? [];
   const unseen = candidates.filter(q => !recent.includes(q.id));

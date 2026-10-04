@@ -25,6 +25,7 @@ export type EnglishQuestion = {
   choices: readonly [string, string, string, string];
   answer: 0 | 1 | 2 | 3;
   explanation: string;
+  format?: 'quick-vocabulary';
   expectedMs: number;
   speedEligible: boolean;
   fastThresholdMs?: number;

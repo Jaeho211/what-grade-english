@@ -40,7 +40,7 @@ export function parseRecords(raw: string | null): PlayRecord[] {
         ['vocabulary', 'usage', 'reading', 'discourse'].includes(t.domain) && ['correct', 'incorrect', 'skip', 'timeout'].includes(t.outcome) &&
         [t.passage, t.prompt, t.correctChoice].every(v => typeof v === 'string') && Array.isArray(t.choices) && t.choices.length === 4 && t.choices.every(v => typeof v === 'string') && t.choices.includes(t.correctChoice) &&
         (t.selectedChoice === undefined || t.choices.includes(t.selectedChoice)) &&
-        Number.isFinite(t.elapsedMs) && t.elapsedMs >= 0 && [20000, 30000].includes(t.limitMs) && t.elapsedMs <= t.limitMs &&
+        Number.isFinite(t.elapsedMs) && t.elapsedMs >= 0 && [15000, 20000, 30000, 40000].includes(t.limitMs) && t.elapsedMs <= t.limitMs &&
         Number.isFinite(t.observedMs) && t.observedMs >= t.elapsedMs && typeof t.interrupted === 'boolean'
       )
     );

@@ -1,3 +1,4 @@
+import { timeLimitMs } from '../src/quiz/engine.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -14,7 +15,7 @@ test('record roundtrip keeps selected answer text and actual per-domain deadline
   assert.deepEqual(parseRecords(JSON.stringify([record])), [record]);
   for (const t of record.trials) {
     assert.equal(t.selectedChoice, t.correctChoice);
-    assert.equal(t.limitMs, ['reading','discourse'].includes(t.domain) ? 30000 : 20000);
+    assert.equal(t.limitMs, timeLimitMs(bank.find(q => q.id === t.id)));
   }
   assert.throws(() => makeRecord(startQuiz(bank), 'v1', [], 'id', new Date().toISOString()));
 });
