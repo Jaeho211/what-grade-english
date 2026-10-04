@@ -495,7 +495,7 @@
       "수요일"
     ],
     "answer": 0,
-    "explanation": "보통은 금요일이지만 this week와 instead가 이번 주 목요일로 바뀌었음을 알려줍니다.",
+    "explanation": "평소 모임은 Friday이지만 This week와 instead가 이번 주의 변경을 알려 줍니다. 따라서 이번 주에는 Thursday, 목요일에 만납니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -509,13 +509,13 @@
     "passage": "Jina has two cats. One is black, and the other is white.",
     "prompt": "지나의 고양이들에 대한 설명은?",
     "choices": [
-      "둘 다 검다",
+      "두 마리 모두 검다",
       "검은 고양이와 흰 고양이가 한 마리씩 있다",
-      "세 마리다",
-      "둘 다 하얗다"
+      "검은 고양이 한 마리만 있다",
+      "두 마리 모두 하얗다"
     ],
     "answer": 1,
-    "explanation": "one과 the other는 두 마리 중 각각 하나를 가리킵니다.",
+    "explanation": "two cats는 두 마리입니다. One은 그중 한 마리, the other는 나머지 한 마리를 가리키므로 각각 검은색과 흰색입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -530,12 +530,12 @@
     "prompt": "지금 예약할 수 있는 투어는?",
     "choices": [
       "오후 2시 투어",
+      "오전과 오후 투어 모두",
       "오전 투어",
-      "저녁 6시 투어",
-      "모든 투어"
+      "표가 남아 있는 투어가 없다"
     ],
     "answer": 0,
-    "explanation": "오전 투어는 만석이고 오후 2시에 시작하는 투어에는 아직 표가 있습니다. 두 정보를 함께 확인해야 합니다.",
+    "explanation": "morning tour is full은 오전 투어가 만석이라는 뜻입니다. 오후 투어에는 still tickets, 아직 표가 있고 starts at two라고 했으므로 오후 2시 투어를 예약할 수 있습니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -547,7 +547,7 @@
     "skill": "detail-integration",
     "familyId": "detail-choice",
     "passage": "Amy ordered a sandwich and juice. The shop had no juice, so she chose milk instead.",
-    "prompt": "Amy가 실제로 받은 음료는?",
+    "prompt": "Amy가 최종 선택한 음료는?",
     "choices": [
       "주스",
       "물",
@@ -555,7 +555,7 @@
       "우유"
     ],
     "answer": 3,
-    "explanation": "주스가 없어 대신 milk를 골랐다는 정보를 확인해야 합니다.",
+    "explanation": "처음 주문한 음료는 juice지만 가게에 없었습니다. chose milk instead는 대신 우유를 골랐다는 뜻이므로 최종 선택은 우유입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -569,13 +569,13 @@
     "passage": "Dan took a taxi because he was late for school.",
     "prompt": "택시를 탄 이유는?",
     "choices": [
-      "비가 와서",
-      "학교가 문을 닫아서",
-      "학교에 늦어서",
-      "택시를 운전하려고"
+      "비가 와서 걷기 어려웠기 때문에",
+      "학교가 일찍 문을 닫았기 때문에",
+      "학교에 늦었기 때문에",
+      "택시 타는 법을 배우기 위해"
     ],
     "answer": 2,
-    "explanation": "because 뒤가 이유입니다. 글에는 날씨 이야기가 없습니다.",
+    "explanation": "because 뒤의 he was late for school이 택시를 탄 이유입니다. 날씨나 학교의 운영 시간은 나오지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -589,13 +589,13 @@
     "passage": "Mina went to the store to buy milk for breakfast.",
     "prompt": "가게에 간 목적은?",
     "choices": [
-      "점심을 먹으려고",
-      "친구를 만나려고",
-      "가게에서 일하려고",
+      "가게에서 아침을 먹으려고",
+      "아침 음식을 가게에 팔려고",
+      "가게에서 일할 준비를 하려고",
       "아침에 먹을 우유를 사려고"
     ],
     "answer": 3,
-    "explanation": "to buy milk가 가게에 간 목적입니다.",
+    "explanation": "to buy milk는 우유를 사려는 목적이고 for breakfast는 아침 식사용이라는 뜻입니다. 가게에서 식사하거나 일을 하러 간다는 내용은 없습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -604,18 +604,18 @@
     "level": 2,
     "slotId": "L2-R02",
     "domain": "reading",
-    "skill": "reason",
+    "skill": "purpose",
     "familyId": "reason-choice",
     "passage": "Ben left home early to buy a cake before school.",
     "prompt": "Ben이 일찍 나온 목적은?",
     "choices": [
-      "버스를 피하기",
-      "친구에게 책 주기",
-      "일찍 잠들기",
-      "등교 전에 케이크 사기"
+      "학교에서 케이크를 만들기 위해",
+      "등교 후 케이크를 사기 위해",
+      "케이크 가게에서 일하기 위해",
+      "등교 전에 케이크를 사기 위해"
     ],
     "answer": 3,
-    "explanation": "to buy a cake가 일찍 나온 목적을 나타냅니다.",
+    "explanation": "to buy a cake는 케이크를 사려는 목적입니다. before school은 등교 전이라는 뜻이므로 등교 후에 사거나 직접 만들러 간다는 보기는 맞지 않습니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -629,13 +629,13 @@
     "passage": "Yuna closed the window because the street was noisy.",
     "prompt": "Yuna가 창문을 닫은 이유는?",
     "choices": [
-      "거리의 소음",
-      "추운 날씨",
-      "비가 오는 것",
-      "창문 청소"
+      "거리의 소음 때문에",
+      "거리의 추위 때문에",
+      "집 안의 소음 때문에",
+      "창문을 청소하기 위해"
     ],
     "answer": 0,
-    "explanation": "because 뒤에서 거리가 시끄러웠다는 이유를 설명합니다.",
+    "explanation": "because the street was noisy는 거리가 시끄러웠기 때문이라는 뜻입니다. 추위나 집 안 소음이 이유라는 내용은 없습니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -649,13 +649,13 @@
     "passage": "I like making cakes. I often bake with my dad. We try new recipes together.",
     "prompt": "글의 중심 내용은?",
     "choices": [
-      "함께 즐기는 제빵 활동",
-      "아빠의 직업",
-      "케이크를 사는 곳",
-      "음식을 먹지 않는 이유"
+      "아빠와 함께 즐기는 제빵 활동",
+      "아빠가 운영하는 빵집",
+      "케이크 재료를 사는 방법",
+      "새 조리법을 책으로 만드는 일"
     ],
     "answer": 0,
-    "explanation": "케이크 만들기, 굽기, 새 조리법 시도가 모두 제빵 활동을 설명합니다.",
+    "explanation": "making cakes, bake, try new recipes는 모두 케이크를 만드는 활동입니다. 아빠와 함께 한다고 했지만 아빠의 직업이나 조리법 책 제작은 나오지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -669,13 +669,13 @@
     "passage": "Our park has many trees. People walk there. Children play there after school.",
     "prompt": "글의 중심 내용은?",
     "choices": [
-      "학교 수업 시간",
-      "사람들이 이용하는 동네 공원",
-      "나무를 자르는 방법",
-      "아이들의 시험 준비"
+      "학교에 나무를 심는 활동",
+      "사람들이 산책하고 노는 공원",
+      "방과 후 운동 수업의 규칙",
+      "어린이만 이용할 수 있는 공원"
     ],
     "answer": 1,
-    "explanation": "나무와 산책, 놀이가 모두 공원에 관한 설명입니다.",
+    "explanation": "나무, 사람들의 산책, 아이들의 놀이가 모두 공원을 설명합니다. 학교 수업 규칙이나 어린이만 이용할 수 있다는 제한은 없습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -690,12 +690,12 @@
     "prompt": "글의 중심 내용은?",
     "choices": [
       "환경을 생각하는 생활 습관",
-      "새 학교를 찾는 방법",
-      "운동 대회를 준비하는 법",
-      "방을 꾸미는 방법"
+      "학교까지 가는 길의 안내",
+      "운동량을 늘리는 계획",
+      "새 물병을 고르는 기준"
     ],
     "answer": 0,
-    "explanation": "걷기·재사용 물병·불 끄기는 환경을 위한 작은 생활 습관입니다.",
+    "explanation": "걷기뿐 아니라 reusable bottle과 빈 방의 불 끄기가 함께 나옵니다. 세 행동을 포괄하는 내용은 환경을 생각하는 생활 습관입니다. 운동 계획이나 물병 고르기는 일부 행동만 보고 고른 보기입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -709,13 +709,13 @@
     "passage": "Sam practices the piano every day. He tries difficult songs slowly. When he makes mistakes, he tries again.",
     "prompt": "글의 중심 내용은?",
     "choices": [
-      "공연을 취소한 이유",
-      "꾸준히 연습하는 태도",
-      "피아노를 사는 방법",
-      "음악을 크게 듣는 이유"
+      "어려운 곡을 공연에서 피하는 태도",
+      "실수해도 꾸준히 연습하는 태도",
+      "피아노 수업의 시간을 정하는 방법",
+      "쉬운 곡만 골라 연습하는 방법"
     ],
     "answer": 1,
-    "explanation": "매일 연습하고 실수해도 다시 시도하는 태도를 보여 줍니다.",
+    "explanation": "every day와 tries again은 꾸준한 연습을 보여 줍니다. difficult songs를 천천히 연습하므로 어려운 곡을 피하거나 쉬운 곡만 고른다는 보기는 반대입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },

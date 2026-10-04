@@ -495,7 +495,7 @@
       "토요일"
     ],
     "answer": 0,
-    "explanation": "on Sunday에 방문한다고 직접 나와 있습니다.",
+    "explanation": "on Sunday는 ‘일요일에’라는 뜻입니다. 미나가 할머니를 방문하는 날은 일요일입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -515,7 +515,7 @@
       "토끼"
     ],
     "answer": 1,
-    "explanation": "앞 문장의 dog를 its가 받습니다.",
+    "explanation": "Tom has a dog는 톰에게 개가 있다는 뜻입니다. 다음 문장의 Its name은 그 개의 이름을 말하므로 Happy는 개입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -535,7 +535,7 @@
       "3시"
     ],
     "answer": 1,
-    "explanation": "starts at two가 시작 시간을 직접 알려 줍니다.",
+    "explanation": "starts at two는 ‘2시에 시작한다’는 뜻입니다. bring a pencil은 연필을 가져오라는 말이며 시작 시간과는 별개의 정보입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -546,16 +546,16 @@
     "domain": "reading",
     "skill": "explicit-detail",
     "familyId": "detail-choice",
-    "passage": "Mina has a dog. Its name is Coco.",
-    "prompt": "Coco는 어떤 동물인가요?",
+    "passage": "Mina has a red bag. She puts her books in it.",
+    "prompt": "미나는 책을 어디에 넣나요?",
     "choices": [
-      "새",
-      "토끼",
-      "개",
-      "고양이"
+      "책상 위",
+      "상자 안",
+      "가방 안",
+      "의자 위"
     ],
     "answer": 2,
-    "explanation": "앞 문장의 a dog를 다음 문장의 Its가 가리킵니다.",
+    "explanation": "a red bag은 빨간 가방입니다. in it의 it은 앞 문장의 가방을 가리키므로 책을 가방 안에 넣습니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -569,13 +569,13 @@
     "passage": "I like apples. I like bananas, too.",
     "prompt": "주로 무엇에 관한 글인가요?",
     "choices": [
-      "좋아하는 운동",
-      "가고 싶은 학교",
-      "좋아하는 과일",
-      "키우는 동물"
+      "좋아하는 과일의 색깔",
+      "과일을 사는 장소",
+      "좋아하는 과일의 종류",
+      "과일을 먹는 시간"
     ],
     "answer": 2,
-    "explanation": "사과와 바나나는 모두 과일이며 둘 다 좋아한다고 합니다.",
+    "explanation": "I like apples와 I like bananas는 사과와 바나나를 좋아한다는 뜻입니다. 공통 내용은 좋아하는 과일이며 색깔·장소·시간은 나오지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -589,13 +589,13 @@
     "passage": "It is cold today. Snow is falling.",
     "prompt": "무엇을 설명하는 글인가요?",
     "choices": [
-      "가게의 가격",
-      "내일의 숙제",
-      "가족의 이름",
+      "오늘 입은 옷",
+      "내일의 날씨",
+      "오늘 할 운동",
       "오늘의 날씨"
     ],
     "answer": 3,
-    "explanation": "추위와 눈은 오늘의 날씨에 관한 정보입니다.",
+    "explanation": "cold는 춥다는 뜻이고 Snow is falling은 눈이 내린다는 뜻입니다. today가 있으므로 오늘의 날씨를 설명합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -606,16 +606,16 @@
     "domain": "reading",
     "skill": "simple-main-idea",
     "familyId": "main-idea-choice",
-    "passage": "I like apples. I also like oranges. I eat fruit every day.",
+    "passage": "I like drawing animals. I draw cats and birds after school.",
     "prompt": "이 글은 무엇에 관한 글인가요?",
     "choices": [
-      "운동 규칙",
-      "여행 계획",
-      "좋아하는 과일",
-      "학교 시간표"
+      "집에서 키우는 동물",
+      "학교에서 배우는 과목",
+      "즐겨 그리는 동물 그림",
+      "공원에서 만난 동물"
     ],
     "answer": 2,
-    "explanation": "사과와 오렌지를 좋아하고 매일 과일을 먹는다는 내용입니다.",
+    "explanation": "drawing animals는 동물을 그리는 일입니다. 고양이와 새를 그린다는 내용도 이어지므로, 키우거나 만나는 동물이 아니라 즐겨 그리는 그림에 관한 글입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -629,13 +629,13 @@
     "passage": "We run in the park. We play soccer there, too.",
     "prompt": "두 문장에 공통으로 나오는 내용은?",
     "choices": [
-      "집에서 하는 공부",
-      "식당에서 먹는 음식",
-      "학교에서 듣는 음악",
+      "공원에서 먹는 음식",
+      "학교에서 하는 운동",
+      "공원에서 보는 동물",
       "공원에서 하는 운동"
     ],
     "answer": 3,
-    "explanation": "공원에서 달리기와 축구를 한다는 내용입니다.",
+    "explanation": "run은 달리기, play soccer는 축구하기입니다. there는 앞 문장의 공원을 가리키므로 두 활동 모두 공원에서 하는 운동입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -650,12 +650,12 @@
     "prompt": "이 글을 쓴 목적은?",
     "choices": [
       "생일 파티에 초대하기",
-      "숙제 알려주기",
-      "날씨 설명하기",
-      "물건 팔기"
+      "생일 선물을 부탁하기",
+      "생일 파티를 취소하기",
+      "생일 날짜를 물어보기"
     ],
     "answer": 0,
-    "explanation": "come to my birthday party는 생일 파티에 와 달라는 초대입니다.",
+    "explanation": "Please come to my birthday party는 ‘내 생일 파티에 와 주세요’라는 뜻입니다. 선물을 부탁하거나 날짜를 묻는 말이 아니라 초대입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -669,13 +669,13 @@
     "passage": "Please wash your hands before lunch.",
     "prompt": "이 글에서 부탁하는 것은?",
     "choices": [
-      "점심 사 오기",
+      "점심 뒤에 손 씻기",
       "점심 전에 손 씻기",
-      "음식 만들기",
-      "식탁 옮기기"
+      "점심 음식을 준비하기",
+      "점심 시간을 바꾸기"
     ],
     "answer": 1,
-    "explanation": "wash your hands는 손을 씻으라는 부탁입니다.",
+    "explanation": "wash your hands는 손을 씻으라는 말입니다. before lunch는 점심 전이라는 뜻이므로 점심 뒤에 씻으라는 보기는 맞지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -686,16 +686,16 @@
     "domain": "reading",
     "skill": "simple-intention",
     "familyId": "intention-choice",
-    "passage": "Come to my birthday party on Saturday! It starts at three.",
+    "passage": "Come to our school concert on Friday! It starts at three.",
     "prompt": "이 메시지를 쓴 목적은?",
     "choices": [
-      "물건을 돌려 달라고 하기",
-      "수업을 취소하기",
-      "길을 알려 주기",
-      "생일 파티에 초대하기"
+      "학교 공연을 취소하기",
+      "공연 시간을 물어보기",
+      "공연에 쓸 악기를 빌리기",
+      "학교 공연에 초대하기"
     ],
     "answer": 3,
-    "explanation": "Come to my birthday party는 생일 파티에 오라는 초대입니다.",
+    "explanation": "Come to our school concert는 학교 공연에 오라는 초대입니다. 금요일 3시에 시작한다는 안내도 있지만 메시지의 목적은 공연 초대입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -709,13 +709,13 @@
     "passage": "Please return my blue pen tomorrow. I need it for class.",
     "prompt": "이 메시지를 쓴 목적은?",
     "choices": [
-      "펜을 돌려 달라고 부탁하기",
-      "파란 펜을 사기",
-      "수업 시간을 바꾸기",
-      "내일 놀자고 하기"
+      "자신의 펜을 돌려 달라고 부탁하기",
+      "파란 펜을 사 달라고 부탁하기",
+      "펜을 내일까지 빌려 주겠다고 하기",
+      "수업에 필요한 펜의 색을 물어보기"
     ],
     "answer": 0,
-    "explanation": "return my blue pen은 빌린 펜을 돌려 달라는 부탁입니다.",
+    "explanation": "return my blue pen은 자신의 파란 펜을 돌려 달라는 말입니다. 새 펜을 사 달라거나 빌려 주겠다는 뜻이 아닙니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },

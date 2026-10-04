@@ -489,13 +489,13 @@
     "passage": "I understand your point, but a cheaper plan might help more students join.",
     "prompt": "글쓴이가 하려는 일은?",
     "choices": [
-      "더 저렴한 대안을 제안하기",
-      "상대의 말을 전부 인정하기",
-      "참여 학생을 줄이기",
-      "어떤 계획도 거부하기"
+      "참여를 늘릴 수 있는 더 저렴한 대안을 제안하기",
+      "비용을 늘려 계획의 질을 높이자고 제안하기",
+      "상대가 제안한 계획을 수정 없이 지지하기",
+      "참여 인원보다 계획의 비용이 중요하지 않다고 말하기"
     ],
     "answer": 0,
-    "explanation": "상대 의견을 이해하면서 더 많은 참여를 위한 저렴한 대안을 제안합니다.",
+    "explanation": "I understand your point는 상대 의견을 이해한다는 말이지만 but 뒤에서 더 저렴한 계획을 제안합니다. 상대의 계획을 그대로 지지하거나 비용을 높이자는 것이 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -509,13 +509,13 @@
     "passage": "The project took longer than expected, but seeing everyone's smiles made the effort worthwhile.",
     "prompt": "글쓴이의 태도는?",
     "choices": [
-      "시간이 오래 걸려 전부 후회한다",
-      "노력의 결과에 보람을 느낀다",
-      "결과에 관심이 없다",
-      "다른 사람을 비난한다"
+      "예상보다 늦어진 결과를 아쉬워하고 있다",
+      "시간이 더 걸렸어도 노력의 결과에 보람을 느낀다",
+      "사람들의 반응보다 일정 준수를 더 중시한다",
+      "다음에는 같은 프로젝트를 피하려고 한다"
     ],
     "answer": 1,
-    "explanation": "시간이 더 걸렸지만 worthwhile에서 노력할 가치와 보람을 느낀다는 것을 알 수 있습니다.",
+    "explanation": "took longer는 예상보다 오래 걸렸다는 뜻이지만 but 뒤의 smiles와 worthwhile이 평가의 중심입니다. 노력이 가치 있었다고 느끼므로 단순한 후회나 회피가 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -524,18 +524,18 @@
     "level": 4,
     "slotId": "L4-R01",
     "domain": "reading",
-    "skill": "author-intention",
+    "skill": "author-attitude",
     "familyId": "intention-choice",
     "passage": "Thank you for fixing the mistake so quickly. I was worried, but your help made a big difference.",
     "prompt": "필자의 태도는?",
     "choices": [
-      "고마워한다",
-      "비난한다",
-      "의심한다",
-      "무관심하다"
+      "걱정을 덜어 준 도움에 고마워한다",
+      "수정된 결과를 확인하기 전까지 의심한다",
+      "실수의 책임을 상대에게 따지고 있다",
+      "도움보다 해결 속도가 느린 점을 아쉬워한다"
     ],
     "answer": 0,
-    "explanation": "빠른 해결에 감사하고 도움의 효과를 긍정적으로 평가합니다.",
+    "explanation": "Thank you와 made a big difference가 감사의 근거입니다. was worried는 이전의 걱정이고 지금의 태도는 긍정적입니다. so quickly도 느렸다는 보기와 반대입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -544,18 +544,18 @@
     "level": 4,
     "slotId": "L4-R01",
     "domain": "reading",
-    "skill": "author-intention",
+    "skill": "author-attitude",
     "familyId": "intention-choice",
     "passage": "The delivery was promised for Monday. It is Thursday, and I still have no package or explanation.",
     "prompt": "필자의 태도로 가장 적절한 것은?",
     "choices": [
-      "재미있어한다",
-      "불만스럽다",
-      "만족스럽다",
-      "기대에 차 있다"
+      "배송이 도착해 안도한다",
+      "약속을 지키지 않고 설명도 없는 점에 불만스럽다",
+      "배송 예정일이 바뀐 설명을 받아들인다",
+      "월요일 배송 약속에 기대감을 표현한다"
     ],
     "answer": 1,
-    "explanation": "약속보다 늦었고 설명도 없다는 내용을 통해 불만을 알 수 있습니다.",
+    "explanation": "Monday로 약속했는데 Thursday에도 물건과 설명이 없습니다. 약속 위반에 대한 불만이 자연스럽습니다. 배송 도착이나 변경 설명을 받은 상황은 아니며 월요일을 기다리는 시점도 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -569,13 +569,13 @@
     "passage": "The town added more buses. Soon, fewer people drove to work, and traffic became lighter.",
     "prompt": "교통량 감소를 설명하는 추론은?",
     "choices": [
-      "모든 도로가 넓어졌다",
-      "모든 직장이 문을 닫았다",
-      "일부 사람이 자동차 대신 버스를 이용했다",
-      "버스 운행이 중단됐다"
+      "버스가 늘면서 자동차 이용자도 늘었다",
+      "교통량 감소는 도로가 넓어진 결과이다",
+      "일부 통근자가 자동차 대신 버스를 이용했을 수 있다",
+      "버스 증가 뒤 사람들이 출근 횟수를 줄였다"
     ],
     "answer": 2,
-    "explanation": "버스 증가와 자동차 이용 감소를 연결하면 일부가 버스로 이동했음을 추론할 수 있습니다. 모든 사람에 관한 단정은 없습니다.",
+    "explanation": "버스 증가, 자동차 출근 감소, 교통 완화를 연결하면 일부 통근자의 버스 전환 가능성이 있습니다. 도로 확장이나 출근 횟수 변화는 나오지 않으므로 별도 원인을 추가한 보기입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -589,13 +589,13 @@
     "passage": "The cafe stopped providing plastic straws. Customers began bringing reusable ones.",
     "prompt": "변화에 가장 타당한 설명은?",
     "choices": [
-      "플라스틱 빨대가 더 많이 제공됐다",
-      "카페가 음료 판매를 중단했다",
-      "손님이 카페에 오지 않게 됐다",
-      "일회용 빨대 대신 재사용 빨대를 쓰게 됐다"
+      "재사용 빨대 제공이 중단되어 플라스틱 빨대를 가져왔다",
+      "카페가 음료 판매를 줄여 빨대 사용도 줄었다",
+      "손님이 가져온 빨대도 카페가 제공한 것이다",
+      "제공 중단 후 손님들이 재사용 빨대를 직접 가져왔다"
     ],
     "answer": 3,
-    "explanation": "제공 중단 이후 손님이 재사용 빨대를 가져오는 변화가 직접 연결됩니다.",
+    "explanation": "stopped providing plastic straws 뒤에 began bringing reusable ones가 이어집니다. 제공을 중단한 것은 플라스틱 빨대이고 재사용 빨대는 손님이 가져온 것입니다. 음료 판매 감소는 제시되지 않았습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -609,13 +609,13 @@
     "passage": "The town made the main street car-free on weekends. More families now walk there, and nearby cafés have more customers.",
     "prompt": "변화의 결과로 가장 적절한 것은?",
     "choices": [
-      "카페의 손님이 줄어들었다",
-      "보행자 증가가 주변 가게에도 도움이 되었다",
-      "모든 차가 영구적으로 금지되었다",
-      "가족들이 그 거리를 피하게 되었다"
+      "차량 제한 뒤 카페의 영업일이 늘어났다",
+      "차량 제한 뒤 늘어난 보행자가 주변 가게에 도움이 됐을 수 있다",
+      "가족이 늘어 평일에도 차량 통행을 금지했다",
+      "카페 이용자가 늘어 가족들은 거리를 피하게 됐다"
     ],
     "answer": 1,
-    "explanation": "주말 차량 제한 뒤 보행 가족과 카페 손님이 모두 늘었습니다.",
+    "explanation": "차량 제한 뒤 걷는 가족과 카페 손님이 모두 늘었습니다. 보행자 증가가 가게에 도움이 됐을 가능성이 있습니다. 영업일 변화나 평일 제한은 없고 가족들이 피한다는 보기는 반대입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -629,13 +629,13 @@
     "passage": "The school moved its bike racks under a roof. After rainy days, fewer students complained about wet seats.",
     "prompt": "불만이 줄어든 이유로 가장 적절한 것은?",
     "choices": [
-      "학교에 비가 오지 않게 되어서",
-      "자전거 보관대가 사라져서",
-      "지붕이 자전거를 비로부터 보호해서",
-      "학생들이 자전거를 모두 팔아서"
+      "보관대 이동 뒤 비 오는 날이 줄었기 때문에",
+      "보관대 이동 뒤 학생들이 자전거를 덜 탔기 때문에",
+      "지붕이 비를 막아 안장이 덜 젖었기 때문에",
+      "보관대가 비를 맞는 장소로 옮겨졌기 때문에"
     ],
     "answer": 2,
-    "explanation": "지붕 아래로 옮긴 뒤 젖은 안장에 대한 불만이 줄었으므로 비를 막은 효과입니다.",
+    "explanation": "under a roof로 옮긴 뒤 비 오는 날의 젖은 안장 불만이 줄었습니다. 지붕의 비 차단 효과가 자연스러운 설명입니다. 강수나 자전거 이용량 변화는 제시되지 않았습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -650,12 +650,12 @@
     "prompt": "상황에서 미나가 암시하는 요청은?",
     "choices": [
       "창문을 닫아 달라",
-      "밖에서 놀자",
-      "냉방을 더 세게 하자",
-      "새 창문을 사자"
+      "밖의 온도를 확인해 달라",
+      "창문을 더 열어 달라",
+      "추운 방으로 자리를 옮기자"
     ],
     "answer": 0,
-    "explanation": "열린 창문과 추위를 함께 언급하므로 닫아 달라는 간접 요청이 자연스럽습니다.",
+    "explanation": "열린 창문과 실내의 추위를 함께 언급하는 상황에서는 창문을 닫아 달라는 간접 요청이 자연스럽습니다. 밖의 온도 확인이나 자리 이동은 주어진 상황의 가장 직접적인 해결이 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -667,15 +667,15 @@
     "skill": "implication",
     "familyId": "indirect-request",
     "passage": "You are playing loud music. Your sister says, 'I'm trying to study.'",
-    "prompt": "동생이 암시하는 요청은?",
+    "prompt": "상대방이 암시하는 요청은?",
     "choices": [
-      "공부를 대신 해 달라",
+      "공부 내용을 설명해 달라",
       "음악 소리를 줄여 달라",
-      "음악을 더 크게 틀어 달라",
-      "같이 노래하자"
+      "공부를 끝낼 때까지 음악을 골라 달라",
+      "같이 음악을 들으며 공부하자"
     ],
     "answer": 1,
-    "explanation": "시끄러운 음악 중 공부 중임을 말하는 것은 조용히 해 달라는 간접 요청입니다.",
+    "explanation": "큰 음악이 나오는 상황에서 공부 중이라고 말합니다. 이 맥락에서는 공부 설명이나 공동 활동 제안보다 조용히 해 달라는 간접 요청이 자연스럽습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -689,13 +689,13 @@
     "passage": "A: Shall we sit outside? B: Those clouds look very dark.",
     "prompt": "B가 암시하는 것은?",
     "choices": [
-      "밖에는 의자가 전혀 없다",
-      "이미 식사를 마쳤다",
-      "비가 올 수 있으니 안에 앉는 게 좋겠다",
-      "구름 사진을 찍고 싶다"
+      "구름이 있는 자리로 옮겨 앉자",
+      "밖에 앉기 전에 식사를 주문하자",
+      "비가 올 수 있으니 밖에 앉는 것을 피하자",
+      "밖에서 구름 사진을 찍자"
     ],
     "answer": 2,
-    "explanation": "밖에 앉자는 제안에 먹구름을 언급한 것은 비가 올 가능성을 걱정한 말입니다.",
+    "explanation": "밖에 앉자는 제안에 dark clouds로 답한 것은 비의 가능성을 제안과 연결한 말입니다. 구름 사진이나 주문 순서가 아니라 야외 자리를 피하자는 암시가 자연스럽습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -709,13 +709,13 @@
     "passage": "A: Can you help me move this table? B: I have a train to catch in ten minutes.",
     "prompt": "B가 암시하는 것은?",
     "choices": [
-      "테이블이 너무 가볍다",
-      "기차가 이미 떠났다",
-      "테이블을 기차로 옮기자",
-      "지금 도와줄 시간이 부족하다"
+      "기차를 타기 전에 테이블을 옮겨 달라",
+      "테이블을 기차역으로 가져가 달라",
+      "기차를 놓쳤으니 나중에 도와주겠다",
+      "기차를 곧 타야 해서 지금 도와주기 어렵다"
     ],
     "answer": 3,
-    "explanation": "곧 기차를 타야 한다는 말은 지금 도움을 주기 어렵다는 뜻을 전달합니다.",
+    "explanation": "도움을 요청받은 사람이 ten minutes 안에 기차를 타야 한다고 답했습니다. 시간이 부족하다는 간접 거절로 이해하는 것이 자연스럽습니다. 이미 기차를 놓쳤거나 테이블을 역으로 옮기라는 뜻은 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
