@@ -490,12 +490,12 @@
     "prompt": "필자의 입장은?",
     "choices": [
       "효율성을 평가할 때 혜택의 분배도 살펴야 한다",
-      "속도가 빠르면 모든 사람이 혜택을 얻는다",
-      "효율적인 시스템은 반드시 폐기해야 한다",
-      "효율성과 혜택은 비교할 수 없다"
+      "속도를 충분히 높이면 혜택의 분배 문제도 해결된다",
+      "혜택을 받는 사람 수를 속도보다 먼저 평가해야 한다",
+      "일부가 소외되면 시스템의 속도는 평가할 가치가 없다"
     ],
     "answer": 0,
-    "explanation": "속도만 칭찬하지 말고 who benefits를 살피라고 하므로 혜택 분배도 평가해야 합니다.",
+    "explanation": "efficient와 leave some people behind가 함께 성립할 수 있습니다. who benefits를 묻지 않으면 중요한 부분을 놓치므로 속도와 혜택 분배를 함께 봐야 합니다. 어느 것을 먼저 볼지 정하거나 속도의 가치를 부정하지는 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -509,13 +509,13 @@
     "passage": "New technology can widen access, yet access alone does not ensure meaningful participation. Users also need the skills to make use of it.",
     "prompt": "필자의 입장은?",
     "choices": [
-      "기술 접근성 확대는 의미가 없다",
+      "활용 능력을 높이면 접근 기회를 따로 보장할 필요가 없다",
       "접근 기회와 활용 능력이 함께 필요하다",
-      "접근만 보장하면 참여가 완성된다",
-      "기술을 쓸 능력은 접근과 관계없다"
+      "접근성이 넓어지면 활용 능력은 자연스럽게 따라온다",
+      "참여 확대보다 기술을 쓸 사람의 선발이 중요하다"
     ],
     "answer": 1,
-    "explanation": "access alone does not ensure는 접근 기회만으로는 보장하지 못한다는 뜻입니다. also need the skills는 활용 능력도 필요하다는 말이므로 두 조건이 함께 필요합니다. 접근 기회가 무의미하다는 주장은 아닙니다.",
+    "explanation": "access alone does not ensure는 접근만으로 충분하지 않다는 뜻이고 also need the skills는 활용 능력도 요구합니다. 둘 중 하나가 다른 하나를 대신하거나 자동으로 만들어 준다는 내용은 없습니다. 사용자 선발을 주장하지도 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -529,13 +529,13 @@
     "passage": "The policy promises faster service, but speed alone is not enough. Without checks on accuracy, quicker decisions may simply produce mistakes sooner.",
     "prompt": "필자의 입장은?",
     "choices": [
-      "서비스 속도를 전혀 높이면 안 된다",
-      "정확성보다 홍보가 중요하다",
+      "속도를 높인 뒤 오류 확인을 줄여야 한다",
+      "처리 속도가 빨라지면 오류도 줄어들 것이다",
       "속도 개선에는 정확성 확인이 필요하다",
-      "빠른 결정은 언제나 정확하다"
+      "정확성을 지키려면 처리 속도를 낮춰야 한다"
     ],
     "answer": 2,
-    "explanation": "속도의 가치 자체를 부정하지 않고 정확성을 함께 확인하라고 요구합니다.",
+    "explanation": "Without checks on accuracy 뒤에 실수가 더 빨리 생길 수 있다고 합니다. 따라서 속도 개선에 정확성 확인이 함께 필요합니다. 속도를 낮춰야 한다거나 빠른 처리 자체가 오류를 줄인다는 결론은 나오지 않습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -549,13 +549,13 @@
     "passage": "Digital records are convenient, yet systems can fail. Keeping a separate backup is a modest precaution, not a rejection of technology.",
     "prompt": "필자의 입장은?",
     "choices": [
-      "종이 기록만 사용해야 한다",
-      "시스템 고장은 무시해도 된다",
-      "백업은 기술 발전을 방해한다",
-      "기술을 쓰면서 대비책도 마련해야 한다"
+      "별도 백업을 두는 것은 디지털 기록을 포기하는 일이다",
+      "디지털 기록이 편리해질수록 백업의 필요성은 줄어든다",
+      "장애가 발생한 뒤에 백업 여부를 결정해야 한다",
+      "디지털 기록을 쓰면서 장애 대비책도 마련해야 한다"
     ],
     "answer": 3,
-    "explanation": "디지털 기록을 인정하면서 장애에 대비한 백업을 권합니다.",
+    "explanation": "convenient는 디지털 기록의 장점, systems can fail은 대비가 필요한 이유입니다. not a rejection은 백업이 기술 포기를 뜻하지 않는다고 명시합니다. 고장 뒤 결정하는 것이 아니라 미리 precaution을 마련하는 주장입니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -566,16 +566,16 @@
     "domain": "reading",
     "skill": "supported-inference",
     "familyId": "evidence-choice",
-    "passage": "Two classes used the same textbook. One also received weekly feedback and improved more. The difference suggests that materials alone may not explain progress.",
-    "prompt": "뒷받침되는 결론은?",
+    "passage": "Two classes used the same textbook. One received weekly feedback and had fewer students, then improved more. The school credits feedback for the difference.",
+    "prompt": "학교의 설명을 평가할 때 주의할 점은?",
     "choices": [
-      "피드백만 있으면 모든 학생이 향상된다",
-      "교재는 학습에 아무 영향이 없다",
-      "피드백이 학습 향상에 기여했을 가능성이 있다",
-      "두 학급의 능력은 시작부터 같았다"
+      "교재가 같으므로 다른 수업 조건도 비슷했을 것이다",
+      "학생 수가 적은 반은 피드백의 영향을 받지 않는다",
+      "두 조건이 함께 달라 피드백의 효과만 분리하기 어렵다",
+      "향상 차이가 있으므로 피드백의 효과 크기를 계산할 수 있다"
     ],
     "answer": 2,
-    "explanation": "같은 교재에서도 피드백 차이와 향상 차이가 연결됩니다. 다른 변수까지 통제했다고는 하지 않습니다.",
+    "explanation": "더 향상된 반은 weekly feedback과 fewer students라는 두 조건이 함께 달랐습니다. 따라서 결과 차이를 피드백 하나의 효과로 분리하기 어렵습니다. 같은 교재가 다른 조건의 동일성을 보장하지 않고, 학생 수가 적다는 사실이 피드백 효과를 없애지도 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -589,13 +589,13 @@
     "passage": "A city improved its parks, but use rose mainly in areas with safe walking routes. Physical distance was similar across the areas.",
     "prompt": "뒷받침되는 결론은?",
     "choices": [
-      "모든 지역의 길이 안전했다",
-      "거리는 이용에 언제나 무관하다",
-      "공원을 개선해도 아무도 이용하지 않는다",
-      "접근 경로의 안전성이 이용에 영향을 줄 수 있다"
+      "이용이 늘어난 지역은 공원까지 거리가 더 짧았을 것이다",
+      "공원 개선의 효과는 시설보다 거리로 설명하는 것이 적절하다",
+      "안전한 경로가 있는 지역의 공원 시설이 더 좋았을 것이다",
+      "비슷한 거리에서도 경로의 안전성이 이용 차이에 관련될 수 있다"
     ],
     "answer": 3,
-    "explanation": "비슷한 거리에도 안전한 경로가 있는 곳에서 이용 증가가 더 크므로 안전성의 영향을 추론할 수 있습니다.",
+    "explanation": "거리는 비슷한데 안전한 경로가 있는 곳에서 이용이 주로 늘었습니다. 이 차이는 안전성이 이용에 관련될 가능성을 뒷받침합니다. 거리 차이를 원인으로 삼는 보기는 조건과 맞지 않고 시설 수준의 차이는 제시되지 않았습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -609,13 +609,13 @@
     "passage": "A town added more parking spaces, hoping to reduce congestion. More people then drove into the center, and traffic became heavier.",
     "prompt": "가장 타당한 결론은?",
     "choices": [
-      "주차 공간이 줄어 교통량이 늘었다",
-      "주차 확대는 언제나 혼잡을 줄인다",
-      "대중교통 이용자가 반드시 늘었다",
+      "주차 확대가 교통량 증가 뒤에 시행된 조치였다",
+      "주차 확대 후 혼잡이 줄어 차량 이용이 늘었다",
+      "차량 증가보다 기존 차량의 체류 시간이 혼잡을 설명한다",
       "주차 확대가 추가 차량 이용을 유도했을 수 있다"
     ],
     "answer": 3,
-    "explanation": "주차 확대 후 운전자가 늘었으므로 추가 이용 유발 가능성이 있습니다.",
+    "explanation": "주차를 늘린 뒤 운전자가 늘고 교통이 더 혼잡해졌습니다. 따라서 추가 운전을 유도했을 가능성이 있습니다. 조치와 결과의 순서를 뒤집거나 혼잡이 줄었다고 읽으면 안 됩니다. 체류 시간 변화는 제시되지 않았습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -629,13 +629,13 @@
     "passage": "Workers who chose remote work reported higher satisfaction. They had selected it themselves, and no random assignment was used.",
     "prompt": "이 결과를 해석할 때 주의할 점은?",
     "choices": [
-      "선택한 사람들의 특성이 결과에 영향을 줬을 수 있다",
-      "원격 근무가 모두에게 반드시 좋다",
-      "만족도는 전혀 측정되지 않았다",
-      "무작위 배정이 결과를 왜곡했다"
+      "자발적으로 선택한 집단의 특성이 만족도 차이에 영향을 줬을 수 있다",
+      "만족도가 높은 결과가 있으므로 근무 방식의 효과로 볼 수 있다",
+      "무작위 배정이 없어도 응답자 수가 많으면 집단 차이는 사라진다",
+      "스스로 선택했다는 이유로 보고된 만족도도 믿을 수 없다"
     ],
     "answer": 0,
-    "explanation": "selected it themselves와 no random assignment가 핵심입니다. 원격 근무를 스스로 고른 사람들의 특성이 만족도에 영향을 줬을 수 있어, 원격 근무가 모든 사람의 만족도를 높인다고 결론 내릴 수 없습니다.",
+    "explanation": "selected it themselves와 no random assignment는 선택한 집단의 특성이 다를 가능성을 남깁니다. 만족도가 높다는 관찰만으로 근무 방식의 효과를 분리할 수 없습니다. 응답자 수가 선택 차이를 없애 주거나 만족도 관찰 자체를 무효로 만들지는 않습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -649,13 +649,13 @@
     "passage": "A measure becomes less useful when people focus on improving the score instead of the activity it was meant to represent.",
     "prompt": "글의 요지는?",
     "choices": [
-      "점수 자체가 목표가 되면 지표의 의미가 약해진다",
-      "측정 가능한 활동은 모두 가치가 없다",
-      "점수가 오르면 실제 활동도 반드시 좋아진다",
-      "활동을 개선하려면 측정을 금지해야 한다"
+      "점수 개선이 실제 활동 개선을 대신하면 지표의 의미가 약해진다",
+      "점수에 집중하면 실제 활동의 목적도 더 분명해진다",
+      "지표를 더 자주 측정하는 것이 활동 개선보다 중요하다",
+      "활동이 수치로 표시되면 개선 방향은 점수로 결정해야 한다"
     ],
     "answer": 0,
-    "explanation": "improving the score instead of the activity는 실제 활동 대신 점수 개선에 집중한다는 뜻입니다. 이때 지표가 less useful해지므로, 점수 자체가 목표가 되면 원래 활동을 평가하는 의미가 약해집니다. 측정 자체를 금지하라는 뜻은 아닙니다.",
+    "explanation": "instead of the activity는 원래 활동 대신 점수에 집중한다는 뜻입니다. 이때 measure가 less useful해지므로 점수가 원래 목적을 대신하는 문제가 핵심입니다. 측정 빈도나 점수 중심의 개선을 권하는 내용이 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -669,13 +669,13 @@
     "passage": "Shared rules reduce uncertainty, but rules applied without attention to context can produce unfair outcomes. Consistency needs judgment, not mere repetition.",
     "prompt": "글의 요지는?",
     "choices": [
-      "같은 규칙은 모든 상황에서 공정하다",
+      "같은 규칙을 반복 적용하는 것이 상황 판단보다 공정하다",
       "규칙을 공정하게 적용하려면 상황을 고려해야 한다",
-      "불확실성을 없애려면 규칙을 폐기해야 한다",
-      "규칙은 판단 없이 반복해야 한다"
+      "상황을 고려하려면 공통 규칙을 정하지 않아야 한다",
+      "규칙의 예측 가능성을 높이면 상황 차이도 줄어든다"
     ],
     "answer": 1,
-    "explanation": "without attention to context는 상황을 고려하지 않는다는 뜻이며, 이런 적용이 unfair outcomes를 낳을 수 있다고 합니다. 마지막 문장의 judgment, not mere repetition은 단순 반복 대신 판단이 필요하다는 뜻입니다. 따라서 규칙을 공정하게 적용하려면 상황을 고려해야 합니다. 규칙을 모두 폐기하라는 주장은 아닙니다.",
+    "explanation": "without attention to context인 적용은 unfair outcomes를 낳을 수 있고, judgment, not mere repetition이 필요하다고 합니다. 따라서 규칙을 상황에 맞게 판단해야 합니다. 공통 규칙의 장점도 인정하므로 규칙을 정하지 말라는 뜻은 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -689,13 +689,13 @@
     "passage": "Rules make behavior predictable, but situations differ. Effective judgment requires knowing when a rule's purpose matters more than its exact wording.",
     "prompt": "글의 핵심은?",
     "choices": [
-      "규칙 적용에는 목적과 상황을 고려해야 한다",
-      "규칙은 모두 없애야 한다",
-      "문구만 따르면 판단이 항상 옳다",
-      "예측 가능한 행동은 불필요하다"
+      "규칙을 적용할 때 문구뿐 아니라 목적과 상황을 살펴야 한다",
+      "규칙의 목적은 문구를 똑같이 반복하는 데 있다",
+      "상황이 다르면 규칙의 목적도 새로 정해야 한다",
+      "행동을 예측하기 쉽게 만드는 것이 판단의 충분한 기준이다"
     ],
     "answer": 0,
-    "explanation": "규칙의 필요성을 인정하되 상황에 맞게 목적을 이해하는 판단을 강조합니다.",
+    "explanation": "situations differ와 purpose matters more than its exact wording이 연결됩니다. 문구를 그대로 반복하기보다 목적과 상황을 이해해야 합니다. 목적을 매번 새로 정하라는 뜻이나 예측 가능성만으로 충분하다는 주장은 아닙니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -709,13 +709,13 @@
     "passage": "A measurement captures selected features, not the whole object. Treating a score as a complete description hides what the test never examined.",
     "prompt": "글의 핵심은?",
     "choices": [
-      "시험은 어떤 정보도 주지 않는다",
-      "점수는 측정하지 않은 특성까지 설명하지 못한다",
-      "측정은 대상을 완벽히 복제한다",
-      "높은 점수는 모든 능력을 보장한다"
+      "점수를 정교하게 계산하면 측정 범위의 한계도 사라진다",
+      "점수는 시험에서 측정하지 않은 특성까지 설명하지 못한다",
+      "측정되지 않은 특성은 평가에서 중요하지 않다",
+      "여러 사람의 점수를 비교하면 대상 전체를 알 수 있다"
     ],
     "answer": 1,
-    "explanation": "selected features, not the whole object는 측정이 대상의 일부 특성만 보여 준다는 뜻입니다. what the test never examined는 시험에서 확인하지 않은 부분이므로, 점수가 모든 특성까지 설명하지는 못합니다. 시험이 어떤 정보도 주지 않는다는 뜻은 아닙니다.",
+    "explanation": "selected features, not the whole object는 일부 특성만 측정한다는 뜻입니다. 점수를 완전한 설명으로 보면 시험이 확인하지 않은 부분을 놓칩니다. 계산의 정교함이나 비교만으로 측정 범위가 넓어지지는 않으며 미측정 특성이 중요하지 않다는 말도 없습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },

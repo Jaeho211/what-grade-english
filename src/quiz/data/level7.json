@@ -489,13 +489,13 @@
     "passage": "When a reward replaces curiosity as the reason for acting, removing the reward may leave the activity without a purpose it once had.",
     "prompt": "글이 암시하는 것은?",
     "choices": [
-      "외적 보상이 원래의 내적 동기를 약화할 수 있다",
-      "보상을 없애면 호기심이 반드시 증가한다",
-      "보상과 호기심은 언제나 함께 증가한다",
-      "호기심만 있으면 보상은 항상 해롭다"
+      "외적 보상이 행동의 이유를 대신하면 내적 동기가 약해질 수 있다",
+      "보상 제거 뒤 활동이 줄면 처음부터 호기심이 없었다고 볼 수 있다",
+      "보상 기간에 활동이 늘면 호기심도 커졌다고 볼 수 있다",
+      "보상을 계속 주면 원래의 호기심도 유지된다고 볼 수 있다"
     ],
     "answer": 0,
-    "explanation": "호기심 대신 보상이 행동 이유가 되면 보상 제거 후 원래 목적도 약해질 수 있습니다. 모든 보상이 해롭다는 단정은 아닙니다.",
+    "explanation": "replaces curiosity는 보상이 호기심을 대신했다는 조건입니다. 보상 제거 후 목적을 잃을 수 있다는 말은 원래 내적 동기가 약해졌을 가능성을 뜻합니다. 보상 전 호기심의 부재, 활동 증가와 호기심 증가의 동일시, 보상 지속과 호기심 유지까지는 추론할 수 없습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -509,13 +509,13 @@
     "passage": "A rule may treat everyone identically while preserving advantages that existed before the rule was introduced.",
     "prompt": "글이 암시하는 것은?",
     "choices": [
-      "같은 규칙은 기존 격차를 항상 줄인다",
-      "동일한 대우가 기존 격차까지 없애는 것은 아니다",
-      "모든 차별은 규칙의 차이에서만 생긴다",
-      "기존 격차가 있으면 어떤 규칙도 불가능하다"
+      "동일한 대우를 시작하면 기존 유리함의 영향도 사라진다",
+      "동일한 규칙의 적용만으로 기존 격차가 해소되지는 않는다",
+      "기존 유리함이 남아 있으면 규칙도 사람마다 다르게 적용된 것이다",
+      "새 규칙 도입 뒤 격차가 남으면 규칙이 그 격차를 만든 것이다"
     ],
     "answer": 1,
-    "explanation": "identically와 preserving advantages의 공존은 동일 대우와 격차 해소가 다름을 보여줍니다.",
+    "explanation": "identically와 preserving advantages가 공존할 수 있다는 뜻입니다. 따라서 같은 규칙을 적용해도 기존 격차가 남을 수 있습니다. 결과 차이만으로 규칙 적용의 차이나 격차의 새 발생을 결론 내리는 것은 원인과 결과를 혼동합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -526,16 +526,16 @@
     "domain": "reading",
     "skill": "implication",
     "familyId": "implication-choice",
-    "passage": "When a target becomes the sole measure of success, people may optimize the score while neglecting the purpose it was meant to serve.",
+    "passage": "A school rewarded teachers for higher test scores. Scores rose after lessons focused on likely questions, but students struggled to use the ideas in unfamiliar situations.",
     "prompt": "글이 시사하는 것은?",
     "choices": [
-      "측정 가능한 목표는 모두 불필요하다",
-      "점수 향상은 언제나 목적을 해친다",
-      "목적이 없으면 점수도 존재하지 않는다",
-      "지표 달성이 본래 목적 달성을 보장하지 않는다"
+      "성공을 측정하는 지표를 없애면 본래 목적을 달성하기 쉽다",
+      "점수가 개선됐다면 목표가 대표하는 활동도 개선됐다고 볼 수 있다",
+      "목적과 지표를 구분하려면 수치 평가를 먼저 포기해야 한다",
+      "점수 상승만으로 이해를 새로운 상황에 적용하는 능력까지 확인할 수 없다"
     ],
     "answer": 3,
-    "explanation": "점수만 최적화하면 그 지표가 대표하려던 목적을 놓칠 수 있다는 뜻입니다.",
+    "explanation": "점수는 올랐지만 낯선 상황에서 개념을 쓰는 데 어려움이 남았습니다. 따라서 점수 상승만으로 새로운 상황에 적용하는 능력까지 확인할 수 없습니다. 지표와 목적의 차이를 보여 주는 사례이지 시험이나 수치 평가를 없애라는 주장이 아닙니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -546,16 +546,16 @@
     "domain": "reading",
     "skill": "implication",
     "familyId": "implication-choice",
-    "passage": "An identical rule can burden people differently. Equal treatment in form, therefore, need not produce equal opportunity in practice.",
+    "passage": "A grant requires each applicant to pay the same fee in advance. Some qualified applicants cannot afford it, so they never enter the selection process.",
     "prompt": "글이 시사하는 것은?",
     "choices": [
-      "같은 규칙의 적용도 실제 기회를 다르게 만들 수 있다",
-      "기회가 같으면 규칙도 항상 같다",
-      "모든 규칙을 사람마다 없애야 한다",
-      "형식적 평등은 반드시 불평등을 만든다"
+      "같은 신청 조건도 경제적 부담 차이 때문에 참여 기회를 다르게 만들 수 있다",
+      "기회가 다르게 나타나면 적용된 규칙도 달랐다고 볼 수 있다",
+      "규칙 적용이 같으면 서로 다른 부담도 기회에 영향을 주지 않는다",
+      "부담 차이가 있으므로 규칙을 바꾸면 기회도 같아질 것이다"
     ],
     "answer": 0,
-    "explanation": "동일 규칙의 부담이 다를 수 있으므로 형식적 동일성과 실질적 기회는 구별됩니다.",
+    "explanation": "신청비는 같지만 일부 자격 있는 신청자는 비용을 감당하지 못해 심사에 들어가지 못합니다. 동일한 조건이 실질적 기회까지 같게 만들지는 않는다는 함축입니다. 조건이 사람마다 달랐다는 뜻도, 조건 변경만으로 기회가 같아진다는 보장도 아닙니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -569,13 +569,13 @@
     "passage": "A prediction can change the behavior it predicts. Once people respond to it, the original conditions may disappear; failure then need not show that the prediction was initially unreasonable.",
     "prompt": "핵심 주장은?",
     "choices": [
-      "예측은 사람의 행동에 영향을 줄 수 없다",
-      "실현되지 않은 예측은 언제나 타당하다",
+      "예측 실패는 사람들이 예측에 반응하지 않았음을 보여 준다",
+      "예측이 행동을 바꿨다면 초기 판단의 근거는 검토할 필요가 없다",
       "예측이 행동을 바꾸면 미실현만으로 초기 타당성을 부정할 수 없다",
-      "예측은 조건이 바뀌어도 반드시 실현된다"
+      "예측에 따른 행동 변화는 예측의 정확성을 높이는 방향으로 작용한다"
     ],
     "answer": 2,
-    "explanation": "people respond to it 뒤에 original conditions may disappear라고 했습니다. 예측을 듣고 행동이 바뀌면 원래 조건이 사라질 수 있어, 예측이 실현되지 않았다는 사실만으로 처음부터 불합리했다고 판단할 수 없습니다. 모든 미실현 예측이 타당하다는 뜻은 아닙니다.",
+    "explanation": "예측에 대한 반응이 original conditions를 바꿀 수 있으므로 미실현만으로 초기 판단을 반박하기 어렵습니다. 행동 변화가 초기 근거 검토를 면제하거나 정확성을 높인다는 뜻은 아닙니다. 미실현이 반응의 부재를 보여 준다는 주장도 맞지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -589,13 +589,13 @@
     "passage": "Silence in a meeting may reflect agreement, but it may also reflect fear of disagreement. Counting silence as support confuses the absence of opposition with evidence of consent.",
     "prompt": "핵심 주장은?",
     "choices": [
-      "동의는 말로 표현할 수 없다",
-      "침묵은 반드시 반대의 표시다",
-      "회의의 모든 동의는 두려움 때문이다",
+      "침묵과 명시적 동의는 같은 근거로 집계할 수 있다",
+      "침묵한 사람은 의견을 정하지 않은 사람으로 분류해야 한다",
+      "두려움이 있는 회의에서는 명시적 동의도 반대로 해석해야 한다",
       "반대가 없다는 사실만으로 동의를 확정할 수 없다"
     ],
     "answer": 3,
-    "explanation": "침묵은 agreement일 수도 fear of disagreement일 수도 있습니다. 따라서 absence of opposition, 즉 반대가 없다는 사실을 consent의 확실한 증거로 삼을 수 없습니다. 침묵이 반드시 반대라는 뜻도 아닙니다.",
+    "explanation": "침묵에는 agreement와 fear of disagreement 등 서로 다른 이유가 있습니다. absence of opposition은 consent의 확실한 증거가 아닙니다. 침묵을 모두 미결정으로 분류하거나 명시적 동의를 반대로 해석하라는 주장도 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -610,12 +610,12 @@
     "prompt": "핵심 주장은?",
     "choices": [
       "모델의 신뢰성에는 과거 적중 이상의 근거가 필요하다",
-      "과거에 맞힌 모델은 미래에도 항상 맞는다",
-      "우연히 맞힌 예측은 가치가 전혀 없다",
-      "환경 변화가 예측을 반드시 불가능하게 한다"
+      "적중 횟수가 늘면 조건 변화에 대한 설명을 대신할 수 있다",
+      "우연히 적중할 수 있으므로 과거 결과는 평가에서 제외해야 한다",
+      "조건이 달라지면 기존 방법 대신 새 방법을 써야 한다"
     ],
     "answer": 0,
-    "explanation": "과거 성공만이 아니라 조건 변화에도 작동할 이유를 요구합니다.",
+    "explanation": "accurate by chance 때문에 과거 적중만으로 신뢰성을 확정하기 어렵습니다. 조건 변화에도 방법이 작동할 이유를 설명해야 합니다. 과거 결과를 버리거나 조건이 바뀔 때마다 방법을 교체하라는 뜻은 아닙니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -629,13 +629,13 @@
     "passage": "Debate improves decisions only when criticism can change the outcome. Inviting objections after a decision is fixed creates the appearance of openness without its practical value.",
     "prompt": "핵심 주장은?",
     "choices": [
-      "개방성은 참석자 수로 판단해야 한다",
-      "토론에는 결정을 바꿀 실질적 가능성이 있어야 한다",
-      "결정 뒤의 모든 대화는 무의미하다",
-      "비판이 있으면 결정을 내릴 수 없다"
+      "결정 뒤 반대 의견을 기록하면 실질적 개방성이 확보된다",
+      "토론에는 비판이 결정을 바꿀 실질적 가능성이 있어야 한다",
+      "반대 의견을 많이 받으면 결정 변경 여부는 중요하지 않다",
+      "결정을 먼저 고정하면 비판의 내용에 더 집중할 수 있다"
     ],
     "answer": 1,
-    "explanation": "의견을 듣는 형식만이 아니라 비판이 결과에 영향을 줄 수 있어야 한다는 주장입니다.",
+    "explanation": "only when criticism can change the outcome이 핵심 조건입니다. 결정이 고정된 뒤의 의견 수렴은 openness의 외형만 줄 수 있습니다. 의견의 기록이나 개수만으로 실질적 개방성을 대신할 수 없습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -650,12 +650,12 @@
     "prompt": "결론에 필요한 전제는?",
     "choices": [
       "알림으로 주의가 끊기면 집중력이 떨어진다",
-      "알림의 정보가 중요할수록 집중력이 높아진다",
+      "알림 감소로 업무 처리 속도가 빨라진다",
       "집중력이 낮은 사람이 더 많은 알림을 받는다",
-      "알림을 줄이면 다른 방해 요인이 늘어난다"
+      "중요한 알림과 불필요한 알림을 구별할 수 있다"
     ],
     "answer": 0,
-    "explanation": "결론은 알림을 줄이면 집중력이 좋아진다는 것입니다. 이 연결에는 알림으로 인한 주의 중단이 실제로 집중력을 떨어뜨린다는 전제가 필요합니다. 알림의 정보가 중요하다거나 다른 방해가 존재한다는 사실만으로는 이 연결을 설명하지 못합니다.",
+    "explanation": "알림이 주의를 끊는다는 근거에서 집중력 개선이라는 결론으로 가려면 주의 중단이 집중력을 떨어뜨린다는 연결이 필요합니다. 업무 속도나 사용자별 알림 수는 이 연결을 설명하지 못합니다. 알림을 구별할 수 있어야 한다는 조건도 제시된 논리에 필요하지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -669,13 +669,13 @@
     "passage": "A town expects free bus rides to reduce car use because fares keep some drivers from choosing the bus.",
     "prompt": "추론의 연결에 필요한 전제는?",
     "choices": [
-      "모든 운전자가 이미 버스를 타고 있다",
-      "요금이 없어지면 일부 운전자가 버스로 바꿀 것이다",
-      "요금 외의 문제는 하나도 존재하지 않는다",
-      "무료 버스는 자동차보다 반드시 빠르다"
+      "무료화하면 기존 버스 이용자의 이용 횟수가 늘어난다",
+      "요금이 없어지면 일부 운전자가 자동차 대신 버스를 선택한다",
+      "버스 요금이 자동차 유지비보다 낮게 책정된다",
+      "무료화 비용을 자동차 관련 세금으로 충당할 수 있다"
     ],
     "answer": 1,
-    "explanation": "요금 장벽 제거가 일부 선택 변화로 이어져야 자동차 이용 감소라는 결론이 나옵니다. 다른 장벽이 없을 필요는 없습니다.",
+    "explanation": "무료화가 자동차 이용 감소로 이어지려면 요금 때문에 버스를 피하던 일부 운전자의 선택이 바뀌어야 합니다. 기존 버스 이용자가 더 타는 것만으로 자동차 이용 감소가 설명되지는 않습니다. 비용 비교와 재원 마련도 결론의 연결 전제가 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -687,15 +687,15 @@
     "skill": "assumption-conclusion",
     "familyId": "assumption-choice",
     "passage": "The argument says that replacing short flights with trains will cut total emissions because trains emit less per passenger.",
-    "prompt": "결론에 필요한 전제로 가장 적절한 것은?",
+    "prompt": "대체 후 총배출량이 줄어든다는 결론에 필요한 전제는?",
     "choices": [
-      "여행자는 기차역 가까이에만 산다",
+      "철도 이용자 수가 대체 전보다 증가한다",
       "대체 과정의 추가 배출이 절감량을 상쇄하지 않는다",
-      "모든 열차가 같은 속도로 달린다",
-      "항공 여행의 가격이 항상 더 높다"
+      "철도 요금이 항공 요금과 비슷하게 유지된다",
+      "비행기를 대체한 열차의 좌석이 충분히 제공된다"
     ],
     "answer": 1,
-    "explanation": "승객당 배출 감소가 총량 감소로 이어지려면 추가 배출이 절감량을 모두 없애지 않아야 합니다.",
+    "explanation": "승객당 배출 감소가 총량 감소로 이어지려면 대체 과정의 추가 배출이 절감량을 없애지 않아야 합니다. 이용자 증가와 좌석 공급은 대체의 실행 조건에 가깝고, 가격 유지도 총배출 감소를 설명하는 연결 전제가 아닙니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -709,13 +709,13 @@
     "passage": "An app reminder increased exercise among volunteers. The author concludes it will increase exercise among all users.",
     "prompt": "이 일반화에 필요한 전제로 가장 적절한 것은?",
     "choices": [
-      "봉사자 전원이 매일 운동한다",
-      "알림의 글자 수가 항상 같다",
-      "일반 사용자도 효과와 관련된 면에서 봉사자와 충분히 비슷하다",
-      "모든 사용자가 같은 휴대폰을 쓴다"
+      "봉사 참여자의 운동 증가 폭이 사용자의 평균보다 크다",
+      "일반 사용자도 봉사 참여자와 같은 시간에 알림을 받는다",
+      "일반 사용자도 효과와 관련된 면에서 봉사 참여자와 충분히 비슷하다",
+      "일반 사용자의 수가 봉사 참여자보다 많다"
     ],
     "answer": 2,
-    "explanation": "volunteers에서 확인한 효과를 all users로 확대하는 추론입니다. 그러려면 운동 습관이나 알림에 대한 반응처럼 효과와 관련된 특성이 두 집단에서 충분히 비슷해야 합니다. 휴대폰 기종이나 알림 글자 수가 같다는 조건만으로 효과가 같다고 볼 수 없습니다.",
+    "explanation": "volunteers는 여기서 실험에 자발적으로 참여한 사람들입니다. 그 집단의 효과를 all users로 확대하려면 효과와 관련된 특성에서 두 집단이 충분히 비슷해야 합니다. 시간 일치나 인원수만으로 효과의 전이를 보장하지 못하고, 증가 폭이 더 크다는 비교도 일반화의 근거가 아닙니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
