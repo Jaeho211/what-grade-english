@@ -495,7 +495,7 @@
       "거짓말을 하려는 사람만 정보를 공유한다"
     ],
     "answer": 0,
-    "explanation": "악의가 없어도 진위 확인 없이 전달하면 거짓 정보가 퍼질 수 있다는 내용입니다.",
+    "explanation": "without intending to deceive는 속일 의도가 없다는 뜻이고, before checking은 진위를 확인하기 전에 공유한다는 뜻입니다. 따라서 확인 없는 공유가 의도치 않게 허위 정보를 퍼뜨릴 수 있습니다. always나 only처럼 악의가 있어야 한다고 단정한 보기는 맞지 않습니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -515,7 +515,7 @@
       "틀린 문제보다 맞힌 문제를 항상 먼저 봐야 한다"
     ],
     "answer": 1,
-    "explanation": "실수가 드러내는 이해의 빈틈과 분석의 학습 가치를 강조합니다.",
+    "explanation": "reveal what we do not understand는 실수가 이해하지 못한 부분을 드러낸다는 뜻입니다. Reviewing them carefully는 그 실수를 자세히 살펴보라는 말이므로, 핵심은 실수 분석의 학습 가치입니다. 익숙한 문제만 반복하라는 주장이 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -635,7 +635,7 @@
       "무급이라는 이유로 능력을 낮게 보는 태도"
     ],
     "answer": 3,
-    "explanation": "급여 여부와 능력을 혼동하는 편견을 비판합니다.",
+    "explanation": "Yet 뒤에서 봉사자도 전문적인 경험이 많을 수 있다고 설명합니다. not whether they receive payment는 급여 여부로 판단하지 말라는 뜻이므로, 필자는 무급이라는 이유로 능력을 낮게 보는 태도를 비판합니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },
@@ -715,7 +715,7 @@
       "두 반의 점수는 반드시 같았다"
     ],
     "answer": 0,
-    "explanation": "피드백 효과의 가능성은 있지만 다른 차이를 확인해야 하므로 단정할 수 없습니다.",
+    "explanation": "extra feedback을 받은 반이 더 향상됐으므로 피드백이 도움이 됐을 가능성은 있습니다. 하지만 other differences still need checking이라고 했으므로 피드백만이 유일한 원인이라고 단정할 수 없습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },

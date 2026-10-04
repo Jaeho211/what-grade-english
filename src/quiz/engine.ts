@@ -7,7 +7,7 @@ export function timeLimitMs(question: EnglishQuestion): number {
 }
 export type Outcome = 'correct' | 'incorrect' | 'timeout' | 'skip';
 export type Evidence = { question: EnglishQuestion; outcome: Outcome; elapsedMs: number; selectedAnswer?: number };
-export type Estimate = { level: Level; status: 'confirmed' | 'provisional'; correct: number; domains: Domain[] };
+export type Estimate = { level: Level; status: 'confirmed' | 'provisional'; basis: 'confirmed' | 'partial' | 'floor'; correct: number; domains: Domain[] };
 export type Session = {
   levels: readonly Level[];
   target: Level;
@@ -48,12 +48,17 @@ function evidenceAt(history: readonly Evidence[], level: Level) {
 export function estimate(history: readonly Evidence[], levels: readonly Level[]): Estimate {
   for (const level of [...levels].sort((a, b) => b - a)) {
     const evidence = evidenceAt(history, level);
-    if (evidence.correct >= 3 && evidence.domains.length >= 3 && evidence.accuracy >= .75) return { level, status: 'confirmed', correct: evidence.correct, domains: evidence.domains };
+    if (evidence.correct >= 3 && evidence.domains.length >= 3 && evidence.accuracy >= .75) return { level, status: 'confirmed', basis: 'confirmed', correct: evidence.correct, domains: evidence.domains };
   }
-  // A single advanced correct answer cannot determine a provisional high grade.
+  // Partial evidence may support a tentative grade, but never one lucky answer or one domain.
+  for (const level of [...levels].sort((a, b) => b - a)) {
+    const evidence = evidenceAt(history, level);
+    if (evidence.correct >= 2 && evidence.domains.length >= 2 && evidence.accuracy >= .75) return { level, status: 'provisional', basis: 'partial', correct: evidence.correct, domains: evidence.domains };
+  }
+  // Without multi-domain evidence, keep the supported range floor explicit.
   const floor = Math.min(...levels) as Level;
   const evidence = evidenceAt(history, floor);
-  return { level: floor, status: 'provisional', correct: evidence.correct, domains: evidence.domains };
+  return { level: floor, status: 'provisional', basis: 'floor', correct: evidence.correct, domains: evidence.domains };
 }
 
 function confirmationTarget(history: readonly Evidence[], levels: readonly Level[]): Level {

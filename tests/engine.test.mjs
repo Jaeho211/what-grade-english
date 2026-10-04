@@ -193,3 +193,26 @@ test('domain timer accepts reading at 20 seconds and expires at each exact deadl
     if (limit === 30000) assert.equal(submitAnswer(bank, initial, question.answer, 20000, options).history[0].outcome, 'correct');
   }
 });
+
+function evidence(level, domains, outcome = 'correct') {
+  return domains.map(domain => ({ question: fullBank.find(q => q.level === level && q.domain === domain), outcome, elapsedMs: 5000 }));
+}
+test('two-domain partial evidence supports a tentative intermediate grade, never a single lucky answer', () => {
+  const partial = estimate(evidence(5, ['vocabulary', 'reading']), fullLevels);
+  assert.deepEqual([partial.level, partial.status, partial.basis], [5, 'provisional', 'partial']);
+  assert.equal(estimate(evidence(7, ['reading']), fullLevels).basis, 'floor');
+  assert.equal(estimate(evidence(7, ['reading', 'reading', 'reading']), fullLevels).basis, 'floor');
+  assert.equal(estimate(evidence(3, ['vocabulary', 'usage']), fullLevels).level, 3);
+});
+test('partial evidence observes accuracy, higher failures and the confirmed result priority', () => {
+  const history = evidence(5, ['vocabulary', 'reading']);
+  assert.equal(estimate([...history, ...evidence(5, ['usage'], 'incorrect')], fullLevels).level, 4);
+  assert.equal(estimate([...history, ...evidence(7, ['usage'], 'timeout')], fullLevels).level, 5);
+  const confirmed = estimate([...history, ...evidence(3, ['discourse'])], fullLevels);
+  assert.deepEqual([confirmed.level, confirmed.status, confirmed.basis], [3, 'confirmed', 'confirmed']);
+  for (const outcome of ['skip', 'timeout']) {
+    assert.equal(estimate([...history, ...evidence(5, ['usage'], outcome)], fullLevels).level, 4);
+  }
+  const reversed = estimate([...history].reverse().map(e => ({ ...e, elapsedMs: 29000 })), fullLevels);
+  assert.equal(reversed.level, 5);
+});

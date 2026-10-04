@@ -575,7 +575,7 @@
       "예측은 조건이 바뀌어도 반드시 실현된다"
     ],
     "answer": 2,
-    "explanation": "예측에 대한 반응이 조건을 바꾸는 경우에 실패만으로 초기 판단을 평가하기 어렵다는 제한적 주장입니다.",
+    "explanation": "people respond to it 뒤에 original conditions may disappear라고 했습니다. 예측을 듣고 행동이 바뀌면 원래 조건이 사라질 수 있어, 예측이 실현되지 않았다는 사실만으로 처음부터 불합리했다고 판단할 수 없습니다. 모든 미실현 예측이 타당하다는 뜻은 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -595,7 +595,7 @@
       "반대가 없다는 사실만으로 동의를 확정할 수 없다"
     ],
     "answer": 3,
-    "explanation": "침묵에 여러 이유가 있을 수 있어 absence of opposition과 consent를 구별해야 합니다.",
+    "explanation": "침묵은 agreement일 수도 fear of disagreement일 수도 있습니다. 따라서 absence of opposition, 즉 반대가 없다는 사실을 consent의 확실한 증거로 삼을 수 없습니다. 침묵이 반드시 반대라는 뜻도 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -649,13 +649,13 @@
     "passage": "The author argues that reducing notifications will improve concentration because each notification interrupts attention.",
     "prompt": "결론에 필요한 전제는?",
     "choices": [
-      "알림을 줄이면 주의를 끊는 방해도 줄어든다",
-      "모든 알림에는 중요한 정보가 있다",
-      "집중력은 알림과 무관하게 항상 같다",
-      "알림이 없어도 모든 사람은 집중하지 못한다"
+      "알림으로 주의가 끊기면 집중력이 떨어진다",
+      "알림의 정보가 중요할수록 집중력이 높아진다",
+      "집중력이 낮은 사람이 더 많은 알림을 받는다",
+      "알림을 줄이면 다른 방해 요인이 늘어난다"
     ],
     "answer": 0,
-    "explanation": "알림 감소에서 집중 향상으로 이어지려면 방해가 실제로 감소한다는 연결 전제가 필요합니다.",
+    "explanation": "결론은 알림을 줄이면 집중력이 좋아진다는 것입니다. 이 연결에는 알림으로 인한 주의 중단이 실제로 집중력을 떨어뜨린다는 전제가 필요합니다. 알림의 정보가 중요하다거나 다른 방해가 존재한다는 사실만으로는 이 연결을 설명하지 못합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -715,7 +715,7 @@
       "모든 사용자가 같은 휴대폰을 쓴다"
     ],
     "answer": 2,
-    "explanation": "참여 집단에서 전체 사용자로 확대하려면 효과에 관련된 차이가 크지 않아야 합니다.",
+    "explanation": "volunteers에서 확인한 효과를 all users로 확대하는 추론입니다. 그러려면 운동 습관이나 알림에 대한 반응처럼 효과와 관련된 특성이 두 집단에서 충분히 비슷해야 합니다. 휴대폰 기종이나 알림 글자 수가 같다는 조건만으로 효과가 같다고 볼 수 없습니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },

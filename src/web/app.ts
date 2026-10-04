@@ -93,7 +93,7 @@ function showResult() {
   const label = LEVELS.find(item => item.level === result.level)!.label;
   const badgeLabel = label.replace('초등학교 ', '초').replace('중학교 ', '중').replace('고등학교 ', '고').replace('학년', '');
   const correct = session.history.filter(e => e.outcome === 'correct').length;
-  shell(`<section class="result"><span class="eyebrow">나의 영어 학년</span><div class="result-badge" aria-hidden="true">${badgeLabel}</div><h1>지금 나의 영어 실력은<br><strong>${label} 수준</strong></h1><p class="result-note">${result.status === 'confirmed' ? '여러 영역의 문제를 풀어 본 결과로 추정했어요.' : '정답 근거가 적어 결과 범위의 시작 학년으로 표시했어요.'}</p><div class="result-stats"><div><b>${correct}<small> / 10</small></b><span>맞힌 문제</span></div><div><b>${new Set(session.history.filter(e => e.outcome === 'correct').map(e => e.question.domain)).size}<small> / 4</small></b><span>정답을 맞힌 영역</span></div></div><button class="primary" id="share">내 결과 자랑하기 <span aria-hidden="true">↗</span></button><p id="share-status" class="hint" aria-live="polite"></p><button class="secondary" id="again">한 번 더 도전하기</button></section><section class="review-list"><h2>문제 다시 보기 <span>10</span></h2><p class="hint">문제를 누르면 정답과 해설을 볼 수 있어요.</p>${session.history.map(review).join('')}</section>`);
+  shell(`<section class="result"><span class="eyebrow">나의 영어 학년</span><div class="result-badge" aria-hidden="true">${badgeLabel}</div><h1>지금 나의 영어 실력은<br><strong>${label} 수준</strong></h1><p class="result-note">${result.status === 'confirmed' ? '여러 영역의 문제를 풀어 본 결과로 추정했어요.' : result.basis === 'partial' ? '두 영역 이상의 정답을 바탕으로 추정했어요. 더 풀어 보면 결과가 달라질 수 있어요.' : '정답 근거가 부족해 결과 범위의 시작 학년으로 표시했어요. 이 학년의 실력을 확인했다는 뜻은 아니에요.'}</p><div class="result-stats"><div><b>${correct}<small> / 10</small></b><span>맞힌 문제</span></div><div><b>${new Set(session.history.filter(e => e.outcome === 'correct').map(e => e.question.domain)).size}<small> / 4</small></b><span>정답을 맞힌 영역</span></div></div><button class="primary" id="share">내 결과 자랑하기 <span aria-hidden="true">↗</span></button><p id="share-status" class="hint" aria-live="polite"></p><button class="secondary" id="again">한 번 더 도전하기</button></section><section class="review-list"><h2>문제 다시 보기 <span>10</span></h2><p class="hint">문제를 누르면 정답과 해설을 볼 수 있어요.</p>${session.history.map(review).join('')}</section>`);
   document.querySelector('#again')!.addEventListener('click', begin);
   document.querySelector('#share')!.addEventListener('click', () => share(label, correct));
   document.querySelector<HTMLHeadingElement>('.result h1')!.setAttribute('tabindex', '-1');
@@ -101,7 +101,7 @@ function showResult() {
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 async function share(label: string, correct: number) {
-  const text = `나의 영어 학년은 ${label}! 10문제 중 ${correct}개 정답. 너의 영어 학년도 알아봐!`;
+  const text = `나의 영어 학년은 ${label}${session?.result?.status === 'provisional' ? ' (잠정 추정)' : ''}! 10문제 중 ${correct}개 정답. 너의 영어 학년도 알아봐!`;
   const url = new URL('.', location.href).href;
   const status = document.querySelector('#share-status')!;
   try {
