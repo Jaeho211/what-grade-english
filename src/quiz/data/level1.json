@@ -90,7 +90,7 @@
     "prompt": "빈칸에 알맞은 말은?",
     "choices": [
       "open",
-      "lock",
+      "draw",
       "close",
       "paint"
     ],

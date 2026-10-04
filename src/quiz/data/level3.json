@@ -906,7 +906,7 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "cause-order",
-    "passage": "(A) He watered it until a green shoot appeared. (B) The new shoot soon grew into a small plant. (C) Jay planted a seed in dry soil.",
+    "passage": "(A) He watered the soil each day until a green shoot appeared. (B) The new shoot soon grew into a small plant. (C) Jay planted a seed in dry soil.",
     "prompt": "자연스러운 순서는?",
     "choices": [
       "A → B → C",
@@ -915,7 +915,7 @@
       "C → B → A"
     ],
     "answer": 2,
-    "explanation": "C에서 씨앗을 심고 A에서 그것에 물을 주어 싹이 나옵니다. B의 The new shoot는 A에서 나타난 싹을 받습니다. 따라서 C → A → B이며, 물주기와 싹이 난 시점의 순서가 명확합니다.",
+    "explanation": "C에서 Jay가 씨앗을 심고 A에서 매일 흙에 물을 주며 싹이 나올 때까지 돌봅니다. B의 The new shoot는 A에서 나온 싹을 가리키므로 C → A → B입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },

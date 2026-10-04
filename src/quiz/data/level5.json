@@ -706,7 +706,7 @@
     "domain": "reading",
     "skill": "supported-inference",
     "familyId": "evidence-choice",
-    "passage": "Two classes used the same textbook. Only one received extra feedback, and that class improved more. The teachers say other differences still need checking.",
+    "passage": "Two classes used the same textbook. Only one received extra feedback, and its test scores improved more. The teachers say other differences between the classes still need checking.",
     "prompt": "가장 타당한 추론은?",
     "choices": [
       "피드백이 향상에 도움이 됐을 가능성이 있다",
@@ -715,7 +715,7 @@
       "다른 차이를 확인하기 전에는 향상 여부도 알 수 없다"
     ],
     "answer": 0,
-    "explanation": "피드백을 받은 반이 더 향상됐다는 관찰은 주어졌지만 other differences still need checking이라고 합니다. 효과의 가능성은 인정할 수 있어도 원인으로 확정할 수 없습니다. 초기 성적은 없고, 향상 여부와 향상의 원인은 서로 다릅니다.",
+    "explanation": "추가 피드백을 받은 반의 시험 점수가 더 많이 올랐지만, 두 반의 다른 차이는 아직 확인해야 한다고 했습니다. 피드백이 도움이 됐을 가능성은 있어도 원인으로 확정할 수 없습니다. 처음의 성적은 제시되지 않았고, 점수가 올랐다는 관찰과 그 원인은 서로 다릅니다.",
     "expectedMs": 18000,
     "speedEligible": false
   },

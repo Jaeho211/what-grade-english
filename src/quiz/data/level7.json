@@ -571,11 +571,11 @@
     "choices": [
       "예측 실패는 사람들이 예측에 반응하지 않았음을 보여 준다",
       "예측이 행동을 바꿨다면 초기 판단의 근거는 검토할 필요가 없다",
-      "예측이 행동을 바꾸면 미실현만으로 초기 타당성을 부정할 수 없다",
+      "예측이 행동을 바꾼 경우, 빗나간 결과만으로 처음 예측이 부당했다고 볼 수 없다",
       "예측에 따른 행동 변화는 예측의 정확성을 높이는 방향으로 작용한다"
     ],
     "answer": 2,
-    "explanation": "예측에 대한 반응이 original conditions를 바꿀 수 있으므로 미실현만으로 초기 판단을 반박하기 어렵습니다. 행동 변화가 초기 근거 검토를 면제하거나 정확성을 높인다는 뜻은 아닙니다. 미실현이 반응의 부재를 보여 준다는 주장도 맞지 않습니다.",
+    "explanation": "사람들이 예측에 반응하면 처음의 조건이 달라질 수 있습니다. 따라서 예측이 빗나갔다는 사실만으로 처음 판단이 부당했다고 단정할 수 없습니다. 처음의 근거를 검토할 필요가 없다는 뜻도, 행동 변화가 언제나 예측을 더 정확하게 만든다는 뜻도 아닙니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -706,17 +706,17 @@
     "domain": "reading",
     "skill": "assumption-conclusion",
     "familyId": "assumption-choice",
-    "passage": "An app reminder increased exercise among volunteers. The author concludes it will increase exercise among all users.",
+    "passage": "Volunteers in an app study exercised more after receiving reminders. The author concludes that the reminders will also help users who did not join the study exercise more.",
     "prompt": "이 일반화에 필요한 전제로 가장 적절한 것은?",
     "choices": [
-      "봉사 참여자의 운동 증가 폭이 사용자의 평균보다 크다",
-      "일반 사용자도 봉사 참여자와 같은 시간에 알림을 받는다",
-      "일반 사용자도 효과와 관련된 면에서 봉사 참여자와 충분히 비슷하다",
-      "일반 사용자의 수가 봉사 참여자보다 많다"
+      "실험 참여자의 운동 증가 폭이 일반 사용자의 평균보다 크다",
+      "일반 사용자도 실험 참여자와 같은 시간에 알림을 받는다",
+      "일반 사용자도 알림의 효과와 관련된 특성에서 실험 참여자와 충분히 비슷하다",
+      "일반 사용자의 수가 실험 참여자보다 많다"
     ],
     "answer": 2,
-    "explanation": "volunteers는 여기서 실험에 자발적으로 참여한 사람들입니다. 그 집단의 효과를 all users로 확대하려면 효과와 관련된 특성에서 두 집단이 충분히 비슷해야 합니다. 시간 일치나 인원수만으로 효과의 전이를 보장하지 못하고, 증가 폭이 더 크다는 비교도 일반화의 근거가 아닙니다.",
-    "expectedMs": 18000,
+    "explanation": "volunteers는 여기서 연구에 자발적으로 참여한 사람들입니다. 이들의 결과를 연구에 참여하지 않은 사용자에게도 적용하려면, 알림 효과와 관련된 특성이 충분히 비슷하다는 전제가 필요합니다. 알림 시간이나 인원수만 같거나 다르다는 사실은 효과를 일반화할 근거가 되지 않습니다.",
+    "expectedMs": 25000,
     "speedEligible": false
   },
   {
@@ -806,7 +806,7 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "argument-order",
-    "passage": "(A) That possibility weakens the claim that the policy alone caused the change. (B) The change followed a new policy. (C) However, other conditions changed at the same time.",
+    "passage": "(A) That possibility weakens the claim that the policy alone caused the change. (B) A change occurred after a new policy was introduced. (C) However, other conditions changed at the same time and may have contributed to the result.",
     "prompt": "자연스러운 순서는?",
     "choices": [
       "B → C → A",
@@ -815,7 +815,7 @@
       "B → A → C"
     ],
     "answer": 0,
-    "explanation": "정책 뒤 변화 → 다른 조건도 변했다는 반론 → 정책 단독 원인 주장 약화입니다. That possibility는 다른 조건의 영향을 받습니다.",
+    "explanation": "B에서 정책 도입 뒤의 변화를 소개하고, C에서 다른 조건도 결과에 영향을 줬을 가능성을 제시합니다. A의 That possibility가 그 가능성을 받아 정책만이 원인이라는 주장을 약화하므로 B → C → A입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },

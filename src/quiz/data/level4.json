@@ -584,10 +584,10 @@
     "level": 4,
     "slotId": "L4-R02",
     "domain": "reading",
-    "skill": "supported-inference",
+    "skill": "detail",
     "familyId": "cause-result",
     "passage": "The cafe stopped providing plastic straws. Customers began bringing reusable ones.",
-    "prompt": "변화에 가장 타당한 설명은?",
+    "prompt": "손님들의 행동 변화로 알 수 있는 것은?",
     "choices": [
       "재사용 빨대 제공이 중단되어 플라스틱 빨대를 가져왔다",
       "카페가 음료 판매를 줄여 빨대 사용도 줄었다",
@@ -826,7 +826,7 @@
     "domain": "discourse",
     "skill": "sequence",
     "familyId": "problem-solution",
-    "passage": "(A) Now, everyone can see the screen. (B) We moved it. (C) A tall plant blocked our view.",
+    "passage": "(A) Now, everyone can see the screen. (B) We moved the plant out of the way. (C) A tall plant blocked our view of the screen.",
     "prompt": "자연스러운 순서는?",
     "choices": [
       "A → B → C",
@@ -835,7 +835,7 @@
       "C → A → B"
     ],
     "answer": 1,
-    "explanation": "먼저 식물이 시야를 가린 문제를 제시하고, 그것을 옮긴 뒤 화면을 볼 수 있게 됩니다. B의 it은 C의 plant를 받습니다.",
+    "explanation": "C에서 식물이 화면을 가린 문제를 소개합니다. B에서 식물을 옮겨 문제를 해결하고 A에서 모두 화면을 볼 수 있게 된 결과를 제시하므로 C → B → A입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -906,7 +906,7 @@
     "domain": "discourse",
     "skill": "implicit-relation",
     "familyId": "relation-choice",
-    "passage": "The new phone has a better camera. Its battery, though, lasts less time.",
+    "passage": "The new phone has a better camera than the old one. Its battery, though, does not last as long.",
     "prompt": "두 문장의 관계는?",
     "choices": [
       "휴대전화 사용 순서를 설명한다",
@@ -915,7 +915,7 @@
       "장점 다음에 단점을 제시한다"
     ],
     "answer": 3,
-    "explanation": "좋아진 카메라와 줄어든 배터리 시간을 대조합니다. though가 반대 측면을 드러냅니다.",
+    "explanation": "이전 휴대전화보다 카메라는 좋아졌지만 배터리는 오래가지 못한다고 했습니다. though가 대조를 나타내므로 장점 다음에 단점을 제시한 관계입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
