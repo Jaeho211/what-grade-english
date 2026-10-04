@@ -60,10 +60,24 @@ function confirmationTarget(history: readonly Evidence[], levels: readonly Level
 
 function select(bank: readonly EnglishQuestion[], state: Session, options: Options): EnglishQuestion {
   const used = new Set(state.history.map(e => e.question.id));
-  const candidates = bank.filter(q => q.level === state.target && !used.has(q.id));
+  let candidates = bank.filter(q => q.level === state.target && !used.has(q.id));
   if (!candidates.length) throw new Error('No unused question at target level: ' + state.target);
   const counts = Object.fromEntries(DOMAINS.map(d => [d, state.history.filter(e => e.question.domain === d).length])) as Record<Domain, number>;
   const demonstrated = new Set(evidenceAt(state.history, state.target).domains);
+  // Preserve the diagnostic domain requirements before avoiding recent questions.
+  if (state.history.length < 4) {
+    const minimum = Math.min(...candidates.map(q => counts[q.domain]));
+    candidates = candidates.filter(q => counts[q.domain] === minimum);
+  } else if (state.history.length >= 7 && candidates.some(q => !demonstrated.has(q.domain))) {
+    candidates = candidates.filter(q => !demonstrated.has(q.domain));
+  }
+  const recent = options.recentIds ?? [];
+  const unseen = candidates.filter(q => !recent.includes(q.id));
+  if (unseen.length) candidates = unseen;
+  else if (recent.length) {
+    const oldest = Math.max(...candidates.map(q => recent.indexOf(q.id)));
+    candidates = candidates.filter(q => recent.indexOf(q.id) === oldest);
+  }
   const previous = state.history.at(-1)?.question;
   const score = (q: EnglishQuestion) => [
     state.history.length < 4 ? counts[q.domain] : 0,
@@ -72,7 +86,6 @@ function select(bank: readonly EnglishQuestion[], state: Session, options: Optio
     previous?.domain === q.domain ? 1 : 0,
     state.history.some(e => e.question.familyId === q.familyId) ? 1 : 0,
     counts[q.domain],
-    options.recentIds?.includes(q.id) ? options.recentIds.length - options.recentIds.indexOf(q.id) : 0,
   ];
   const compare = (a: EnglishQuestion, b: EnglishQuestion) => {
     const sa = score(a), sb = score(b);

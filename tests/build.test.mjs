@@ -25,7 +25,7 @@ test('static build: executable modules, full bank and relative deployment paths'
     }
   }
   const bank = JSON.parse(await readFile(new URL('dist/quiz/data/bank.json', root), 'utf8'));
-  assert.equal(bank.length, 168);
+  assert.equal(bank.length, 336);
   const { startQuiz } = await import('../dist/quiz/engine.js');
   assert.ok(startQuiz(bank).pending);
   for (const file of ['styles.css', 'icon.svg']) await stat(new URL('dist/' + file, root));

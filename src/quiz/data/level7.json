@@ -40,6 +40,46 @@
     "speedEligible": false
   },
   {
+    "id": "L7-V01-3",
+    "level": 7,
+    "slotId": "L7-V01",
+    "domain": "vocabulary",
+    "skill": "precise-abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "A lack of evidence does not constitute evidence of absence.",
+    "prompt": "constitute의 뜻은?",
+    "choices": [
+      "숨기다",
+      "찾아내다",
+      "제거하다",
+      "~에 해당하다"
+    ],
+    "answer": 3,
+    "explanation": "증거가 없다는 사실이 존재하지 않는다는 증거에 해당하지는 않는다는 뜻입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V01-4",
+    "level": 7,
+    "slotId": "L7-V01",
+    "domain": "vocabulary",
+    "skill": "precise-abstract-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The committee sought an impartial review, free from either side's influence.",
+    "prompt": "impartial의 뜻은?",
+    "choices": [
+      "어느 편에도 치우치지 않는",
+      "모든 의견에 동의하는",
+      "결론을 내리지 않는",
+      "내용을 공개하지 않는"
+    ],
+    "answer": 0,
+    "explanation": "어느 쪽의 영향도 받지 않는 공정한 검토를 뜻합니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
     "id": "L7-V02-1",
     "level": 7,
     "slotId": "L7-V02",
@@ -77,6 +117,46 @@
     "answer": 3,
     "explanation": "자기 입장을 약화하는 근거만 무시한다는 맥락에서 conveniently는 비판적 함의를 갖습니다.",
     "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V02-3",
+    "level": 7,
+    "slotId": "L7-V02",
+    "domain": "vocabulary",
+    "skill": "connotation",
+    "familyId": "tone-choice",
+    "passage": "Calling the plan ambitious highlights its bold goals; calling it unrealistic questions whether those goals can be reached.",
+    "prompt": "unrealistic에 담긴 태도는?",
+    "choices": [
+      "실현 가능성에 대한 회의",
+      "과감한 목표에 대한 칭찬",
+      "비용에 대한 중립적 설명",
+      "완성된 결과에 대한 만족"
+    ],
+    "answer": 0,
+    "explanation": "unrealistic은 목표를 달성할 수 있는지 비판적으로 의심하는 표현입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V02-4",
+    "level": 7,
+    "slotId": "L7-V02",
+    "domain": "vocabulary",
+    "skill": "connotation",
+    "familyId": "tone-choice",
+    "passage": "The reviewer described the design as merely adequate, rather than impressive.",
+    "prompt": "merely adequate가 전달하는 평가는?",
+    "choices": [
+      "판단할 정보가 전혀 없다",
+      "기준은 충족하지만 뛰어나지는 않다",
+      "기준조차 전혀 충족하지 못한다",
+      "기대보다 훨씬 뛰어나다"
+    ],
+    "answer": 1,
+    "explanation": "adequate는 충분한 수준, merely는 그 이상은 아니라는 제한적 평가입니다.",
+    "expectedMs": 18000,
     "speedEligible": false
   },
   {
@@ -120,6 +200,46 @@
     "speedEligible": false
   },
   {
+    "id": "L7-V03-3",
+    "level": 7,
+    "slotId": "L7-V03",
+    "domain": "vocabulary",
+    "skill": "semantic-shift",
+    "familyId": "meaning-choice",
+    "passage": "How a question is framed can influence which answers seem reasonable.",
+    "prompt": "framed의 문맥상 뜻은?",
+    "choices": [
+      "사진으로 촬영된",
+      "관점이나 표현 방식이 구성된",
+      "액자에 넣어진",
+      "잘못을 뒤집어쓴"
+    ],
+    "answer": 1,
+    "explanation": "질문을 어떤 관점과 표현으로 구성하는지가 답의 인식에 영향을 준다는 뜻입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-V03-4",
+    "level": 7,
+    "slotId": "L7-V03",
+    "domain": "vocabulary",
+    "skill": "semantic-shift",
+    "familyId": "meaning-choice",
+    "passage": "The discovery opened the door to treatments that had previously seemed impossible.",
+    "prompt": "opened the door의 문맥상 뜻은?",
+    "choices": [
+      "비밀을 공개했다",
+      "기존 치료를 금지했다",
+      "새 가능성을 열었다",
+      "출입을 허가했다"
+    ],
+    "answer": 2,
+    "explanation": "불가능해 보였던 치료를 가능하게 하는 길을 열었다는 비유입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
     "id": "L7-U01-1",
     "level": 7,
     "slotId": "L7-U01",
@@ -157,6 +277,46 @@
     "answer": 3,
     "explanation": "only가 발표 허용의 필요조건을 제한합니다. 허용된 학생 모두가 실제 발표했다는 뜻은 아닙니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U01-3",
+    "level": 7,
+    "slotId": "L7-U01",
+    "domain": "usage",
+    "skill": "negation-scope",
+    "familyId": "meaning-equivalence",
+    "passage": "Not all participants supported the proposal.",
+    "prompt": "반드시 같은 뜻인 것은?",
+    "choices": [
+      "참가자 모두가 반대했다",
+      "참가자 누구도 의견을 내지 않았다",
+      "참가자 모두가 지지했다",
+      "참가자 중 적어도 일부는 지지하지 않았다"
+    ],
+    "answer": 3,
+    "explanation": "Not all은 모두가 그렇지는 않다는 부분 부정입니다. 모두 반대했다는 뜻은 아닙니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U01-4",
+    "level": 7,
+    "slotId": "L7-U01",
+    "domain": "usage",
+    "skill": "negation-scope",
+    "familyId": "meaning-equivalence",
+    "passage": "Only the editor criticized the title.",
+    "prompt": "이 문장이 제한하는 것은?",
+    "choices": [
+      "제목을 비판한 사람",
+      "편집자가 비판한 대상",
+      "제목이 비판받은 시간",
+      "편집자가 사용한 표현"
+    ],
+    "answer": 0,
+    "explanation": "Only가 the editor 바로 앞에 있으므로 비판한 사람을 편집자로 제한합니다.",
+    "expectedMs": 18000,
     "speedEligible": false
   },
   {
@@ -200,6 +360,46 @@
     "speedEligible": false
   },
   {
+    "id": "L7-U02-3",
+    "level": 7,
+    "slotId": "L7-U02",
+    "domain": "usage",
+    "skill": "embedded-structure",
+    "familyId": "core-choice",
+    "passage": "The claim that the witness whom the lawyer questioned had changed her story was disputed.",
+    "prompt": "논란이 된 것은?",
+    "choices": [
+      "그 증인이 진술을 바꿨다는 주장",
+      "변호사가 진술을 바꿨다는 주장",
+      "증인이 변호사를 심문했다는 주장",
+      "모든 진술이 사실이라는 주장"
+    ],
+    "answer": 0,
+    "explanation": "문장의 중심은 The claim was disputed이며 claim의 내용은 증인의 진술 변경입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U02-4",
+    "level": 7,
+    "slotId": "L7-U02",
+    "domain": "usage",
+    "skill": "embedded-structure",
+    "familyId": "core-choice",
+    "passage": "The scientist whose theory the article criticized said the evidence had been misunderstood.",
+    "prompt": "증거가 오해되었다고 말한 사람은?",
+    "choices": [
+      "과학자를 지지한 기자",
+      "비판받은 이론의 과학자",
+      "기사의 독자",
+      "기사 자체"
+    ],
+    "answer": 1,
+    "explanation": "주어는 The scientist이며 whose 이하가 어떤 과학자인지를 설명합니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
     "id": "L7-U03-1",
     "level": 7,
     "slotId": "L7-U03",
@@ -237,6 +437,46 @@
     "answer": 3,
     "explanation": "consistent with는 모순이 없다는 뜻이며 uniquely support하지 않으므로 유일한 설명은 아닙니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U03-3",
+    "level": 7,
+    "slotId": "L7-U03",
+    "domain": "usage",
+    "skill": "subtle-usage",
+    "familyId": "counterfactual",
+    "passage": "Had the warning arrived earlier, the team ___ the loss; in fact, it arrived too late.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "has prevented",
+      "could have prevented",
+      "can prevent",
+      "will prevent"
+    ],
+    "answer": 1,
+    "explanation": "실제로는 늦게 도착한 과거 상황의 반대를 가정하므로 could have prevented입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-U03-4",
+    "level": 7,
+    "slotId": "L7-U03",
+    "domain": "usage",
+    "skill": "subtle-usage",
+    "familyId": "counterfactual",
+    "passage": "The proposal is acceptable ___ its safety claims can be independently verified.",
+    "prompt": "빈칸에 가장 알맞은 말은?",
+    "choices": [
+      "regardless of",
+      "whether or not",
+      "provided that",
+      "even if"
+    ],
+    "answer": 2,
+    "explanation": "안전 주장을 독립적으로 검증할 수 있어야 받아들인다는 조건입니다. 나머지는 검증 여부와 무관하다는 뜻입니다.",
+    "expectedMs": 18000,
     "speedEligible": false
   },
   {
@@ -280,6 +520,46 @@
     "speedEligible": false
   },
   {
+    "id": "L7-R01-3",
+    "level": 7,
+    "slotId": "L7-R01",
+    "domain": "reading",
+    "skill": "implication",
+    "familyId": "implication-choice",
+    "passage": "When a target becomes the sole measure of success, people may optimize the score while neglecting the purpose it was meant to serve.",
+    "prompt": "글이 시사하는 것은?",
+    "choices": [
+      "측정 가능한 목표는 모두 불필요하다",
+      "점수 향상은 언제나 목적을 해친다",
+      "목적이 없으면 점수도 존재하지 않는다",
+      "지표 달성이 본래 목적 달성을 보장하지 않는다"
+    ],
+    "answer": 3,
+    "explanation": "점수만 최적화하면 그 지표가 대표하려던 목적을 놓칠 수 있다는 뜻입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R01-4",
+    "level": 7,
+    "slotId": "L7-R01",
+    "domain": "reading",
+    "skill": "implication",
+    "familyId": "implication-choice",
+    "passage": "An identical rule can burden people differently. Equal treatment in form, therefore, need not produce equal opportunity in practice.",
+    "prompt": "글이 시사하는 것은?",
+    "choices": [
+      "같은 규칙의 적용도 실제 기회를 다르게 만들 수 있다",
+      "기회가 같으면 규칙도 항상 같다",
+      "모든 규칙을 사람마다 없애야 한다",
+      "형식적 평등은 반드시 불평등을 만든다"
+    ],
+    "answer": 0,
+    "explanation": "동일 규칙의 부담이 다를 수 있으므로 형식적 동일성과 실질적 기회는 구별됩니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
     "id": "L7-R02-1",
     "level": 7,
     "slotId": "L7-R02",
@@ -317,6 +597,46 @@
     "answer": 3,
     "explanation": "침묵에 여러 이유가 있을 수 있어 absence of opposition과 consent를 구별해야 합니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R02-3",
+    "level": 7,
+    "slotId": "L7-R02",
+    "domain": "reading",
+    "skill": "argument-core",
+    "familyId": "claim-choice",
+    "passage": "A prediction may be accurate by chance. A reliable model must explain why its method should continue to work when conditions change, not merely point to past successes.",
+    "prompt": "핵심 주장은?",
+    "choices": [
+      "모델의 신뢰성에는 과거 적중 이상의 근거가 필요하다",
+      "과거에 맞힌 모델은 미래에도 항상 맞는다",
+      "우연히 맞힌 예측은 가치가 전혀 없다",
+      "환경 변화가 예측을 반드시 불가능하게 한다"
+    ],
+    "answer": 0,
+    "explanation": "과거 성공만이 아니라 조건 변화에도 작동할 이유를 요구합니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R02-4",
+    "level": 7,
+    "slotId": "L7-R02",
+    "domain": "reading",
+    "skill": "argument-core",
+    "familyId": "claim-choice",
+    "passage": "Debate improves decisions only when criticism can change the outcome. Inviting objections after a decision is fixed creates the appearance of openness without its practical value.",
+    "prompt": "핵심 주장은?",
+    "choices": [
+      "개방성은 참석자 수로 판단해야 한다",
+      "토론에는 결정을 바꿀 실질적 가능성이 있어야 한다",
+      "결정 뒤의 모든 대화는 무의미하다",
+      "비판이 있으면 결정을 내릴 수 없다"
+    ],
+    "answer": 1,
+    "explanation": "의견을 듣는 형식만이 아니라 비판이 결과에 영향을 줄 수 있어야 한다는 주장입니다.",
+    "expectedMs": 18000,
     "speedEligible": false
   },
   {
@@ -360,6 +680,46 @@
     "speedEligible": false
   },
   {
+    "id": "L7-R03-3",
+    "level": 7,
+    "slotId": "L7-R03",
+    "domain": "reading",
+    "skill": "assumption-conclusion",
+    "familyId": "assumption-choice",
+    "passage": "The argument says that replacing short flights with trains will cut total emissions because trains emit less per passenger.",
+    "prompt": "결론에 필요한 전제로 가장 적절한 것은?",
+    "choices": [
+      "여행자는 기차역 가까이에만 산다",
+      "대체 과정의 추가 배출이 절감량을 상쇄하지 않는다",
+      "모든 열차가 같은 속도로 달린다",
+      "항공 여행의 가격이 항상 더 높다"
+    ],
+    "answer": 1,
+    "explanation": "승객당 배출 감소가 총량 감소로 이어지려면 추가 배출이 절감량을 모두 없애지 않아야 합니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-R03-4",
+    "level": 7,
+    "slotId": "L7-R03",
+    "domain": "reading",
+    "skill": "assumption-conclusion",
+    "familyId": "assumption-choice",
+    "passage": "An app reminder increased exercise among volunteers. The author concludes it will increase exercise among all users.",
+    "prompt": "이 일반화에 필요한 전제로 가장 적절한 것은?",
+    "choices": [
+      "봉사자 전원이 매일 운동한다",
+      "알림의 글자 수가 항상 같다",
+      "일반 사용자도 효과와 관련된 면에서 봉사자와 충분히 비슷하다",
+      "모든 사용자가 같은 휴대폰을 쓴다"
+    ],
+    "answer": 2,
+    "explanation": "참여 집단에서 전체 사용자로 확대하려면 효과에 관련된 차이가 크지 않아야 합니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
     "id": "L7-D01-1",
     "level": 7,
     "slotId": "L7-D01",
@@ -397,6 +757,46 @@
     "answer": 3,
     "explanation": "This failure는 이후 실험의 재현 실패를 받고, 의문 제기 후 설명 수정으로 이어지므로 (3) 앞입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D01-3",
+    "level": 7,
+    "slotId": "L7-D01",
+    "domain": "discourse",
+    "skill": "sentence-insertion",
+    "familyId": "insertion-choice",
+    "passage": "(1) A single successful trial can be misleading. (2) Scientists therefore repeat experiments. (3) Consistent results across trials strengthen confidence.",
+    "prompt": "'This repetition helps separate stable effects from chance.'를 넣을 위치는?",
+    "choices": [
+      "1번 앞",
+      "1번 뒤",
+      "3번 뒤",
+      "2번 뒤"
+    ],
+    "answer": 3,
+    "explanation": "This repetition은 2번의 반복 실험을 받아 그 기능을 설명하며 3번의 신뢰 증가로 이어집니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D01-4",
+    "level": 7,
+    "slotId": "L7-D01",
+    "domain": "discourse",
+    "skill": "sentence-insertion",
+    "familyId": "insertion-choice",
+    "passage": "(1) The system was designed for ordinary conditions. (2) A rare storm disrupted it. (3) The disruption revealed weaknesses that routine tests had missed.",
+    "prompt": "'This unexpected event provided a different kind of test.'를 넣을 위치는?",
+    "choices": [
+      "2번 뒤",
+      "1번 앞",
+      "1번 뒤",
+      "3번 뒤"
+    ],
+    "answer": 0,
+    "explanation": "This unexpected event는 2번의 폭풍을 받고 3번의 약점 발견을 연결합니다.",
+    "expectedMs": 18000,
     "speedEligible": false
   },
   {
@@ -440,6 +840,46 @@
     "speedEligible": false
   },
   {
+    "id": "L7-D02-3",
+    "level": 7,
+    "slotId": "L7-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "argument-order",
+    "passage": "(A) Thus, judging progress by one number can conceal important losses. (B) A town's income rose after a factory opened. (C) Yet residents also lost access to clean water.",
+    "prompt": "자연스러운 논증 순서는?",
+    "choices": [
+      "B → C → A",
+      "A → B → C",
+      "C → A → B",
+      "B → A → C"
+    ],
+    "answer": 0,
+    "explanation": "소득 증가 사례 → 반대 측면인 물 손실 → 한 지표의 한계라는 결론입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D02-4",
+    "level": 7,
+    "slotId": "L7-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "argument-order",
+    "passage": "(A) However, errors copied from one source remain the same error. (B) Many agreeing reports may appear to provide strong evidence. (C) What matters, then, is whether the sources are independent.",
+    "prompt": "자연스러운 논증 순서는?",
+    "choices": [
+      "B → C → A",
+      "B → A → C",
+      "A → C → B",
+      "C → B → A"
+    ],
+    "answer": 1,
+    "explanation": "다수 보고서의 인상 → 공통 오류의 반론 → 독립성이라는 결론 순서입니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
     "id": "L7-D03-1",
     "level": 7,
     "slotId": "L7-D03",
@@ -477,6 +917,46 @@
     "answer": 3,
     "explanation": "평가할 결정에서 기준을 가져오면 편향이 순환하므로 독립적인 판단 기준이 필요합니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D03-3",
+    "level": 7,
+    "slotId": "L7-D03",
+    "domain": "discourse",
+    "skill": "high-density-blank",
+    "familyId": "logic-gap",
+    "passage": "A filter removes what its designer considers irrelevant. If that judgment is mistaken, useful information disappears before users can assess it. Filtering therefore requires ___.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "measurement of speed alone",
+      "scrutiny of the criteria, not just the output",
+      "blind trust in the designer's intention",
+      "the removal of every unusual item"
+    ],
+    "answer": 1,
+    "explanation": "관련성 판단이 틀릴 위험 때문에 결과뿐 아니라 무엇을 거를지 정한 기준도 검토해야 합니다.",
+    "expectedMs": 18000,
+    "speedEligible": false
+  },
+  {
+    "id": "L7-D03-4",
+    "level": 7,
+    "slotId": "L7-D03",
+    "domain": "discourse",
+    "skill": "high-density-blank",
+    "familyId": "logic-gap",
+    "passage": "A policy may work because people expect others to follow it. If that expectation vanishes, the same written rule may lose its effect. Its success depends partly on ___.",
+    "prompt": "빈칸에 가장 적절한 말은?",
+    "choices": [
+      "the absence of any public discussion",
+      "identical outcomes for every person",
+      "shared beliefs about others' behavior",
+      "the exact length of the written rule"
+    ],
+    "answer": 2,
+    "explanation": "다른 사람도 따른다는 기대가 효과의 조건이므로 공유된 믿음에 일부 의존합니다.",
+    "expectedMs": 18000,
     "speedEligible": false
   }
 ]

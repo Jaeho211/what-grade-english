@@ -40,6 +40,46 @@
     "speedEligible": false
   },
   {
+    "id": "L2-V01-3",
+    "level": 2,
+    "slotId": "L2-V01",
+    "domain": "vocabulary",
+    "skill": "context-word-choice",
+    "familyId": "context-gap",
+    "passage": "I studied hard for the test, so I felt ___ when I got a low score.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "relaxed",
+      "excited",
+      "disappointed",
+      "proud"
+    ],
+    "answer": 2,
+    "explanation": "열심히 공부했는데 낮은 점수를 받아 실망한 상황입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-V01-4",
+    "level": 2,
+    "slotId": "L2-V01",
+    "domain": "vocabulary",
+    "skill": "context-word-choice",
+    "familyId": "context-gap",
+    "passage": "I have never been on a plane before. I feel ___ about my first flight.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "bored",
+      "angry",
+      "sleepy",
+      "nervous"
+    ],
+    "answer": 3,
+    "explanation": "첫 비행을 앞둔 불안하고 긴장한 마음을 nervous로 표현합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L2-V02-1",
     "level": 2,
     "slotId": "L2-V02",
@@ -76,6 +116,46 @@
     ],
     "answer": 3,
     "explanation": "1분 만에 걸어갈 수 있으므로 학교 가까이에 있다는 near가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-V02-3",
+    "level": 2,
+    "slotId": "L2-V02",
+    "domain": "vocabulary",
+    "skill": "synonym",
+    "familyId": "meaning-choice",
+    "passage": "The store is near my house. I can walk there in two minutes.",
+    "prompt": "near와 가장 가까운 뜻은?",
+    "choices": [
+      "far from",
+      "inside",
+      "behind",
+      "close to"
+    ],
+    "answer": 3,
+    "explanation": "걸어서 2분이면 갈 수 있으므로 집에서 가깝다는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-V02-4",
+    "level": 2,
+    "slotId": "L2-V02",
+    "domain": "vocabulary",
+    "skill": "synonym",
+    "familyId": "meaning-choice",
+    "passage": "Please begin your work now. We have only ten minutes.",
+    "prompt": "begin과 가장 가까운 뜻은?",
+    "choices": [
+      "start",
+      "finish",
+      "forget",
+      "copy"
+    ],
+    "answer": 0,
+    "explanation": "begin은 시작하다는 뜻이며 지금 일을 시작하라는 부탁입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -120,6 +200,46 @@
     "speedEligible": false
   },
   {
+    "id": "L2-V03-3",
+    "level": 2,
+    "slotId": "L2-V03",
+    "domain": "vocabulary",
+    "skill": "collocation",
+    "familyId": "word-pair",
+    "passage": "Please ___ a photo of our team.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "take",
+      "do",
+      "make",
+      "have"
+    ],
+    "answer": 0,
+    "explanation": "사진을 찍다는 take a photo라는 표현을 씁니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-V03-4",
+    "level": 2,
+    "slotId": "L2-V03",
+    "domain": "vocabulary",
+    "skill": "collocation",
+    "familyId": "word-pair",
+    "passage": "I always ___ my homework before dinner.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "get",
+      "do",
+      "make",
+      "take"
+    ],
+    "answer": 1,
+    "explanation": "숙제를 하다는 do my homework로 표현합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L2-U01-1",
     "level": 2,
     "slotId": "L2-U01",
@@ -157,6 +277,46 @@
     "answer": 3,
     "explanation": "Yesterday가 과거를 나타내므로 visited입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-U01-3",
+    "level": 2,
+    "slotId": "L2-U01",
+    "domain": "usage",
+    "skill": "tense-progressive",
+    "familyId": "tense-gap",
+    "passage": "Be quiet! The baby ___ now.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "slept",
+      "sleep",
+      "is sleeping",
+      "sleeps"
+    ],
+    "answer": 2,
+    "explanation": "now는 지금 진행 중인 상황을 나타내므로 is sleeping이 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-U01-4",
+    "level": 2,
+    "slotId": "L2-U01",
+    "domain": "usage",
+    "skill": "tense-progressive",
+    "familyId": "tense-gap",
+    "passage": "When I called yesterday, Dad ___ dinner.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "is cooking",
+      "cooks",
+      "will cook",
+      "was cooking"
+    ],
+    "answer": 3,
+    "explanation": "어제 전화한 시점에 진행 중이던 행동은 was cooking으로 표현합니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -200,6 +360,46 @@
     "speedEligible": false
   },
   {
+    "id": "L2-U02-3",
+    "level": 2,
+    "slotId": "L2-U02",
+    "domain": "usage",
+    "skill": "verb-complement",
+    "familyId": "verb-form",
+    "passage": "Jin enjoys ___ stories.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "write",
+      "to write",
+      "wrote",
+      "writing"
+    ],
+    "answer": 3,
+    "explanation": "enjoy 뒤에는 동명사인 writing을 씁니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-U02-4",
+    "level": 2,
+    "slotId": "L2-U02",
+    "domain": "usage",
+    "skill": "verb-complement",
+    "familyId": "verb-form",
+    "passage": "We decided ___ the museum on Sunday.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "to visit",
+      "visiting",
+      "visited",
+      "visit"
+    ],
+    "answer": 0,
+    "explanation": "decide 뒤에는 to부정사를 써서 to visit으로 표현합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L2-U03-1",
     "level": 2,
     "slotId": "L2-U03",
@@ -237,6 +437,46 @@
     "answer": 3,
     "explanation": "세 명 중 가장 크다는 뜻이므로 최상급 tallest입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-U03-3",
+    "level": 2,
+    "slotId": "L2-U03",
+    "domain": "usage",
+    "skill": "comparison",
+    "familyId": "comparison-gap",
+    "passage": "This road is ___ than that one.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "wider",
+      "widest",
+      "wide",
+      "as wide"
+    ],
+    "answer": 0,
+    "explanation": "than으로 두 도로를 비교하므로 비교급 wider를 씁니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-U03-4",
+    "level": 2,
+    "slotId": "L2-U03",
+    "domain": "usage",
+    "skill": "comparison",
+    "familyId": "comparison-gap",
+    "passage": "Of the three bags, the red one is the ___.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "as light",
+      "lightest",
+      "lighter",
+      "light"
+    ],
+    "answer": 1,
+    "explanation": "세 가방 중 가장 가벼운 하나를 고르므로 최상급 lightest가 맞습니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -280,6 +520,46 @@
     "speedEligible": false
   },
   {
+    "id": "L2-R01-3",
+    "level": 2,
+    "slotId": "L2-R01",
+    "domain": "reading",
+    "skill": "detail-integration",
+    "familyId": "detail-choice",
+    "passage": "The morning tour is full. There are still tickets for the afternoon tour, which starts at two.",
+    "prompt": "지금 예약할 수 있는 투어는?",
+    "choices": [
+      "오후 2시 투어",
+      "오전 투어",
+      "저녁 6시 투어",
+      "모든 투어"
+    ],
+    "answer": 0,
+    "explanation": "오전 투어는 만석이고 오후 2시에 시작하는 투어에는 아직 표가 있습니다. 두 정보를 함께 확인해야 합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-R01-4",
+    "level": 2,
+    "slotId": "L2-R01",
+    "domain": "reading",
+    "skill": "detail-integration",
+    "familyId": "detail-choice",
+    "passage": "Amy ordered a sandwich and juice. The shop had no juice, so she chose milk instead.",
+    "prompt": "Amy가 실제로 받은 음료는?",
+    "choices": [
+      "주스",
+      "물",
+      "차",
+      "우유"
+    ],
+    "answer": 3,
+    "explanation": "주스가 없어 대신 milk를 골랐다는 정보를 확인해야 합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L2-R02-1",
     "level": 2,
     "slotId": "L2-R02",
@@ -317,6 +597,46 @@
     "answer": 3,
     "explanation": "to buy milk가 가게에 간 목적입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-R02-3",
+    "level": 2,
+    "slotId": "L2-R02",
+    "domain": "reading",
+    "skill": "reason",
+    "familyId": "reason-choice",
+    "passage": "Ben left home early to buy a cake before school.",
+    "prompt": "Ben이 일찍 나온 목적은?",
+    "choices": [
+      "버스를 피하기",
+      "친구에게 책 주기",
+      "일찍 잠들기",
+      "등교 전에 케이크 사기"
+    ],
+    "answer": 3,
+    "explanation": "to buy a cake가 일찍 나온 목적을 나타냅니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-R02-4",
+    "level": 2,
+    "slotId": "L2-R02",
+    "domain": "reading",
+    "skill": "reason",
+    "familyId": "reason-choice",
+    "passage": "Yuna closed the window because the street was noisy.",
+    "prompt": "Yuna가 창문을 닫은 이유는?",
+    "choices": [
+      "거리의 소음",
+      "추운 날씨",
+      "비가 오는 것",
+      "창문 청소"
+    ],
+    "answer": 0,
+    "explanation": "because 뒤에서 거리가 시끄러웠다는 이유를 설명합니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -360,6 +680,46 @@
     "speedEligible": false
   },
   {
+    "id": "L2-R03-3",
+    "level": 2,
+    "slotId": "L2-R03",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "Ella walks to school. She uses a reusable bottle. She turns off lights in empty rooms.",
+    "prompt": "글의 중심 내용은?",
+    "choices": [
+      "환경을 생각하는 생활 습관",
+      "새 학교를 찾는 방법",
+      "운동 대회를 준비하는 법",
+      "방을 꾸미는 방법"
+    ],
+    "answer": 0,
+    "explanation": "걷기·재사용 물병·불 끄기는 환경을 위한 작은 생활 습관입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-R03-4",
+    "level": 2,
+    "slotId": "L2-R03",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "Sam practices the piano every day. He tries difficult songs slowly. When he makes mistakes, he tries again.",
+    "prompt": "글의 중심 내용은?",
+    "choices": [
+      "공연을 취소한 이유",
+      "꾸준히 연습하는 태도",
+      "피아노를 사는 방법",
+      "음악을 크게 듣는 이유"
+    ],
+    "answer": 1,
+    "explanation": "매일 연습하고 실수해도 다시 시도하는 태도를 보여 줍니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L2-D01-1",
     "level": 2,
     "slotId": "L2-D01",
@@ -397,6 +757,46 @@
     "answer": 3,
     "explanation": "복수 them은 앞의 복수 명사 cookies를 가리킵니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-D01-3",
+    "level": 2,
+    "slotId": "L2-D01",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "noun-reference",
+    "passage": "Nora gave Lily a book. Lily read it on the bus.",
+    "prompt": "it이 가리키는 것은?",
+    "choices": [
+      "Nora",
+      "Lily",
+      "책",
+      "버스"
+    ],
+    "answer": 2,
+    "explanation": "읽은 대상은 Nora가 준 a book입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-D01-4",
+    "level": 2,
+    "slotId": "L2-D01",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "noun-reference",
+    "passage": "Our class planted trees. This made the playground greener.",
+    "prompt": "This가 가리키는 것은?",
+    "choices": [
+      "운동장에서 뛰는 일",
+      "반에 새 친구가 온 일",
+      "나무를 베는 일",
+      "반에서 나무를 심은 일"
+    ],
+    "answer": 3,
+    "explanation": "앞 문장 전체인 나무 심기가 운동장을 더 푸르게 만들었습니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -440,6 +840,46 @@
     "speedEligible": false
   },
   {
+    "id": "L2-D02-3",
+    "level": 2,
+    "slotId": "L2-D02",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "The train was late, ___ we missed the first song of the concert.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "because",
+      "but",
+      "although",
+      "so"
+    ],
+    "answer": 3,
+    "explanation": "열차 지연이 원인이고 첫 곡을 놓친 것이 결과이므로 so가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-D02-4",
+    "level": 2,
+    "slotId": "L2-D02",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "The floor was wet because someone spilled water.",
+    "prompt": "먼저 일어난 원인은?",
+    "choices": [
+      "누군가 물을 쏟음",
+      "바닥이 젖음",
+      "바닥을 닦음",
+      "물이 마름"
+    ],
+    "answer": 0,
+    "explanation": "because 뒤의 물을 쏟은 일이 원인이고 젖은 바닥은 결과입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L2-D03-1",
     "level": 2,
     "slotId": "L2-D03",
@@ -477,6 +917,46 @@
     "answer": 3,
     "explanation": "after dinner와 then에 따라 저녁 식사, 숙제, 잠자기 순서입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-D03-3",
+    "level": 2,
+    "slotId": "L2-D03",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "Wash your hands before you eat lunch.",
+    "prompt": "먼저 해야 하는 일은?",
+    "choices": [
+      "손 씻기",
+      "점심 먹기",
+      "그릇 치우기",
+      "음식 주문하기"
+    ],
+    "answer": 0,
+    "explanation": "before you eat lunch는 점심을 먹기 전에 손을 씻으라는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L2-D03-4",
+    "level": 2,
+    "slotId": "L2-D03",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "After Mia finished her homework, she called her friend.",
+    "prompt": "Mia가 먼저 한 일은?",
+    "choices": [
+      "숙제 빌리기",
+      "숙제 끝내기",
+      "친구에게 전화하기",
+      "친구 만나기"
+    ],
+    "answer": 1,
+    "explanation": "After 다음의 숙제 끝내기가 전화하기보다 먼저 일어났습니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   }
 ]

@@ -14,7 +14,7 @@ let frame = 0;
 let recent: string[] = [];
 try {
   const value = JSON.parse(localStorage.getItem(recentKey) ?? '[]');
-  if (Array.isArray(value)) recent = value.filter(id => typeof id === 'string').slice(0, 100);
+  if (Array.isArray(value)) recent = value.filter(id => typeof id === 'string').slice(0, 400);
 } catch { /* Private browsing and blocked storage still allow play. */ }
 
 function shell(content: string) {
@@ -62,7 +62,7 @@ function finish(answer: number | 'skip' | 'timeout', id: string) {
   cancelAnimationFrame(frame);
   const next = submitAnswer(bank, session, answer, elapsed(), { recentIds: recent });
   const evidence = next.history.at(-1)!;
-  recent = [id, ...recent.filter(value => value !== id)].slice(0, 100);
+  recent = [id, ...recent.filter(value => value !== id)].slice(0, 400);
   try { localStorage.setItem(recentKey, JSON.stringify(recent)); } catch { /* Continue without persistence. */ }
   document.querySelectorAll<HTMLButtonElement>('.choice').forEach((button, i) => {
     button.disabled = true;

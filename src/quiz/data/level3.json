@@ -40,6 +40,46 @@
     "speedEligible": false
   },
   {
+    "id": "L3-V01-3",
+    "level": 3,
+    "slotId": "L3-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The library will remain open during the holiday.",
+    "prompt": "remain open의 뜻은?",
+    "choices": [
+      "새로 문을 연다",
+      "일찍 문을 닫는다",
+      "입장을 제한한다",
+      "계속 열려 있다"
+    ],
+    "answer": 3,
+    "explanation": "remain은 어떤 상태를 유지한다는 뜻이므로 휴일에도 계속 엽니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V01-4",
+    "level": 3,
+    "slotId": "L3-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "You can borrow my umbrella, but please return it tomorrow.",
+    "prompt": "return의 뜻은?",
+    "choices": [
+      "돌려주다",
+      "사다",
+      "버리다",
+      "펼치다"
+    ],
+    "answer": 0,
+    "explanation": "우산을 빌려 준 상황에서 return은 빌린 물건을 돌려주라는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
     "id": "L3-V02-1",
     "level": 3,
     "slotId": "L3-V02",
@@ -77,6 +117,46 @@
     "answer": 3,
     "explanation": "목적어가 가게인 bakery이므로 가게를 운영한다는 의미입니다.",
     "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V02-3",
+    "level": 3,
+    "slotId": "L3-V02",
+    "domain": "vocabulary",
+    "skill": "polysemy",
+    "familyId": "meaning-choice",
+    "passage": "This suitcase is light enough for a child to carry.",
+    "prompt": "light의 뜻은?",
+    "choices": [
+      "가벼운",
+      "밝은",
+      "불빛",
+      "연한 색의"
+    ],
+    "answer": 0,
+    "explanation": "아이도 들 수 있다는 단서로 무게가 가볍다는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V02-4",
+    "level": 3,
+    "slotId": "L3-V02",
+    "domain": "vocabulary",
+    "skill": "polysemy",
+    "familyId": "meaning-choice",
+    "passage": "The café is so busy that it needs more staff.",
+    "prompt": "busy의 뜻은?",
+    "choices": [
+      "문이 닫힌",
+      "손님이 많아 바쁜",
+      "전화가 통화 중인",
+      "직원이 쉬는"
+    ],
+    "answer": 1,
+    "explanation": "직원을 더 구해야 하므로 손님이 많아 바쁜 상황입니다.",
+    "expectedMs": 15000,
     "speedEligible": false
   },
   {
@@ -120,6 +200,46 @@
     "speedEligible": false
   },
   {
+    "id": "L3-V03-3",
+    "level": 3,
+    "slotId": "L3-V03",
+    "domain": "vocabulary",
+    "skill": "context-inference",
+    "familyId": "definition-clue",
+    "passage": "These cups are reusable: you can wash them and use them again.",
+    "prompt": "reusable의 뜻은?",
+    "choices": [
+      "씻을 수 없는",
+      "다시 사용할 수 있는",
+      "쉽게 깨지는",
+      "한 번만 쓰는"
+    ],
+    "answer": 1,
+    "explanation": "씻어서 다시 쓸 수 있다는 설명이 reusable의 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-V03-4",
+    "level": 3,
+    "slotId": "L3-V03",
+    "domain": "vocabulary",
+    "skill": "context-inference",
+    "familyId": "definition-clue",
+    "passage": "The animal is nocturnal. It sleeps during the day and hunts at night.",
+    "prompt": "nocturnal의 뜻은?",
+    "choices": [
+      "낮에 활동하는",
+      "무리로 사는",
+      "밤에 활동하는",
+      "물속에 사는"
+    ],
+    "answer": 2,
+    "explanation": "낮에는 자고 밤에 사냥한다는 단서로 뜻을 추론합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
     "id": "L3-U01-1",
     "level": 3,
     "slotId": "L3-U01",
@@ -156,6 +276,46 @@
     ],
     "answer": 2,
     "explanation": "2년 전 시작해 지금도 계속하므로 현재완료와 기간 for two years가 맞습니다. stopped는 중단했다는 뜻입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U01-3",
+    "level": 3,
+    "slotId": "L3-U01",
+    "domain": "usage",
+    "skill": "perfect-meaning",
+    "familyId": "meaning-equivalence",
+    "passage": "I moved here in 2020 and still live here.",
+    "prompt": "같은 뜻의 문장은?",
+    "choices": [
+      "I lived here only in 2020.",
+      "I will live here in 2020.",
+      "I left here in 2020.",
+      "I have lived here since 2020."
+    ],
+    "answer": 3,
+    "explanation": "2020년에 시작해서 지금까지 이어지는 상태이므로 have lived와 since를 씁니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U01-4",
+    "level": 3,
+    "slotId": "L3-U01",
+    "domain": "usage",
+    "skill": "perfect-meaning",
+    "familyId": "meaning-equivalence",
+    "passage": "She has already finished her homework.",
+    "prompt": "이 문장의 뜻은?",
+    "choices": [
+      "숙제를 이미 끝냈다",
+      "숙제를 아직 시작하지 않았다",
+      "숙제를 내일 끝낼 것이다",
+      "매일 숙제를 한다"
+    ],
+    "answer": 0,
+    "explanation": "has finished는 완료를, already는 이미라는 뜻을 나타냅니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -200,6 +360,46 @@
     "speedEligible": false
   },
   {
+    "id": "L3-U02-3",
+    "level": 3,
+    "slotId": "L3-U02",
+    "domain": "usage",
+    "skill": "passive-relation",
+    "familyId": "agent-patient",
+    "passage": "The window ___ by a ball yesterday.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "was broken",
+      "broke",
+      "is breaking",
+      "has breaking"
+    ],
+    "answer": 0,
+    "explanation": "창문은 공에 의해 깨진 대상이며 어제 일어난 일이므로 was broken입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U02-4",
+    "level": 3,
+    "slotId": "L3-U02",
+    "domain": "usage",
+    "skill": "passive-relation",
+    "familyId": "agent-patient",
+    "passage": "A local artist painted this picture.",
+    "prompt": "같은 뜻의 문장은?",
+    "choices": [
+      "This picture will paint a local artist.",
+      "This picture was painted by a local artist.",
+      "This picture painted a local artist.",
+      "A local artist was painted by this picture."
+    ],
+    "answer": 1,
+    "explanation": "그림이 그려진 대상이며 by 뒤에 그림을 그린 사람을 둡니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
     "id": "L3-U03-1",
     "level": 3,
     "slotId": "L3-U03",
@@ -236,6 +436,46 @@
     ],
     "answer": 2,
     "explanation": "뒤 절에서 helped의 주어가 필요하고 앞의 boy가 사람이므로 who입니다. whose는 뒤에 소유 대상을 나타내는 명사가 필요합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U03-3",
+    "level": 3,
+    "slotId": "L3-U03",
+    "domain": "usage",
+    "skill": "clause-order",
+    "familyId": "embedded-question",
+    "passage": "Do you know ___?",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "where the station be",
+      "where the station is",
+      "where is the station",
+      "where does the station"
+    ],
+    "answer": 1,
+    "explanation": "간접의문문은 where 뒤에 주어 the station과 동사 is 순서로 씁니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-U03-4",
+    "level": 3,
+    "slotId": "L3-U03",
+    "domain": "usage",
+    "skill": "clause-order",
+    "familyId": "embedded-question",
+    "passage": "The girl who won the race is my cousin.",
+    "prompt": "경주에서 우승한 사람은?",
+    "choices": [
+      "소녀의 친구",
+      "경주를 연 교사",
+      "내 사촌인 소녀",
+      "말하는 사람"
+    ],
+    "answer": 2,
+    "explanation": "who won the race가 The girl을 설명하고 그 소녀가 내 사촌입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -280,6 +520,46 @@
     "speedEligible": false
   },
   {
+    "id": "L3-R01-3",
+    "level": 3,
+    "slotId": "L3-R01",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "A small garden replaced an empty parking lot. Neighbors now grow vegetables there and share them. The space has brought people together.",
+    "prompt": "글의 중심 내용은?",
+    "choices": [
+      "주차 공간이 늘어났다",
+      "채소 판매가 중단되었다",
+      "이웃들이 이사를 갔다",
+      "공동 정원이 이웃을 연결했다"
+    ],
+    "answer": 3,
+    "explanation": "빈 공간에 생긴 정원에서 채소를 함께 기르고 나누며 이웃이 가까워졌습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R01-4",
+    "level": 3,
+    "slotId": "L3-R01",
+    "domain": "reading",
+    "skill": "main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "At first, Ian could not swim. He took lessons and practiced each weekend. Now he can cross the pool without help.",
+    "prompt": "글의 중심 내용은?",
+    "choices": [
+      "연습으로 수영 실력이 향상되었다",
+      "수영장 이용이 금지되었다",
+      "주말마다 수업이 취소되었다",
+      "도움 없이는 수영할 수 없다"
+    ],
+    "answer": 0,
+    "explanation": "처음과 지금을 비교하면 꾸준한 연습의 결과를 알 수 있습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
     "id": "L3-R02-1",
     "level": 3,
     "slotId": "L3-R02",
@@ -316,6 +596,46 @@
     ],
     "answer": 2,
     "explanation": "because 뒤의 lights stopped working이 원인입니다. 방문객이 떠난 것은 결과입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R02-3",
+    "level": 3,
+    "slotId": "L3-R02",
+    "domain": "reading",
+    "skill": "purpose",
+    "familyId": "purpose-choice",
+    "passage": "The coach changed practice to the morning to avoid the afternoon heat.",
+    "prompt": "연습 시간을 바꾼 목적은?",
+    "choices": [
+      "오후의 더위 피하기",
+      "더 오래 연습하기",
+      "관중 모으기",
+      "선수를 줄이기"
+    ],
+    "answer": 0,
+    "explanation": "to avoid 이하가 목적이며 오후의 더위를 피하려고 시간을 바꿨습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R02-4",
+    "level": 3,
+    "slotId": "L3-R02",
+    "domain": "reading",
+    "skill": "purpose",
+    "familyId": "purpose-choice",
+    "passage": "The shop added a ramp because some customers could not climb the steps.",
+    "prompt": "경사로를 설치한 이유는?",
+    "choices": [
+      "손님이 너무 빨리 걸어서",
+      "계단을 오르기 어려운 손님이 있어서",
+      "물건을 더 많이 팔아서",
+      "건물이 너무 어두워서"
+    ],
+    "answer": 1,
+    "explanation": "because 뒤에서 계단을 오를 수 없는 손님들이 있다는 이유를 제시합니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -360,6 +680,46 @@
     "speedEligible": false
   },
   {
+    "id": "L3-R03-3",
+    "level": 3,
+    "slotId": "L3-R03",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "The bus leaves at nine. It takes Mia fifteen minutes to walk to the stop. At 8:55, she is still at home.",
+    "prompt": "Mia가 걸어서 출발하면 어떻게 될 가능성이 큰가요?",
+    "choices": [
+      "버스 출발이 취소된다",
+      "9시 버스를 놓친다",
+      "정류장에 8시 50분에 도착한다",
+      "버스보다 먼저 도착한다"
+    ],
+    "answer": 1,
+    "explanation": "8시 55분에서 15분 후면 9시 10분이므로 출발 시간보다 늦습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-R03-4",
+    "level": 3,
+    "slotId": "L3-R03",
+    "domain": "reading",
+    "skill": "supported-inference",
+    "familyId": "evidence-choice",
+    "passage": "Alex promised to water the plants while Jo was away. When Jo returned, the soil was wet and the plants looked healthy.",
+    "prompt": "가장 자연스러운 추론은?",
+    "choices": [
+      "식물에 햇빛이 전혀 없었다",
+      "Alex가 식물을 팔았다",
+      "Alex가 식물에 물을 주었다",
+      "Jo가 식물을 모두 버렸다"
+    ],
+    "answer": 2,
+    "explanation": "물주기 약속과 젖은 흙·건강한 식물이 같은 결론을 뒷받침합니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
     "id": "L3-D01-1",
     "level": 3,
     "slotId": "L3-D01",
@@ -396,6 +756,46 @@
     ],
     "answer": 2,
     "explanation": "지루할 것이라는 예상과 실제 즐겼다는 내용이 반대이므로 However가 맞습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D01-3",
+    "level": 3,
+    "slotId": "L3-D01",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "The café is small. ___, it offers many different dishes.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "Therefore",
+      "For example",
+      "As a result",
+      "However"
+    ],
+    "answer": 3,
+    "explanation": "작은 크기와 다양한 메뉴가 대조되므로 However가 맞습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D01-4",
+    "level": 3,
+    "slotId": "L3-D01",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "Many insects help plants. ___, bees carry pollen between flowers.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "For example",
+      "However",
+      "Instead",
+      "Otherwise"
+    ],
+    "answer": 0,
+    "explanation": "벌이 꽃가루를 옮기는 것은 곤충이 식물을 돕는 구체적인 예입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   },
@@ -440,6 +840,46 @@
     "speedEligible": false
   },
   {
+    "id": "L3-D02-3",
+    "level": 3,
+    "slotId": "L3-D02",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "event-reference",
+    "passage": "A team built a small robot. The machine can sort rubbish. It runs on solar power.",
+    "prompt": "It이 가리키는 것은?",
+    "choices": [
+      "로봇",
+      "쓰레기",
+      "태양",
+      "팀의 건물"
+    ],
+    "answer": 0,
+    "explanation": "The machine은 앞의 로봇을 다시 부르는 말이고 It도 그 로봇을 가리킵니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D02-4",
+    "level": 3,
+    "slotId": "L3-D02",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "event-reference",
+    "passage": "Tickets sold out in an hour. This surprised the organizer, who had expected few visitors.",
+    "prompt": "This가 가리키는 것은?",
+    "choices": [
+      "새 표를 인쇄한 일",
+      "한 시간 만에 표가 매진된 일",
+      "방문객이 적을 것이라는 예상",
+      "행사를 취소한 일"
+    ],
+    "answer": 1,
+    "explanation": "놀라게 한 것은 앞 문장 전체인 빠른 매진입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
     "id": "L3-D03-1",
     "level": 3,
     "slotId": "L3-D03",
@@ -476,6 +916,46 @@
     ],
     "answer": 2,
     "explanation": "먼저 씨앗을 심고 그것을 매일 물 준 뒤 싹이 나타납니다. A의 it은 C의 seed를 받습니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D03-3",
+    "level": 3,
+    "slotId": "L3-D03",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "(A) Finally, she found it under her bed. (B) Mia could not find her phone. (C) She looked around her room.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "B → A → C",
+      "B → C → A",
+      "A → B → C",
+      "C → A → B"
+    ],
+    "answer": 1,
+    "explanation": "휴대폰 분실 → 방을 찾음 → 마침내 발견 순서입니다.",
+    "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L3-D03-4",
+    "level": 3,
+    "slotId": "L3-D03",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "(A) He took it to a repair shop. (B) His bike worked again. (C) Tom noticed a broken wheel.",
+    "prompt": "자연스러운 순서는?",
+    "choices": [
+      "B → A → C",
+      "C → B → A",
+      "C → A → B",
+      "A → C → B"
+    ],
+    "answer": 2,
+    "explanation": "고장 발견 → 수리점에 가져감 → 다시 작동 순서입니다.",
     "expectedMs": 15000,
     "speedEligible": false
   }

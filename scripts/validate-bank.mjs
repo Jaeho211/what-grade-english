@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 
 const levels = [1, 2, 3, 4, 5, 6, 7];
 const bank = levels.flatMap(level => JSON.parse(readFileSync(new URL('../src/quiz/data/level' + level + '.json', import.meta.url), 'utf8')));
-assert.equal(bank.length, 168);
+assert.equal(bank.length, 336);
 assert.equal(new Set(bank.map(q => q.id)).size, bank.length);
+assert.equal(new Set(bank.map(q => q.passage)).size, bank.length, "Repeated passage across grades");
 const domains = ['vocabulary', 'usage', 'reading', 'discourse'];
 for (const q of bank) {
   assert.ok(levels.includes(q.level), q.id);
@@ -22,6 +23,6 @@ for (const q of bank) {
 }
 const slots = new Set(bank.map(q => q.slotId));
 assert.equal(slots.size, 84);
-for (const slot of slots) assert.equal(bank.filter(q => q.slotId === slot).length, 2, slot);
-for (const level of levels) for (const domain of domains) assert.equal(bank.filter(q => q.level === level && q.domain === domain).length, 6, level + '/' + domain);
-console.log('PASS: 168 questions, 84 slots, 4 domains; structural checks only.');
+for (const slot of slots) assert.equal(bank.filter(q => q.slotId === slot).length, 4, slot);
+for (const level of levels) for (const domain of domains) assert.equal(bank.filter(q => q.level === level && q.domain === domain).length, 12, level + '/' + domain);
+console.log('PASS: 336 questions, 84 slots, 4 domains; structural checks only.');

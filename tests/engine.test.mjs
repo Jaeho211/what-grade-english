@@ -138,3 +138,44 @@ test('mixed non-answer paths remain playable and preserve numeric answers for re
     }
   }
 });
+
+test('unseen questions beat skill preferences within the required opening domain', () => {
+  const first = startQuiz(bank, { levels, random: () => 0 });
+  const history = [{ question: first.pending, outcome: 'incorrect', elapsedMs: 5000 }];
+  const pending = bank.find(q => q.level === 3 && q.domain !== first.pending.domain);
+  const fresh = bank.find(q => q.level === 2 && q.domain !== first.pending.domain && q.domain !== pending.domain);
+  const source = bank.map(q => q.id === fresh.id ? { ...q, skill: first.pending.skill } : q);
+  const state = { ...first, target: 3, history, pending };
+  const recentIds = source.filter(q => q.id !== fresh.id).map(q => q.id);
+  const next = submitAnswer(source, state, 'skip', 5000, { levels, recentIds, random: () => 0 });
+  assert.equal(next.pending.id, fresh.id);
+});
+
+test('eight replay sessions preserve domain requirements and avoid recent eligible questions', () => {
+  for (const response of ['correct', 'incorrect', 'skip']) {
+    let recentIds = [];
+    for (let round = 0; round < 8; round++) {
+      const options = { recentIds, random: rng(round + 1) };
+      let state = startQuiz(fullBank, options);
+      for (let i = 0; i < 10; i++) {
+        const used = new Set(state.history.map(e => e.question.id));
+        let eligible = fullBank.filter(q => q.level === state.target && !used.has(q.id));
+        const counts = Object.fromEntries(['vocabulary', 'usage', 'reading', 'discourse'].map(d => [d, state.history.filter(e => e.question.domain === d).length]));
+        if (i < 4) {
+          const min = Math.min(...eligible.map(q => counts[q.domain]));
+          eligible = eligible.filter(q => counts[q.domain] === min);
+        } else if (i >= 7) {
+          const demonstrated = new Set(state.history.filter(e => e.outcome === 'correct' && e.question.level >= state.target).map(e => e.question.domain));
+          if (eligible.some(q => !demonstrated.has(q.domain))) eligible = eligible.filter(q => !demonstrated.has(q.domain));
+        }
+        if (eligible.some(q => !recentIds.includes(q.id))) assert.ok(!recentIds.includes(state.pending.id), `Unexpected repeat in ${response}, round ${round}, question ${i}`);
+        else assert.equal(recentIds.indexOf(state.pending.id), Math.max(...eligible.map(q => recentIds.indexOf(q.id))));
+        const q = state.pending;
+        recentIds = [q.id, ...recentIds.filter(id => id !== q.id)].slice(0, 400);
+        state = submitAnswer(fullBank, state, response === 'correct' ? q.answer : response === 'skip' ? 'skip' : (q.answer + 1) % 4, 5000, { ...options, recentIds });
+      }
+      assert.equal(new Set(state.history.slice(0, 4).map(e => e.question.domain)).size, 4);
+      assert.equal(new Set(state.history.map(e => e.question.id)).size, 10);
+    }
+  }
+});

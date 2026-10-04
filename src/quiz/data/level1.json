@@ -40,6 +40,46 @@
     "speedEligible": false
   },
   {
+    "id": "L1-V01-3",
+    "level": 1,
+    "slotId": "L1-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "The library is quiet. Please do not shout.",
+    "prompt": "quiet의 뜻은?",
+    "choices": [
+      "위험한",
+      "조용한",
+      "붐비는",
+      "밝은"
+    ],
+    "answer": 1,
+    "explanation": "소리 지르지 말라는 부탁이 있으므로 quiet는 조용하다는 뜻입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-V01-4",
+    "level": 1,
+    "slotId": "L1-V01",
+    "domain": "vocabulary",
+    "skill": "context-meaning",
+    "familyId": "meaning-choice",
+    "passage": "This box is empty. There is nothing inside.",
+    "prompt": "empty의 뜻은?",
+    "choices": [
+      "가득 찬",
+      "깨진",
+      "비어 있는",
+      "무거운"
+    ],
+    "answer": 2,
+    "explanation": "안에 아무것도 없다는 문장이 empty의 뜻을 설명합니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L1-V02-1",
     "level": 1,
     "slotId": "L1-V02",
@@ -76,6 +116,46 @@
     ],
     "answer": 3,
     "explanation": "이를 닦다는 brush my teeth입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-V02-3",
+    "level": 1,
+    "slotId": "L1-V02",
+    "domain": "vocabulary",
+    "skill": "action-choice",
+    "familyId": "context-gap",
+    "passage": "My hands are dirty. I need to ___ them.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "carry",
+      "answer",
+      "wash",
+      "draw"
+    ],
+    "answer": 2,
+    "explanation": "손이 더러우므로 씻는다는 뜻의 wash가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-V02-4",
+    "level": 1,
+    "slotId": "L1-V02",
+    "domain": "vocabulary",
+    "skill": "action-choice",
+    "familyId": "context-gap",
+    "passage": "The bus is coming. Let's ___ here for it.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "swim",
+      "cook",
+      "open",
+      "wait"
+    ],
+    "answer": 3,
+    "explanation": "버스가 오고 있으므로 여기서 기다리자는 뜻입니다.",
     "expectedMs": 10000,
     "speedEligible": false
   },
@@ -120,6 +200,46 @@
     "speedEligible": false
   },
   {
+    "id": "L1-V03-3",
+    "level": 1,
+    "slotId": "L1-V03",
+    "domain": "vocabulary",
+    "skill": "basic-description",
+    "familyId": "context-gap",
+    "passage": "The soup is very ___. Do not eat it yet.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "short",
+      "late",
+      "quiet",
+      "hot"
+    ],
+    "answer": 3,
+    "explanation": "아직 먹지 말라는 단서로 수프가 뜨겁다는 것을 알 수 있습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-V03-4",
+    "level": 1,
+    "slotId": "L1-V03",
+    "domain": "vocabulary",
+    "skill": "basic-description",
+    "familyId": "context-gap",
+    "passage": "I cannot carry this bag. It is too ___.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "heavy",
+      "young",
+      "early",
+      "thirsty"
+    ],
+    "answer": 0,
+    "explanation": "가방을 들 수 없으므로 너무 무겁다는 heavy가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L1-U01-1",
     "level": 1,
     "slotId": "L1-U01",
@@ -157,6 +277,46 @@
     "answer": 3,
     "explanation": "you와 일반동사 like로 질문할 때 Do를 씁니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-U01-3",
+    "level": 1,
+    "slotId": "L1-U01",
+    "domain": "usage",
+    "skill": "basic-verb",
+    "familyId": "verb-form",
+    "passage": "My sister ___ a student.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "am",
+      "is",
+      "are",
+      "do"
+    ],
+    "answer": 1,
+    "explanation": "My sister는 한 사람을 가리키므로 be동사 is를 씁니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-U01-4",
+    "level": 1,
+    "slotId": "L1-U01",
+    "domain": "usage",
+    "skill": "basic-verb",
+    "familyId": "verb-form",
+    "passage": "Tom and I ___ soccer every Sunday.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "is",
+      "playing",
+      "play",
+      "plays"
+    ],
+    "answer": 2,
+    "explanation": "Tom and I는 복수 주어이며 매주 하는 일을 나타내므로 play를 씁니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -200,6 +360,46 @@
     "speedEligible": false
   },
   {
+    "id": "L1-U02-3",
+    "level": 1,
+    "slotId": "L1-U02",
+    "domain": "usage",
+    "skill": "basic-tense",
+    "familyId": "tense-gap",
+    "passage": "We ___ a movie yesterday.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "watches",
+      "watching",
+      "watched",
+      "watch"
+    ],
+    "answer": 2,
+    "explanation": "yesterday가 과거를 나타내므로 watched가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-U02-4",
+    "level": 1,
+    "slotId": "L1-U02",
+    "domain": "usage",
+    "skill": "basic-tense",
+    "familyId": "tense-gap",
+    "passage": "She ___ breakfast at seven every day.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "ate",
+      "eating",
+      "eat",
+      "eats"
+    ],
+    "answer": 3,
+    "explanation": "매일 하는 일을 나타내며 주어가 She이므로 eats를 씁니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L1-U03-1",
     "level": 1,
     "slotId": "L1-U03",
@@ -237,6 +437,46 @@
     "answer": 3,
     "explanation": "under는 아래라는 뜻입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-U03-3",
+    "level": 1,
+    "slotId": "L1-U03",
+    "domain": "usage",
+    "skill": "basic-modal",
+    "familyId": "verb-form",
+    "passage": "Can you ___ a bike?",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "rides",
+      "rode",
+      "riding",
+      "ride"
+    ],
+    "answer": 3,
+    "explanation": "can 뒤에는 동사의 기본형을 쓰므로 ride가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-U03-4",
+    "level": 1,
+    "slotId": "L1-U03",
+    "domain": "usage",
+    "skill": "basic-modal",
+    "familyId": "verb-form",
+    "passage": "The shoes are beside the door.",
+    "prompt": "신발은 어디에 있나요?",
+    "choices": [
+      "문 옆",
+      "문 아래",
+      "문 위",
+      "문 안"
+    ],
+    "answer": 0,
+    "explanation": "beside는 옆에 있다는 뜻입니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -280,6 +520,46 @@
     "speedEligible": false
   },
   {
+    "id": "L1-R01-3",
+    "level": 1,
+    "slotId": "L1-R01",
+    "domain": "reading",
+    "skill": "explicit-detail",
+    "familyId": "detail-choice",
+    "passage": "The art class starts at two. Please bring a pencil.",
+    "prompt": "수업은 몇 시에 시작하나요?",
+    "choices": [
+      "4시",
+      "2시",
+      "1시",
+      "3시"
+    ],
+    "answer": 1,
+    "explanation": "starts at two가 시작 시간을 직접 알려 줍니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-R01-4",
+    "level": 1,
+    "slotId": "L1-R01",
+    "domain": "reading",
+    "skill": "explicit-detail",
+    "familyId": "detail-choice",
+    "passage": "Mina has a dog. Its name is Coco.",
+    "prompt": "Coco는 어떤 동물인가요?",
+    "choices": [
+      "새",
+      "토끼",
+      "개",
+      "고양이"
+    ],
+    "answer": 2,
+    "explanation": "앞 문장의 a dog를 다음 문장의 Its가 가리킵니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L1-R02-1",
     "level": 1,
     "slotId": "L1-R02",
@@ -317,6 +597,46 @@
     "answer": 3,
     "explanation": "추위와 눈은 오늘의 날씨에 관한 정보입니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-R02-3",
+    "level": 1,
+    "slotId": "L1-R02",
+    "domain": "reading",
+    "skill": "simple-main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "I like apples. I also like oranges. I eat fruit every day.",
+    "prompt": "이 글은 무엇에 관한 글인가요?",
+    "choices": [
+      "운동 규칙",
+      "여행 계획",
+      "좋아하는 과일",
+      "학교 시간표"
+    ],
+    "answer": 2,
+    "explanation": "사과와 오렌지를 좋아하고 매일 과일을 먹는다는 내용입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-R02-4",
+    "level": 1,
+    "slotId": "L1-R02",
+    "domain": "reading",
+    "skill": "simple-main-idea",
+    "familyId": "main-idea-choice",
+    "passage": "We run in the park. We play soccer there, too.",
+    "prompt": "두 문장에 공통으로 나오는 내용은?",
+    "choices": [
+      "집에서 하는 공부",
+      "식당에서 먹는 음식",
+      "학교에서 듣는 음악",
+      "공원에서 하는 운동"
+    ],
+    "answer": 3,
+    "explanation": "공원에서 달리기와 축구를 한다는 내용입니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -360,6 +680,46 @@
     "speedEligible": false
   },
   {
+    "id": "L1-R03-3",
+    "level": 1,
+    "slotId": "L1-R03",
+    "domain": "reading",
+    "skill": "simple-intention",
+    "familyId": "intention-choice",
+    "passage": "Come to my birthday party on Saturday! It starts at three.",
+    "prompt": "이 메시지를 쓴 목적은?",
+    "choices": [
+      "물건을 돌려 달라고 하기",
+      "수업을 취소하기",
+      "길을 알려 주기",
+      "생일 파티에 초대하기"
+    ],
+    "answer": 3,
+    "explanation": "Come to my birthday party는 생일 파티에 오라는 초대입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-R03-4",
+    "level": 1,
+    "slotId": "L1-R03",
+    "domain": "reading",
+    "skill": "simple-intention",
+    "familyId": "intention-choice",
+    "passage": "Please return my blue pen tomorrow. I need it for class.",
+    "prompt": "이 메시지를 쓴 목적은?",
+    "choices": [
+      "펜을 돌려 달라고 부탁하기",
+      "파란 펜을 사기",
+      "수업 시간을 바꾸기",
+      "내일 놀자고 하기"
+    ],
+    "answer": 0,
+    "explanation": "return my blue pen은 빌린 펜을 돌려 달라는 부탁입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L1-D01-1",
     "level": 1,
     "slotId": "L1-D01",
@@ -397,6 +757,46 @@
     "answer": 3,
     "explanation": "and는 사과와 바나나를 함께 연결합니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-D01-3",
+    "level": 1,
+    "slotId": "L1-D01",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "I want to go outside, ___ it is raining.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "because",
+      "but",
+      "and",
+      "or"
+    ],
+    "answer": 1,
+    "explanation": "나가고 싶은 마음과 비가 오는 상황이 대조되므로 but가 맞습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-D01-4",
+    "level": 1,
+    "slotId": "L1-D01",
+    "domain": "discourse",
+    "skill": "connector",
+    "familyId": "connector-choice",
+    "passage": "I am wearing a coat ___ it is cold.",
+    "prompt": "빈칸에 알맞은 말은?",
+    "choices": [
+      "or",
+      "then",
+      "because",
+      "but"
+    ],
+    "answer": 2,
+    "explanation": "추운 것이 코트를 입은 이유이므로 because가 맞습니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   },
   {
@@ -440,6 +840,46 @@
     "speedEligible": false
   },
   {
+    "id": "L1-D02-3",
+    "level": 1,
+    "slotId": "L1-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "First, wash the tomato. Then, cut it. Finally, put it in the salad.",
+    "prompt": "토마토를 자르기 바로 전에 하는 일은?",
+    "choices": [
+      "토마토 씻기",
+      "토마토 자르기",
+      "샐러드에 넣기",
+      "토마토 먹기"
+    ],
+    "answer": 0,
+    "explanation": "wash → cut → put 순서이므로 자르기 직전에 토마토를 씻습니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-D02-4",
+    "level": 1,
+    "slotId": "L1-D02",
+    "domain": "discourse",
+    "skill": "sequence",
+    "familyId": "event-order",
+    "passage": "First, put on your shoes. Then, open the door. Finally, go outside.",
+    "prompt": "마지막에 하는 일은?",
+    "choices": [
+      "신발 신기",
+      "문 열기",
+      "문 닫기",
+      "밖으로 나가기"
+    ],
+    "answer": 3,
+    "explanation": "Finally 다음의 go outside가 마지막 행동입니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
     "id": "L1-D03-1",
     "level": 1,
     "slotId": "L1-D03",
@@ -477,6 +917,46 @@
     "answer": 3,
     "explanation": "앞 문장의 a ball을 It이 받습니다.",
     "expectedMs": 15000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-D03-3",
+    "level": 1,
+    "slotId": "L1-D03",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "noun-reference",
+    "passage": "Leo has two rabbits. They are white.",
+    "prompt": "They가 가리키는 것은?",
+    "choices": [
+      "Leo",
+      "흰 신발",
+      "토끼의 집",
+      "토끼 두 마리"
+    ],
+    "answer": 3,
+    "explanation": "복수 대명사 They는 앞 문장의 two rabbits를 가리킵니다.",
+    "expectedMs": 10000,
+    "speedEligible": false
+  },
+  {
+    "id": "L1-D03-4",
+    "level": 1,
+    "slotId": "L1-D03",
+    "domain": "discourse",
+    "skill": "reference",
+    "familyId": "noun-reference",
+    "passage": "Sara finds a key. She puts it in her bag.",
+    "prompt": "it이 가리키는 것은?",
+    "choices": [
+      "열쇠",
+      "가방",
+      "Sara",
+      "책"
+    ],
+    "answer": 0,
+    "explanation": "가방에 넣은 대상은 앞 문장에서 찾은 a key입니다.",
+    "expectedMs": 10000,
     "speedEligible": false
   }
 ]
