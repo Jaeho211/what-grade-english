@@ -43,3 +43,5 @@ Cloudflare Workers(`english.2dain.workers.dev`)는 저장소의 `wrangler.jsonc`
 설계와 UI 정책은 docs/curriculum 및 docs/quiz에 있습니다.
 
 제품 방향과 수학 자매 사이트 대비 품질 기준은 [제품 기준](docs/product-plan.md)을 따릅니다.
+
+완료한 풀이 기록은 최근 50회까지 기기에 저장됩니다. 결과 화면에서 JSON으로 내려받거나 삭제할 수 있으며 서버에 자동 전송하지 않습니다. [기록·보정 기준](docs/quiz/play-records.md)을 참고하세요.

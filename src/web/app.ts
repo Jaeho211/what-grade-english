@@ -1,4 +1,5 @@
 import { startQuiz, submitAnswer, shuffleChoices, QUESTION_COUNT, timeLimitMs, type Session, type Evidence } from '../quiz/engine.ts';
+import { RECORDS_KEY, MAX_RECORDS, fingerprint, parseRecords, makeRecord, exportRecords, type PlayRecord, type Observation } from '../quiz/records.ts';
 import { LEVELS, type EnglishQuestion, type Domain } from '../quiz/schema.ts';
 
 const root = document.querySelector<HTMLElement>('#app')!;
@@ -12,6 +13,13 @@ let startedAt = 0;
 let wallStartedAt = 0;
 let frame = 0;
 let recent: string[] = [];
+let records: PlayRecord[] = [];
+let observations: Observation[] = [];
+let interrupted = false;
+let recordSaved = false;
+let storageAvailable = true;
+let bankVersion = '';
+try { records = parseRecords(localStorage.getItem(RECORDS_KEY)); } catch { storageAvailable = false; }
 try {
   const value = JSON.parse(localStorage.getItem(recentKey) ?? '[]');
   if (Array.isArray(value)) recent = value.filter(id => typeof id === 'string').slice(0, 400);
@@ -23,10 +31,12 @@ function shell(content: string) {
 function home() {
   cancelAnimationFrame(frame);
   phase = 'home';
-  shell(`<section class="hero"><span class="eyebrow">짧게 풀고, 나를 발견하는 영어 퀴즈</span><h1>나의 영어<br><span>학년은?</span></h1><p class="intro">익숙한 한 문장부터<br>생각이 필요한 짧은 글까지.</p><div class="facts"><span><b>10</b>문제</span><span><b>20–30</b>초씩</span><span><b>초6–고3</b></span></div><button class="primary" id="start">내 영어 학년 알아보기 <span aria-hidden="true">→</span></button><p class="hint">모르는 문제는 넘어가도 괜찮아요.</p></section><section class="preview"><span class="eyebrow">어떤 문제를 풀까요?</span><p lang="en">Small questions.<br><em>A little discovery.</em></p><div class="tags">${Object.values(labels).map(label => `<span>${label}</span>`).join('')}</div></section>`);
+  shell(`<section class="hero"><span class="eyebrow">짧게 풀고, 나를 발견하는 영어 퀴즈</span><h1>나의 영어<br><span>학년은?</span></h1><p class="intro">익숙한 한 문장부터<br>생각이 필요한 짧은 글까지.</p><div class="facts"><span><b>10</b>문제</span><span><b>20–30</b>초씩</span><span><b>초6–고3</b></span></div><button class="primary" id="start">내 영어 학년 알아보기 <span aria-hidden="true">→</span></button><p class="hint">모르는 문제는 넘어가도 괜찮아요.<br>풀이 기록은 이 기기에만 보관돼요.</p></section><section class="preview"><span class="eyebrow">어떤 문제를 풀까요?</span><p lang="en">Small questions.<br><em>A little discovery.</em></p><div class="tags">${Object.values(labels).map(label => `<span>${label}</span>`).join('')}</div></section>`);
   document.querySelector('#start')!.addEventListener('click', begin);
 }
 function begin() {
+  observations = [];
+  recordSaved = false;
   session = startQuiz(bank, { recentIds: recent });
   showQuestion();
 }
@@ -35,6 +45,7 @@ function showQuestion() {
   session = { ...session, pending: shuffleChoices(session.pending) };
   const q = session.pending!;
   phase = 'question';
+  interrupted = document.hidden;
   const index = session.history.length + 1;
   shell(`<section class="quiz"><div class="question-top"><span class="eyebrow">QUESTION ${String(index).padStart(2, '0')} <span class="muted">/ ${QUESTION_COUNT}</span></span><span class="domain">${labels[q.domain]}</span></div><div class="progress" role="progressbar" aria-label="퀴즈 진행" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="10"><span style="width:${index * 10}%"></span></div><div class="timer-row"><span>남은 시간</span><strong id="timer" role="timer" aria-label="남은 시간">${timeLimitMs(q) / 1000}<span>초</span></strong></div><article class="question-card"><p class="passage" lang="en">${escape(q.passage)}</p><h1 class="prompt" tabindex="-1">${escape(q.prompt)}</h1><div class="choices">${q.choices.map((choice, i) => `<button class="choice" data-answer="${i}"><span class="choice-number">${i + 1}</span><span>${escape(choice)}</span></button>`).join('')}</div></article><button class="skip" id="skip">넘어가기 <span aria-hidden="true">→</span></button><div id="feedback" aria-live="polite"></div></section>`);
   document.querySelectorAll<HTMLButtonElement>('[data-answer]').forEach(button => button.addEventListener('click', () => finish(Number(button.dataset.answer), q.id)));
@@ -60,7 +71,9 @@ function finish(answer: number | 'skip' | 'timeout', id: string) {
   if (phase !== 'question' || !session?.pending || session.pending.id !== id) return;
   phase = 'feedback'; // Locks duplicate clicks before changing state.
   cancelAnimationFrame(frame);
-  const next = submitAnswer(bank, session, answer, elapsed(), { recentIds: recent });
+  const observedMs = elapsed();
+  observations.push({ observedMs, interrupted });
+  const next = submitAnswer(bank, session, answer, observedMs, { recentIds: recent });
   const evidence = next.history.at(-1)!;
   recent = [id, ...recent.filter(value => value !== id)].slice(0, 400);
   try { localStorage.setItem(recentKey, JSON.stringify(recent)); } catch { /* Continue without persistence. */ }
@@ -89,16 +102,39 @@ function review(e: Evidence, i: number) {
 function showResult() {
   if (!session?.result) return;
   phase = 'result';
+  if (!recordSaved) {
+    records = [makeRecord(session, bankVersion, observations, crypto.randomUUID(), new Date().toISOString()), ...records].slice(0, MAX_RECORDS);
+    recordSaved = true;
+    try { localStorage.setItem(RECORDS_KEY, JSON.stringify(records)); storageAvailable = true; } catch { storageAvailable = false; }
+  }
   const result = session.result;
   const label = LEVELS.find(item => item.level === result.level)!.label;
   const badgeLabel = label.replace('초등학교 ', '초').replace('중학교 ', '중').replace('고등학교 ', '고').replace('학년', '');
   const correct = session.history.filter(e => e.outcome === 'correct').length;
-  shell(`<section class="result"><span class="eyebrow">나의 영어 학년</span><div class="result-badge" aria-hidden="true">${badgeLabel}</div><h1>지금 나의 영어 실력은<br><strong>${label} 수준</strong></h1><p class="result-note">${result.status === 'confirmed' ? '여러 영역의 문제를 풀어 본 결과로 추정했어요.' : result.basis === 'partial' ? '두 영역 이상의 정답을 바탕으로 추정했어요. 더 풀어 보면 결과가 달라질 수 있어요.' : '정답 근거가 부족해 결과 범위의 시작 학년으로 표시했어요. 이 학년의 실력을 확인했다는 뜻은 아니에요.'}</p><div class="result-stats"><div><b>${correct}<small> / 10</small></b><span>맞힌 문제</span></div><div><b>${new Set(session.history.filter(e => e.outcome === 'correct').map(e => e.question.domain)).size}<small> / 4</small></b><span>정답을 맞힌 영역</span></div></div><button class="primary" id="share">내 결과 자랑하기 <span aria-hidden="true">↗</span></button><p id="share-status" class="hint" aria-live="polite"></p><button class="secondary" id="again">한 번 더 도전하기</button></section><section class="review-list"><h2>문제 다시 보기 <span>10</span></h2><p class="hint">문제를 누르면 정답과 해설을 볼 수 있어요.</p>${session.history.map(review).join('')}</section>`);
+  shell(`<section class="result"><span class="eyebrow">나의 영어 학년</span><div class="result-badge" aria-hidden="true">${badgeLabel}</div><h1>지금 나의 영어 실력은<br><strong>${label} 수준</strong></h1><p class="result-note">${result.status === 'confirmed' ? '여러 영역의 문제를 풀어 본 결과로 추정했어요.' : result.basis === 'partial' ? '두 영역 이상의 정답을 바탕으로 추정했어요. 더 풀어 보면 결과가 달라질 수 있어요.' : '정답 근거가 부족해 결과 범위의 시작 학년으로 표시했어요. 이 학년의 실력을 확인했다는 뜻은 아니에요.'}</p><div class="result-stats"><div><b>${correct}<small> / 10</small></b><span>맞힌 문제</span></div><div><b>${new Set(session.history.filter(e => e.outcome === 'correct').map(e => e.question.domain)).size}<small> / 4</small></b><span>정답을 맞힌 영역</span></div></div><button class="primary" id="share">내 결과 자랑하기 <span aria-hidden="true">↗</span></button><p id="share-status" class="hint" aria-live="polite"></p><button class="secondary" id="again">한 번 더 도전하기</button></section><section class="review-list"><h2>문제 다시 보기 <span>10</span></h2><p class="hint">문제를 누르면 정답과 해설을 볼 수 있어요.</p>${session.history.map(review).join('')}</section><section class="record-controls"><h2>풀이 기록</h2><p class="hint">${records.length}회 기록 · 최근 ${MAX_RECORDS}회까지 보관해요.<br>${storageAvailable ? '이 기기에만 저장되며 자동으로 전송하지 않아요.' : '기기에 저장할 수 없어 이 화면이 열려 있는 동안만 기록을 유지해요.'}<br>기록에는 푼 문제, 선택한 답, 풀이 시간이 들어 있어요.</p><button class="secondary" id="download-records">풀이 기록 내려받기</button><button class="skip" id="clear-records">저장된 풀이 기록 삭제</button><p class="hint" id="record-status" aria-live="polite"></p></section>`);
+  document.querySelector('#download-records')!.addEventListener('click', downloadRecords);
+  document.querySelector('#clear-records')!.addEventListener('click', () => {
+    records = [];
+    try { localStorage.removeItem(RECORDS_KEY); document.querySelector('#record-status')!.textContent = '이 기기에 저장된 풀이 기록을 삭제했어요.'; }
+    catch { document.querySelector('#record-status')!.textContent = '현재 화면의 기록을 비웠어요. 기기의 저장 기록은 삭제하지 못했어요.'; }
+    document.querySelector<HTMLButtonElement>('#download-records')!.disabled = true;
+    document.querySelector<HTMLButtonElement>('#clear-records')!.disabled = true;
+    document.querySelector('.record-controls .hint')!.textContent = '현재 화면의 풀이 기록은 0회예요.';
+  });
   document.querySelector('#again')!.addEventListener('click', begin);
   document.querySelector('#share')!.addEventListener('click', () => share(label, correct));
   document.querySelector<HTMLHeadingElement>('.result h1')!.setAttribute('tabindex', '-1');
   document.querySelector<HTMLElement>('.result h1')?.focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: 'instant' });
+}
+function downloadRecords() {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(exportRecords(records, new Date().toISOString()), null, 2)], { type: 'application/json' }));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `english-play-records-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  document.querySelector('#record-status')!.textContent = '풀이 기록 파일의 내려받기를 요청했어요.';
 }
 async function share(label: string, correct: number) {
   const text = `나의 영어 학년은 ${label}${session?.result?.status === 'provisional' ? ' (잠정 추정)' : ''}! 10문제 중 ${correct}개 정답. 너의 영어 학년도 알아봐!`;
@@ -113,11 +149,12 @@ async function share(label: string, correct: number) {
     status.innerHTML = `<label>이 내용을 복사해서 공유해 주세요.<textarea readonly>${escape(text + '\n' + url)}</textarea></label>`;
   }
 }
-document.addEventListener('visibilitychange', () => { if (phase === 'question' && !document.hidden && session?.pending) { cancelAnimationFrame(frame); tick(session.pending.id); } });
+document.addEventListener('visibilitychange', () => { if (phase === 'question' && document.hidden) interrupted = true; if (phase === 'question' && !document.hidden && session?.pending) { cancelAnimationFrame(frame); tick(session.pending.id); } });
 try {
   const response = await fetch(new URL('../quiz/data/bank.json', import.meta.url));
   if (!response.ok) throw new Error('Unable to load questions');
   bank = await response.json();
+  bankVersion = fingerprint(JSON.stringify(bank));
   // Fail before showing the start button if a deployment is incomplete.
   startQuiz(bank);
   home();

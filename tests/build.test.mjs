@@ -16,7 +16,7 @@ test('static build: executable modules, full bank and relative deployment paths'
   assert.ok(html.includes('lang="ko"'));
   assert.ok(html.includes('src="./web/app.js"'));
   assert.ok(!/(?:src|href)="\//.test(html));
-  for (const file of ['web/app.js', 'quiz/engine.js', 'quiz/schema.js']) {
+  for (const file of ['web/app.js', 'quiz/engine.js', 'quiz/schema.js', 'quiz/records.js']) {
     execFileSync(process.execPath, ['--check', fileURLToPath(new URL('dist/' + file, root))], { stdio: 'pipe' });
     const source = await readFile(new URL('dist/' + file, root), 'utf8');
     for (const match of source.matchAll(/from\s+['"]([^'"]+)['"]/g)) {
